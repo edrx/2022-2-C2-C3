@@ -1,0 +1,158 @@
+# This file:
+#   https://github.com/edrx/2022-2-C2-C3/
+#       http://angg.twu.net/2022-2-C2-C3/README.org.html
+#       http://angg.twu.net/2022-2-C2-C3/README.org
+#               (find-angg "2022-2-C2-C3/README.org")
+#               (find-angg "2022-2-C2-C3/")
+# Author: Eduardo Ochs <eduardoochs@gmail.com>
+# See: (find-LATEX "2022-2-C2-tudo.tex")
+#      (find-LATEX "2022-2-C3-tudo.tex")
+# 
+# Some eev-isms:
+# (defun c  () (interactive) (eek "C-c C-e h h"))
+# (defun o  () (interactive) (find-angg "2022-2-C2-C3/README.org"))
+# (defun oo () (interactive) (find-angg "2022-1-C2-C3/README.org"))
+# (defun v  () (interactive) (brg     "~/2022-2-C2-C3/README.html"))
+# (defun cv () (interactive) (c) (v))
+# 
+# (find-mygitrepo-links "2022-2-C2-C3")
+# (find-orgnode "Table of Contents")
+#+OPTIONS: toc:nil num:nil
+
+Este repositório contém a fonte em LaTeX dos slides, testes e provas
+dos meus cursos de Cálculo 2 e Cálculo 3 do semestre 2022.2 da UFF.
+
+Páginas dos cursos (com links pra todos os PDFs e vídeos): [[http://angg.twu.net/2022.2-C2.html][C2]], [[http://angg.twu.net/2022.2-C3.html][C3]].
+
+[[http://angg.twu.net/2021aulas-por-telegram.html][Sobre aulas por Telegram]].
+
+[[http://angg.twu.net/contact.html][Como entrar em contato comigo]].
+
+#+begin_src sh
+# Para baixar tudo e compilar
+# os .texs faca isto aqui:
+#
+rm -Rfv /tmp/2022-2-C2-C3/
+mkdir   /tmp/2022-2-C2-C3/
+cd      /tmp/2022-2-C2-C3/
+git clone https://github.com/edrx/2022-2-C2-C3 .
+make
+#+end_src
+
+#+begin_comment
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+
+cd ~/LATEX/
+getincls0   () { grep incl | tr '\\{}' '   ' }
+getincls    () { getincls0 | awk 'NF==2 && $1=="incl" {print $2       }' }
+getincltexs () { getincls0 | awk 'NF==2 && $1=="incl" {print $2 ".tex"}' }
+cat 2022-2-C2-tudo.tex     | getincls0
+cat 2022-2-C2-tudo.tex     | getincls
+cat 2022-2-C2-tudo.tex     | getincltexs
+cat 2022-2-C{2,3}-tudo.tex | getincls
+cat 2022-2-C{2,3}-tudo.tex | getincltexs
+cat 2022-2-C{2,3}-tudo.tex | getincls    | sort | uniq | tee /tmp/.filest0.bn
+cat 2022-2-C{2,3}-tudo.tex | getincltexs | sort | uniq | tee /tmp/.filest0.tex
+
+# (find-fline "/tmp/.filest0.tex")
+# (find-fline "/tmp/.filest0.bn")
+
+for i in $(cat /tmp/.filest0.tex); do 
+  lualatex -record $i
+  done
+
+for i in $(cat /tmp/.filest0.bn); do 
+  flsfiles $i.fls
+  done | sort | uniq | tee /tmp/2022-2.fls
+
+cat /tmp/2022-2.fls     >  /tmp/2022-2+.fls
+echo 2022-2-C2-tudo.tex >> /tmp/2022-2+.fls
+echo 2022-2-C3-tudo.tex >> /tmp/2022-2+.fls
+
+# (find-tkdiff "/tmp/2022-2.fls" "/tmp/2022-2+.fls")
+
+cd ~/LATEX/
+tar -cvzf /tmp/2022-2.tgz   $(cat /tmp/2022-2+.fls)
+
+cd ~/2022-2-C2-C3/
+tar -xvzf /tmp/2022-2.tgz
+# (find-fline "~/2022-2-C2-C3/")
+# (find-fline "~/2022-2-C2-C3/Makefile")
+
+  git init
+  git add README.org
+  git add $(cat /tmp/2022-2+.fls)
+  git add Makefile
+# (magit-status "~/2022-2-C2-C3/")
+
+# git commit -m "Initial commit."
+
+  git branch -M main
+  git remote add origin https://github.com/edrx/2022-2-C2-C3.git
+  git push -u origin main
+  git pull
+  git pull origin
+  git pull origin main
+
+git add README.org
+git commit -m "Small changes."
+git push -u origin main
+
+# (find-angg ".zshrc" "flsfiles")
+# (find-angg "LUA/flsfiles.lua")
+# (find-fline "~/2022-2-C2-C3/")
+# (find-fline "~/2022-2-C2-C3/README.org")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# Test 1:
+cd           ~/2022-2-C2-C3/
+tar -cvzf /tmp/2022-2-C2-C3.tgz *
+rm -Rfv   /tmp/2022-2-C2-C3/
+mkdir     /tmp/2022-2-C2-C3/
+cd        /tmp/2022-2-C2-C3/
+tar -xvzf /tmp/2022-2-C2-C3.tgz
+make
+# (find-fline "/tmp/2022-2-C2-C3/")
+# (find-pdf-page "/tmp/2022-2-C2-C3/2022-2-C2-tudo.pdf")
+# (find-pdf-page "/tmp/2022-2-C2-C3/2022-2-C3-tudo.pdf")
+
+# Test 2:
+rm -Rfv   /tmp/2022-2-C2-C3/
+mkdir     /tmp/2022-2-C2-C3/
+cd        /tmp/2022-2-C2-C3/
+git clone https://github.com/edrx/2022-2-C2-C3 .
+# (find-fline "/tmp/2022-2-C2-C3/")
+# (find-fline "/tmp/2022-2-C2-C3/Makefile")
+make
+
+#+end_comment
+
+#+begin_comment
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+cd ~/2022-2-C2-C3/
+laf
+rm -v *~
+rm -v *.html
+
+# (find-fline   "~/2022-2-C2-C3/")
+# (magit-status "~/2022-2-C2-C3/")
+# (find-gitk    "~/2022-2-C2-C3/")
+#
+#   (s)tage all changes
+#   (c)ommit -> (c)reate
+#   (P)ush -> (p)ushremote
+#   https://github.com/edrx/2022-2-C2-C3
+#
+#+end_comment
+
+# Local Variables:
+# coding:               utf-8-unix
+# modes:                (org-mode fundamental-mode)
+# org-html-postamble:   nil
+# End:

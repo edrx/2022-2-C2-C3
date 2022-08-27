@@ -1,0 +1,467 @@
+% (find-LATEX "2022-2-C2-mathologermovel.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C2-mathologermovel.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C2-mathologermovel.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C2-mathologermovel.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C2-mathologermovel.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C2-mathologermovel.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C2-mathologermovel.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C2-mathologermovel"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C2-mathologermovel.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C2-mathologermovel")
+% (find-pdf-page   "~/LATEX/2022-2-C2-mathologermovel.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-mathologermovel.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-mathologermovel.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C2-mathologermovel.pdf")
+%   file:///home/edrx/LATEX/2022-2-C2-mathologermovel.pdf
+%               file:///tmp/2022-2-C2-mathologermovel.pdf
+%           file:///tmp/pen/2022-2-C2-mathologermovel.pdf
+% http://angg.twu.net/LATEX/2022-2-C2-mathologermovel.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C2-mathologermovel" "2" "c2m222mm" "c2mm")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.item-3»	(to "item-3")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m222mm" "2022-2-C2-mathologermovel")
+% (code-eevvideo      "c2m222mm" "2022-2-C2-mathologermovel")
+% (code-eevlinksvideo "c2m222mm" "2022-2-C2-mathologermovel")
+% (find-c2m222mmvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m222mmp 1 "title")
+% (c2m222mma   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.2}
+
+\bsk
+
+Aula 2: derivação e integração com o Mathologermóvel
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C2.html}
+
+\end{center}
+
+\newpage
+
+% (c2m221p1p 7 "escadas-defs")
+% (c2m221p1a   "escadas-defs")
+
+%L hx = function (x, y) return format(" (%s,%s)c--(%s,%s)o", x-1,y, x,y) end
+%L hxs = function (ys)
+%L     local str = ""
+%L     for x,y in ipairs(ys) do str = str .. hx(x, y) end
+%L     return str
+%L   end
+%L mtintegralspec = function (specf, xmax, y0)
+%L     local pws = PwSpec.from(specf)
+%L     local f = pws:fun()
+%L     local ys = {[0] = y0}
+%L     for x=1,xmax do
+%L       PP("FOO", x, f(x-0.5), ys)
+%L       ys[x] = ys[x - 1] + f(x - 0.5)
+%L     end
+%L     local strx = function (x) return tostring(v(x, ys[x])) end
+%L     local specF = mapconcat(strx, seq(0, xmax), "--")
+%L     return specF
+%L   end
+%L
+%L ysf   = {1, 2, 1, 0, -1, -2, -1, 0, 1, 2, 1, 0}
+%L specf = hxs(ysf)
+%L ysg   = {0, 1, 2, 3, -2, -1, 0, -1, -2, 3, 2, 1, 0}
+%L specg = hxs(ysg)
+%L specF = mtintegralspec(specf, #ysf,  0)
+%L specG = mtintegralspec(specf, #ysf, -3)
+%L specI = mtintegralspec(specg, #ysg,  0)
+%L pwsf  = PwSpec.from(specf)
+%L pwsg  = PwSpec.from(specg)
+%L pwsF  = PwSpec.from(specF)
+%L pwsG  = PwSpec.from(specG)
+%L pwsI  = PwSpec.from(specI)
+%L pf    = pwsf:topict():setbounds(v(0,-2), v(#ysf,2)):pgat("pgatc")
+%L pg    = pwsg:topict():setbounds(v(0,-2), v(#ysg,3)):pgat("pgatc")
+%L pF    = pwsF:topict():setbounds(v(0,-0), v(#ysf,4)):pgat("pgatc")
+%L pG    = pwsG:topict():setbounds(v(0,-3), v(#ysf,1)):pgat("pgatc")
+%L pI    = pwsI:topict():setbounds(v(0,0),  v(#ysg,6)):pgat("pgatc")
+%L pf:sa("Fig f"):output()
+%L pg:sa("Fig g"):output()
+%L pF:sa("Fig F"):output()
+%L pG:sa("Fig G"):output()
+%L pI:sa("Fig I"):output()
+%L
+%L PictList{}:setbounds(v(0,-4),v(13,4)):pgat("pgatc"):sa("respgrid"):output()
+%L
+%L mtintegralspec2 = function (x0, y0, Dys, dot0, dot1)
+%L     local mkxy = function (x,y) return format("(%d,%d)", x, y) end
+%L     local xys = { mkxy(x0,y0) .. (dot0 or "") }
+%L     local x,y = x0,y0
+%L     for i,Dy in ipairs(Dys) do
+%L       x = x + 1
+%L       y = y + Dy
+%L       table.insert(xys, mkxy(x,y))
+%L     end
+%L     xys[#xys] = xys[#xys] .. (dot1 or "")
+%L     return table.concat(xys, "--")
+%L   end
+%L
+%L -- = mtintegralspec2(10, 20, {1, 2, -3, -3}, "a", "b")
+%L ysf   = {1, 2, 1, 0, -1, -2, -1, 0, 1, 2, 1, 0}
+%L ysf_  = {1, 2, 1, 0, -1, -2, -1}
+%L ysg   = {0, 1, 2, 3, -2, -1,  0, -1, -2, 3, 2, 1, 0}
+%L ysg_  =                         {-1, -2, 3, 2, 1}
+%L specH = mtintegralspec2(0, -4, ysf_, "", "o\n") ..
+%L         mtintegralspec2(7,  1, ysg_, "o", "")
+%L specM = mtintegralspec2(0, -4, ysf_, "", "o\n") ..
+%L         mtintegralspec2(7,  2, ysg_, "o", "")
+%L -- = specH
+%L -- = specM
+%L pwsH  = PwSpec.from(specH)
+%L pwsM  = PwSpec.from(specM)
+%L pH    = pwsH:topict():setbounds(v(0,-4), v(12,4)):pgat("pgatc")
+%L pM    = pwsM:topict():setbounds(v(0,-4),  v(12,5)):pgat("pgatc")
+%L pH:sa("Fig H"):output()
+%L pM:sa("Fig M"):output()
+\pu
+
+
+
+\newpage
+
+Este PDF vai ser refeito depois!
+
+Por enquanto:
+
+\msk
+
+1) assista a parte do vídeo do Mathologer sobre como usar um carro pra
+derivar e integrar --- essa parte começa no 3:12. Link:
+
+\ssk
+
+{\footnotesize
+
+%    http://angg.twu.net/mathologer-calculus-easy.html#03:08
+\url{http://angg.twu.net/mathologer-calculus-easy.html\#03:08}
+
+}
+
+\ssk
+
+Repare que ele sempre põe o gráfico da distância em cima e o gráfico
+da velocidade embaixo; quando ele fala de derivação ele começa com uma
+função ``original'', $f$, em cima e ele desenha, ou escreve, a
+derivada dela, $f'$, embaixo.
+
+\msk
+
+2) O Leithold define a inclinação de uma reta na página 17 (no
+capítulo 1) e na página 150 (no capítulo 3) ele discute a derivada da
+função $|x|$. Leia estes trechos.
+
+% (find-books "__analysis/__analysis.el" "leithold")
+% (find-leitholdptpage (+ 17  17)   "inclinação")
+% (find-leitholdptpage (+ 17 150)   "|x|")
+
+\newpage
+
+% «item-3»  (to ".item-3")
+
+3) Considere que a função $G(x)$ do exercício 4 daqui
+
+\ssk
+
+{\footnotesize
+
+% (c2m221tfc1p 10 "exercicio-4")
+% (c2m221tfc1a    "exercicio-4")
+%    http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf#page=10
+\url{http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf#page=10}
+
+}
+
+\ssk
+
+é um gráfico da posição do mathologermóvel no tempo. Copie esse
+gráfico num papel e abaixo dele faça o gráfico correspondente da
+velocidade do mathologermóvel no tempo.
+
+\msk
+
+Tem uma espécie de gabarito desse exercício aqui:
+
+\ssk
+
+{\footnotesize
+
+% (c2m212mt3p 4 "gabarito")
+% (c2m212mt3a   "gabarito")
+%    http://angg.twu.net/LATEX/2021-2-C2-MT3.pdf#page=4
+\url{http://angg.twu.net/LATEX/2021-2-C2-MT3.pdf#page=4}
+
+}
+
+
+
+
+
+\newpage
+
+4) Na P1 do semestre passado --- link:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221p1p 7 "escadas")
+% (c2m221p1a   "escadas")
+%    http://angg.twu.net/LATEX/2022-1-C2-P1.pdf#page=7
+\url{http://angg.twu.net/LATEX/2022-1-C2-P1.pdf\#page=7}
+
+}
+
+\ssk
+
+eu defini as funções $f(x)$ e $g(x)$ desta forma:
+
+\unitlength=9pt
+
+\bsk
+
+$f(x) = \ga{Fig f}
+ \qquad
+ g(x) = \ga{Fig g}
+$
+
+% $
+% \ga{Fig F}
+% \ga{Fig G}
+% \ga{Fig I}
+% \ga{Fig M}
+% $
+
+\msk
+
+Interprete esses gráficos da $f(x)$ e da $g(x)$ como dois gráficos
+diferentes da velocidade do mathologermóvel no tempo. Copie elas num
+papel e acima de cada um deles faça o gráfico correspondente da
+posição do mathologermóvel no tempo.
+
+\msk
+
+Tem uma espécie de gabarito disso aqui:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221p1p 8 "escadas-gab")
+% (c2m221p1a   "escadas-gab")
+%    http://angg.twu.net/LATEX/2022-1-C2-P1.pdf#page=8
+\url{http://angg.twu.net/LATEX/2022-1-C2-P1.pdf#page=8}
+
+}
+
+
+
+
+
+
+\newpage
+
+
+\msk
+
+5) Faça o exercício 1 daqui:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221tfc1p 7 "exercicio-1")
+% (c2m221tfc1a   "exercicio-1")
+%    http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf#page=7
+\url{http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf\#page=7}
+
+}
+
+\ssk
+
+Pra fazer ele você vai ter que interpretar o gráfico da $f(x)$ como um
+gráfico de velocidade, e você vai que interpretar expressões como esta aqui
+%
+$$\Intx{1.5}{2}{f(x)}$$
+%
+como o quanto a posição do mathologermóvel varia entre o ``instante
+inicial'', que é $t=1.5$, e o ``instante final'', que é $t=2$.
+
+
+
+
+
+
+
+
+
+
+
+% (find-TH "mathologer-calculus-easy" "legendas")
+% (find-TH "mathologer-calculus-easy" "legendas" "03:08")
+
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C2/")
+# (find-fline "~/LATEX/2022-2-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C2-mathologermovel veryclean
+make -f 2019.mk STEM=2022-2-C2-mathologermovel pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2mm"
+% ee-tla: "c2m222mm"
+% End:

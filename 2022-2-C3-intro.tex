@@ -1,0 +1,574 @@
+% (find-LATEX "2022-2-C3-intro.tex")
+% (defun c  () (interactive) (find-LATEXsh "lualatex -record 2022-2-C3-intro.tex" :end))
+% (defun C  () (interactive) (find-LATEXsh "lualatex 2022-2-C3-intro.tex" "Success!!!"))
+% (defun D  () (interactive) (find-pdf-page      "~/LATEX/2022-2-C3-intro.pdf"))
+% (defun d  () (interactive) (find-pdftools-page "~/LATEX/2022-2-C3-intro.pdf"))
+% (defun e  () (interactive) (find-LATEX "2022-2-C3-intro.tex"))
+% (defun o  () (interactive) (find-LATEX "2022-1-C3-intro.tex"))
+% (defun oo () (interactive) (find-LATEX "2021-2-C3-intro.tex"))
+% (defun u  () (interactive) (find-latex-upload-links "2022-2-C3-intro"))
+% (defun v  () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C3-intro.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C3-intro")
+% (find-pdf-page   "~/LATEX/2022-2-C3-intro.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-intro.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-intro.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C3-intro.pdf")
+%   file:///home/edrx/LATEX/2022-2-C3-intro.pdf
+%               file:///tmp/2022-2-C3-intro.pdf
+%           file:///tmp/pen/2022-2-C3-intro.pdf
+% http://angg.twu.net/LATEX/2022-2-C3-intro.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C3-intro" "3" "c3m222intro" "c3i")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.aula-1»	(to "aula-1")
+% «.intro-v»	(to "intro-v")
+% «.VT»		(to "VT")
+% «.orbita»	(to "orbita")
+% «.orbita-2»	(to "orbita-2")
+% «.orbita-3»	(to "orbita-3")
+% «.orbita-4»	(to "orbita-4")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m222intro" "2022-2-C3-intro")
+% (code-eevvideo      "c3m222intro" "2022-2-C3-intro")
+% (code-eevlinksvideo "c3m222intro" "2022-2-C3-intro")
+% (find-c3m222introvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m222introp 1 "title")
+% (c3m222introa   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.2}
+
+\bsk
+
+Aulas 1 e 2: introdução ao curso
+
+(e a trajetórias)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C3.html}
+
+\end{center}
+
+\newpage
+
+%     _         _         _ 
+%    / \  _   _| | __ _  / |
+%   / _ \| | | | |/ _` | | |
+%  / ___ \ |_| | | (_| | | |
+% /_/   \_\__,_|_|\__,_| |_|
+%                           
+% «aula-1»  (to ".aula-1")
+% (c3m222introp 2 "aula-1")
+% (c3m222introa   "aula-1")
+
+{\bf Sobre a aula 1}
+
+Na aula 1 nós usamos as idéias dos 8 primeiros slides daqui,
+
+\ssk
+
+{\footnotesize
+
+% (c3m212introp 1 "title")
+% (c3m212introa   "title")
+%    http://angg.twu.net/LATEX/2021-2-C3-intro.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C3-intro.pdf}
+
+}
+
+\ssk
+
+e do slide 10 daqui,
+
+\ssk
+
+{\footnotesize
+
+% (c3m202planotangp 10 "geral-e-particular")
+% (c3m202planotanga    "geral-e-particular")
+%    http://angg.twu.net/LATEX/2020-2-C3-plano-tang.pdf#page=10
+\url{http://angg.twu.net/LATEX/2020-2-C3-plano-tang.pdf#page=10}
+
+}
+
+\ssk
+
+...pra desenhar casos particulares das figuras das seções 7.4 e 7.5
+
+do ``GA1'' do Felipe Acker:
+
+\ssk
+
+{\footnotesize
+
+% (find-books "__analysis/__analysis.el" "acker")
+% (find-ackerGA1page (+ 16 27) "7.4 Soma de vetores")
+% (find-ackerGA1page (+ 16 29) "7.5 Somando vetores a pontos")
+%    http://angg.twu.net/acker/acker__ga_livro1_2019.pdf#page=43
+\url{http://angg.twu.net/acker/acker__ga_livro1_2019.pdf\#page=43}
+
+}
+
+
+\newpage
+
+% «intro-v»  (to ".intro-v")
+% (c3m222introp 3 "intro-v")
+% (c3m222introa   "intro-v")
+
+{\bf Introdução ao vetor velocidade}
+
+Em cursos de Cálculo 3 ``pra matemáticos'' a gente normalmente
+
+começa definindo o vetor velocidade como um limite. O Felipe
+
+Acker faz isso muito bem nos capítulos 2 e 3 do ``GA4'',
+
+\ssk
+
+{\footnotesize
+
+% (find-books "__analysis/__analysis.el" "acker")
+% (find-ackerGA4page (+ 8 13) "2" "Velocidade")
+% (find-ackerGA4text (+ 8 13) "2" "Velocidade")
+% (find-ackerGA4page (+ 8 19) "3" "Aceleracao")
+% (find-ackerGA4text (+ 8 19) "3" "Aceleracao")
+%    http://angg.twu.net/acker/acker__ga_livro4_2019.pdf
+\url{http://angg.twu.net/acker/acker__ga_livro4_2019.pdf}
+
+}
+
+\ssk
+
+Eu costumava fazer mais ou menos isso no curso de Cálculo 3,
+
+e a gente gastava uma aula inteira aprendendo a decifrar a
+
+fórmula daquele limite e visualizar o que ela queria dizer.
+
+\msk
+
+Dessa vez vamos tentar fazer algo diferente.
+
+Vamos começar com exemplos e animações.
+
+Assista este vídeo aqui até o 9:00,
+
+\ssk
+
+{\footnotesize
+
+% (c3m212bezierp 1)
+% (c3m212bezier 1)
+%    http://angg.twu.net/LATEX/2021-2-C3-bezier.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C3-bezier.pdf}
+
+%    https://www.youtube.com/watch?v=aVwxzDHniEw
+\url{https://www.youtube.com/watch?v=aVwxzDHniEw}
+
+}
+
+\ssk
+
+\standout{mas considere que tudo até o 6:34...}
+
+\newpage
+
+{\bf Introdução ao vetor velocidade (cont.)}
+
+\ssk
+
+...mas considere que tudo no vídeo até o 6:34 são idéias avançadas que
+a gente só vai entender nuns exercícios que a gente vai fazer daqui a
+algumas aulas. Por enquanto reserve praticamente toda a sua atenção
+pro trecho entre 6:34 e 9:00, que é o trecho que a Freya Holmér mostra
+os vetores velocidade e aceleração pra algumas curvas de Bézier.
+
+A gente vai fazer o seguinte. Nós vamos acreditar que {\sl em geral}
+quando temos uma trajetória $P(t) = (x(t),y(t))$ o vetor velocidade
+dessa trajetória é $P'(t) = (x'(t),y'(t))$. Nós vamos ver vários
+exemplos disso, e vamos deixar pra entender os detalhes desse ``em
+geral'' quando formos entender a definição ``pra matemáticos'' do
+vetor velocidade.
+
+\newpage
+
+{\bf Exercício 1: uma trajetória com um bico}
+
+Dê uma olhada no item 1e da VS do semestre passado:
+
+\ssk
+
+{\footnotesize
+
+% (c3m221vsp 2 "questao-1")
+% (c3m221vsa   "questao-1")
+%    http://angg.twu.net/LATEX/2022-1-C3-VS.pdf#page=2
+\url{http://angg.twu.net/LATEX/2022-1-C3-VS.pdf#page=2}
+
+}
+
+\ssk
+
+Faça o que essa questão pede e represente graficamente $Q(t)+Q'(t)$
+pra um monte de outros valores de $t$ também --- até você entender
+como essa trajetória se comporta. {\sl Dica:} ela é um movimento
+retilíneo uniforme até um determinado instante, aí ela muda de vetor
+velocidade subitamente e vira um outro movimento retilíneo uniforme.
+
+\msk
+
+{\bf Exercício 2: um trajetória com teleporte}
+
+Represente graficamente a trajetória abaixo. Ela é parecida com a
+anterior, mas nessa tem um momento em que a partícula desaparece do
+ponto em que em estava e se teleporta pra outro lugar.
+%
+$$\scalebox{0.9}{$
+  R(t) \;=\;
+  \begin{cases}
+    (t,4)    & \text{quando $t≤6$}, \\
+    (5,11-t) & \text{quando $6<t$}. \\
+  \end{cases}
+  $}
+$$
+
+
+\newpage
+
+% «VT»  (to ".VT")
+% (c3m222introp 6 "VT")
+% (c3m222introa   "VT")
+
+{\bf ``VT''}
+
+\msk
+
+Vou me referir a esse PDF aqui como ``VT'',
+
+\ssk
+
+{\footnotesize
+
+% (c3m211vtp 3 "exercicio-2")
+% (c3m211vta   "exercicio-2")
+%    http://angg.twu.net/LATEX/2021-1-C3-vetor-tangente.pdf
+\url{http://angg.twu.net/LATEX/2021-1-C3-vetor-tangente.pdf}
+
+}
+
+\ssk
+
+e aos exercícios 1 e 2 dele como ``VTex1'', ``VTex2''.
+
+\bsk
+
+Faça os exercícios VTex1 e VTex2.
+
+
+\newpage
+
+% «orbita»  (to ".orbita")
+% (c3m222introp 7 "orbita")
+% (c3m222introa   "orbita")
+
+{\bf Órbita}
+
+Este exercício vai dar uma figura que é a órbita de uma lua.
+
+O resultado vai ser algo como a figura da última página daqui,
+
+\ssk
+
+{\footnotesize
+
+% (c3m221orbitap 2 "links")
+% (c3m221orbitaa   "links")
+%    http://angg.twu.net/LATEX/2022-1-C3-orbita.pdf
+\url{http://angg.twu.net/LATEX/2022-1-C3-orbita.pdf}
+
+}
+
+\ssk
+
+mas olhe pra essa figura durante só uns poucos segundos.
+
+\msk
+
+Neste exercício você vai tentar redescobrir essa figura sozinho, e
+você vai tentar descobrir como desenhar uma aproximação bem razoável
+pra ela só somando uns vetores no olhômetro e sem fazer nenhuma conta
+complicada --- por exemplo, você vai evitar usar uma aproximação
+numérica pra $(\cos(\frac{1}{12}·2π), \sen(\frac{1}{12}·2π))$; ao
+invés disso você vai usar a representação gráfica deste ponto no
+$\R^2$.
+
+\newpage
+
+% «orbita-2»  (to ".orbita-2")
+% (c3m222introp 8 "orbita-2")
+% (c3m222introa   "orbita-2")
+% (find-es "maxima" "plot2d-parametric")
+% (find-books "__analysis/__analysis.el" "leithold")
+% (find-books "__analysis/__analysis.el" "leithold" "Limaçon")
+
+{\bf Órbita (cont.)}
+
+\scalebox{0.9}{\def\colwidth{14cm}\firstcol{
+
+Seja $h = \frac{1}{12}·2π$.
+
+Esse $h$ vai ser uma ``hora''. Vou explicar isso no quadro.
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  P(t) &=& (\cos t, \sen t), \\
+  Q(t) &=& (\cos 4t, \sen 4t), \\
+  R(t) &=& \frac{1}{2}(\cos 4t, \sen 4t)  = (\frac{1}{2}\cos 4t, \frac{1}{2}\sen 4t), \\
+  S(t) &=& P(t) + R(t). \\
+  \end{array}
+$$
+
+a) Represente graficamente $P(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+b) Represente graficamente $P(t) + P'(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+\ssk
+
+c) Represente graficamente $Q(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+d) Represente graficamente $Q(t) + Q'(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+\ssk
+
+e) Represente graficamente $Q(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+f) Represente graficamente $Q(t) + Q'(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+\ssk
+
+g) Represente graficamente $S(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+h) Represente graficamente $S(t) + S'(t)$ para $t=0h, 1h, 2h, \ldots, 12h$.
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «orbita-3»  (to ".orbita-3")
+% (c3m222introp 9 "orbita-3")
+% (c3m222introa   "orbita-3")
+
+{\bf Órbita (cont.)}
+
+Nos itens a até f você deve ter obtido pontos sobre círculos e vetores
+tangentes aos círculos apoiados nestes pontos. Nos itens g e h você
+deve ter obtido algo bem mais complicado: pontos e vetores apoiados
+nestes pontos, mas você ainda não sabe direito sobre que curva eles
+estão.
+
+Reveja o trecho entre 6:34 e 9:00 do vídeo da Freya Holmér. A
+trajetória que ela analisa é bem ``suave'', no sentido de que ela não
+bicos ou teleportes, e a derivada da aceleração dela é constante.
+
+No item h você obteve alguns pontos e vetores velocidade {\sl de uma
+  trajetória que você não sabe direito qual é}... você só tem uma
+lembrança vaga do ``traço'' dessa trajetória, porque você viu a
+figura-spoiler durante uns poucos segundos.
+
+\newpage
+
+% «orbita-4»  (to ".orbita-4")
+% (c3m222introp 10 "orbita-4")
+% (c3m222introa    "orbita-4")
+
+{\bf Órbita (cont.)}
+
+\msk
+
+i) Desenhe uma trajetória bem suave que nos instantes $t=0h$, $1h$,
+$\ldots$, $12h$ passe pelos pontos que você obteve no item g. Aqui
+você vai conseguir uma aproximação bem tosca pro ``traço'' da
+trajetória $S(t)$.
+
+\msk
+
+j) Desenhe uma trajetória bem suave que nos instantes $t=0h$, $1h$,
+$\ldots$, $12h$ passe pelos pontos que você obteve no item h, e que
+naqueles instantes tenha exatamente os vetores velocidade que você
+também desenhou no item h. Aqui você provavelmente vai conseguir uma
+aproximação bastante boa pro ``traço'' da trajetória $S(t)$.
+
+\msk
+
+k) Refaça o desenho do item j pra ele ficar mais caprichado e
+simétrico e tal. Quando você achar que conseguiu fazer uma versão
+caprichada boa olhe de novo a figura-spoiler e compare o seu desenho
+com ela.
+
+
+
+
+
+
+% (c3m221orbitap 2 "links")
+% (c3m221orbitaa   "links")
+% (find-LATEXgrep "grep --color=auto -nH --null -e trajet *.tex")
+
+
+
+
+
+
+
+
+% (c3m212bezierp 1 "title")
+% (c3m212beziera   "title")
+
+
+% (c3m212beziera "title")
+% (c3m212beziera "title" "Aula 7: um vídeo sobre curvas de Bézier")
+
+% https://www.youtube.com/watch?v=aVwxzDHniEw
+
+
+% (find-books "__analysis/__analysis.el" "acker")
+
+
+
+
+
+\ssk
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C3-intro veryclean
+make -f 2019.mk STEM=2022-2-C3-intro pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3i"
+% ee-tla: "c3m222intro"
+% End:

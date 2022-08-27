@@ -1,0 +1,150 @@
+% (find-LATEX "2022-2-C2-tudo.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C2-tudo.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C2-tudo.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C2-tudo.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C2-tudo.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C2-tudo.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-tudo.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C2-tudo"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C2-tudo.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C2-tudo")
+% (find-pdf-page   "~/LATEX/2022-2-C2-tudo.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-tudo.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-tudo.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C2-tudo.pdf")
+%   file:///home/edrx/LATEX/2022-2-C2-tudo.pdf
+%               file:///tmp/2022-2-C2-tudo.pdf
+%           file:///tmp/pen/2022-2-C2-tudo.pdf
+% http://angg.twu.net/LATEX/2022-2-C2-tudo.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C2-tudo" "2" "c2m222tudo" "c2tu")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.parts»	(to "parts")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m222tudo" "2022-2-C2-tudo")
+% (code-eevvideo      "c2m222tudo" "2022-2-C2-tudo")
+% (code-eevlinksvideo "c2m222tudo" "2022-2-C2-tudo")
+% (find-c2m222tudovideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+\usepackage{pdfpages}
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m222tudop 1 "title")
+% (c2m222tudoa   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.2}
+
+\bsk
+
+Todos os PDFs do semestre
+
+juntados num PDFzão só
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C2.html}
+
+\end{center}
+
+\newpage
+
+% «parts»  (to ".parts")
+% (c2m222tudop 2 "parts")
+% (c2m222tudoa   "parts")
+% (find-angg ".emacs" "c2-2022-2")
+\def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
+
+% (c2m222buracoa "title")
+% (c2m222buracoa "title" "Aula 1: a operação `$[:=]$', ou:" "aqui o curso tem um buraco")
+\incl{2022-2-C2-buraco}
+
+% (c2m222mma "title")
+% (c2m222mma "title" "Aula 2: derivação e integração com o Mathologermóvel")
+\incl{2022-2-C2-mathologermovel}
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C2-tudo veryclean
+make -f 2019.mk STEM=2022-2-C2-tudo pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2tu"
+% ee-tla: "c2m222tudo"
+% End:
