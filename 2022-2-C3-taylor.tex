@@ -1,0 +1,1248 @@
+% (find-LATEX "2022-2-C3-taylor.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C3-taylor.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C3-taylor.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C3-taylor.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C3-taylor.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C3-taylor.tex"))
+% (defun o () (interactive) (find-LATEX "2021-2-C3-taylor.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C3-taylor"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C3-taylor.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C3-taylor")
+% (find-pdf-page   "~/LATEX/2022-2-C3-taylor.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-taylor.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-taylor.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C3-taylor.pdf")
+%   file:///home/edrx/LATEX/2022-2-C3-taylor.pdf
+%               file:///tmp/2022-2-C3-taylor.pdf
+%           file:///tmp/pen/2022-2-C3-taylor.pdf
+% http://angg.twu.net/LATEX/2022-2-C3-taylor.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C3-taylor" "3" "c3m222taylor" "c3ta")
+
+% «.defs»			(to "defs")
+% «.title»			(to "title")
+% «.links»			(to "links")
+% «.ideia-basica-1»		(to "ideia-basica-1")
+% «.ideia-basica-2»		(to "ideia-basica-2")
+% «.exercicio-1»		(to "exercicio-1")
+% «.exercicio-2»		(to "exercicio-2")
+% «.derivs-e-derivs0»		(to "derivs-e-derivs0")
+% «.exercicio-3»		(to "exercicio-3")
+% «.exercicio-4»		(to "exercicio-4")
+% «.approx»			(to "approx")
+% «.versoes-truncadas»		(to "versoes-truncadas")
+% «.exercicio-5»		(to "exercicio-5")
+% «.truques-de-traducao»	(to "truques-de-traducao")
+% «.truques-de-traducao-2»	(to "truques-de-traducao-2")
+% «.aproximacoes-lineares»	(to "aproximacoes-lineares")
+% «.exercicio-5»		(to "exercicio-4")
+% «.exercicio-5-maxima»		(to "exercicio-4-maxima")
+% «.exercicio-5»		(to "exercicio-5")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m222taylor" "2022-2-C3-taylor")
+% (code-eevvideo      "c3m222taylor" "2022-2-C3-taylor")
+% (code-eevlinksvideo "c3m222taylor" "2022-2-C3-taylor")
+% (find-c3m222taylorvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+\def\derivs{\mathsf{derivs}}
+\def\frt#1{\frac{f^{(#1)}(0)}{#1!}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m222taylorp 1 "title")
+% (c3m222taylora   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.2}
+
+\bsk
+
+Aulas 9 e 10: Séries de Taylor
+
+(para funções de $\R$ em $\R$)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C3.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c3m222taylorp 2 "links")
+% (c3m222taylora   "links")
+% (c3m212taa "title")
+% (c3m212taa "title" "Aula 24: Séries de Taylor")
+% (find-angg ".emacs" "c3-2022-1-quadros")
+% (find-angg ".emacs" "c3-2022-1-quadros" "séries de Taylor")
+
+% «ideia-basica-1»  (to ".ideia-basica-1")
+% (c3m222taylorp 2 "ideia-basica-1")
+% (c3m222taylora   "ideia-basica-1")
+% (c3m212tap 2 "ideia-basica-1")
+% (c3m212taa   "ideia-basica-1")
+% (c3m211tap 2 "taylor-1")
+% (c3m211taa   "taylor-1")
+
+{\bf A idéia básica}
+
+
+\scalebox{0.75}{\def\colwidth{12cm}\firstcol{
+
+Digamos que $f(x)$ é um polinômio.
+
+Digamos que o grau dele é 4, pra simplificar.
+
+Digamos que $f(x) = a + bx + cx^2 + dx^3 + ex^4$.
+
+Então:
+%
+\def\b#1{\hbox to 25pt{\hss$#1$\hss}}
+%
+$$\begin{array}{rcl}
+      f(x) &=& \b{a} + \b{bx} + \b{cx^2} + \b{dx^3} + \b{ex^4} \\
+     f'(x) &=& \b{b} + \b{2cx} + \b{3dx^2} + \b{4ex^3} \\
+    f''(x) &=& \b{2c} + \b{6dx} + \b{12ex^2} \\
+   f'''(x) &=& \b{6d} + \b{24ex} \\
+  f''''(x) &=& \b{24e} \\
+  \end{array}
+  %
+  \begin{array}{rcl}
+      f(0) &=& a \\
+     f'(0) &=& b \\
+    f''(0) &=& 2c \\
+   f'''(0) &=& 6d \\
+  f''''(0) &=& 24e \\
+  \end{array}
+  %
+  \begin{array}{rcl}
+    \phantom{m}
+    a &=&     f(0) \\
+    b &=&    f'(0) \\
+    c &=&   f''(0)/2 \\
+    d &=&  f'''(0)/6 \\
+    e &=& f''''(0)/24 \\
+  \end{array}
+  %
+$$
+
+E portanto:
+%
+$$f(x) \;\; = \;\;
+    f(0) 
+  + f'(0) x
+  + \frac{f''(0)}{2} x^2
+  + \frac{f'''(0)}{6} x^3
+  + \frac{f''''(0)}{24} x^4
+$$ 
+
+%}\anothercol{
+}}
+
+
+
+\newpage
+
+% «ideia-basica-2»  (to ".ideia-basica-2")
+% (c3m212tap 3 "ideia-basica-2")
+% (c3m212taa   "ideia-basica-2")
+
+{\bf A idéia básica (2)}
+
+\scalebox{0.72}{\def\colwidth{14cm}\firstcol{
+
+Agora vamos tentar generalizar isso.
+
+Digamos que $f(x)$ é um polinômio.
+
+Digamos que o grau dele é $k$, e que \ColorRed{por enquanto} $k=4$.
+
+Digamos que $f(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + a_4x^4$.
+
+A notação $f^{(k)}$, como o $(k)$ entre parênteses, quer dizer
+
+``$f$ derivada $k$ vezes''. Por exemplo, $f^{(4)} = f''''$, e $f^{(0)} = f$.
+
+Então:
+%
+\def\b#1{\hbox to 27.5pt{\hss$#1$\hss}}
+%
+$$\begin{array}{rcl}
+  f^{(0)}(x) &=&   \b{a_0} +   \b{a_1x} +   \b{a_2x^2} +  \b{a_3x^3} + \b{a_4x^4} \\
+  f^{(1)}(x) &=&   \b{a_1} +  \b{2a_2x} +  \b{3a_3x^2} + \b{4a_4x^3} \\
+  f^{(2)}(x) &=&  \b{2a_2} +  \b{6a_3x} + \b{12a_4x^2} \\
+  f^{(3)}(x) &=&  \b{6a_3} + \b{24a_4x} \\
+  f^{(4)}(x) &=& \b{24a_4} \\
+  \end{array}
+  %
+  \begin{array}{rcl}
+    \phantom{ii}
+  f^{(0)}(0) &=& 0!\,a_0 \\
+  f^{(1)}(0) &=& 1!\,a_1 \\
+  f^{(2)}(0) &=& 2!\,a_2 \\
+  f^{(3)}(0) &=& 3!\,a_3 \\
+  f^{(4)}(0) &=& 4!\,a_4 \\
+  \end{array}
+  %
+  \begin{array}{rcl}
+    \phantom{m}
+  a_0 &=& f^{(0)}(0)/0! \\
+  a_1 &=& f^{(1)}(0)/1! \\
+  a_2 &=& f^{(2)}(0)/2! \\
+  a_3 &=& f^{(3)}(0)/3! \\
+  a_4 &=& f^{(4)}(0)/4! \\
+  \end{array}
+  %
+$$
+
+E portanto:
+%
+$$\def\frt#1{\frac{f^{(#1)}(0)}{#1!}}
+  f(x) \;\; = \;\;
+    \frt0 x^0
+  + \frt1 x^1
+  + \frt2 x^2
+  + \frt3 x^3
+  + \frt4 x^4
+    \;\; = \;\;
+  \D \sum_{k=0}^{4} \frt{k} x^k
+$$ 
+
+%}\anothercol{
+}}
+
+
+
+\newpage
+
+% «exercicio-1»  (to ".exercicio-1")
+% (c3tap 4 "exercicio-1")
+% (c3taa   "exercicio-1")
+
+{\bf Exercício 1.}
+
+A fórmula do slide anterior também funciona
+
+pra polinômios com grau menor que 4.
+
+Verifique o que ela faz quando
+%
+$$f(x) = 42x^2 + 99x + 200.$$
+
+Lembre que no ensino médio você era obrigado
+
+a ``simplificar'' $4·5·6·999$ para 119880, mas
+
+em Cálculo 2 você tem que encontrar jeitos
+
+de escrever que sejam mais simples de ler e
+
+de verificar... pra gente \ColorRed{em certos contextos}
+
+$4·5·6·999$ é mais ``simples'' que 119880.
+
+
+
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c3tap 5 "exercicio-2")
+% (c3taa   "exercicio-2")
+
+{\bf Exercício 2.}
+
+\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+
+Tente aplicar a fórmula $(*)$ abaixo
+%
+$$f(x) \;\; = \;\;
+  \D \sum_{k=0}^{4} \frt{k} x^k
+  \qquad \qquad (*)
+$$ 
+
+a esta $f$ aqui: $f(x) = 200x^5$.
+
+\msk
+
+a) O que acontece?
+
+\msk
+
+b) Tente escrever em detalhes o que dá errado.
+
+Você vai precisar de notação matemática \ColorRed{E} português.
+
+Tente aprender as convenções que eu usei nos PDFs
+
+e as convenções que os livros usam, e lembre que se
+
+você começar escrevendo uma igualdade qualquer leitor
+
+que não seja muito seu amigo vai interpretá-la
+
+como uma \ColorRed{afirmação}.
+
+%}\anothercol{
+}}
+
+
+
+
+\newpage
+
+% «derivs-e-derivs0»  (to ".derivs-e-derivs0")
+% (c3m212tap 5 "derivs-e-derivs0")
+% (c3m212taa    "derivs-e-derivs0")
+% (c3m211tap 2 "taylor-1")
+% (c3m211taa   "taylor-1")
+
+{\bf As operações $\derivs$ e $\derivs_0$}
+
+
+\scalebox{0.75}{\def\colwidth{12cm}\firstcol{
+
+Sejam $\derivs$ e $\derivs_0$ as seguintes operações --
+
+que vão nos ajudar muito nas contas:
+%
+$$\begin{array}{rcl}
+  \derivs(f)   &=& (f, f', f'', f''', \ldots) \\
+  \derivs_0(f) &=& (f(0), f'(0), f''(0), f'''(0), \ldots) \\
+  \end{array}
+$$
+
+Repare que $\derivs(f)$ retorna uma sequência infinita de \ColorRed{funções}
+
+e $\derivs_0(f)$ retorna uma sequência infinita de \ColorRed{números}.
+
+\msk
+
+Um exemplo: se $f(x) = ax^2 + bx + c$, então:
+%
+$$\begin{array}{rclcrcl}
+  f(x)   &=& ax^2 + bx + c,    && f(0)   &=& c, \\
+  f'(x)  &=& 2ax + b,          && f'(0)  &=& b, \\
+  f''(x) &=& 2a,               && f''(0) &=& 2a, \\
+  f'''(x) &=& 0,               && f'''(0) &=& 0, \\
+  \end{array}
+$$
+
+e:
+%
+$$\begin{array}{rcl}
+  \derivs(f) &=& (ax^2 + bx + c, \; 2ax + b, \; 2a, \; 0, 0, 0, \ldots) \\
+  \derivs_0(f) &=& (c, b, 2a, 0, 0, 0, \ldots) \\
+  \end{array}
+$$
+
+}\anothercol{
+}}
+
+\newpage
+
+% «exercicio-3»  (to ".exercicio-3")
+% (c3m212tap 7 "exercicio-3")
+% (c3m212taa   "exercicio-3")
+
+{\bf Algumas definições}
+
+\scalebox{0.8}{\def\colwidth{6.5cm}\firstcol{
+
+Isto aqui
+%
+$$\D \sum_{k=0}^{n} \frt{k} x^k
+$$ 
+
+é a {\sl série de Taylor da função $f$
+
+no ponto 0 truncada até grau $n$},
+
+e isto aqui
+%
+
+$$\begin{array}{rr}
+  & \D \lim_{n→∞} \sum_{k=0}^{n} \frt{k} x^k, \\[15pt]
+  \text{ou:}
+  & \D            \sum_{k=0}^{∞} \frt{k} x^k
+  \end{array}
+$$ 
+
+é a {\sl série de Taylor da função $f$
+
+no ponto 0}.
+
+}\def\colwidth{10cm}%
+ \anothercol%
+{
+
+{\bf Exercício 3.}
+
+Seja $f(x) = \sen x$.
+
+\msk
+
+a) Calcule as 8 primeiras
+
+componentes de $\derivs(f)$.
+
+\msk
+
+b) Calcule as 8 primeiras
+
+componentes de $\derivs_0(f)$.
+
+\msk
+
+c) Calcule a série de Taylor
+
+de $\sen x$ truncada até grau 7.
+
+\msk
+
+d) Seja $g(x)$ a série de Taylor
+
+de $\sen x$ truncada até grau 7;
+
+Calcule $g(0.1)$ \ColorRed{na mão} e
+
+compare o seu resultado com
+
+o resultado de calcular $\sen 0.1$
+
+na calculadora ou no computador.
+
+
+}}
+
+
+\newpage
+
+%  _____                   _      _         _  _   
+% | ____|_  _____ _ __ ___(_) ___(_) ___   | || |  
+% |  _| \ \/ / _ \ '__/ __| |/ __| |/ _ \  | || |_ 
+% | |___ >  <  __/ | | (__| | (__| | (_) | |__   _|
+% |_____/_/\_\___|_|  \___|_|\___|_|\___/     |_|  
+%                                                  
+% «exercicio-4»  (to ".exercicio-4")
+% (c3m222taylorp 8 "exercicio-4")
+% (c3m222taylora   "exercicio-4")
+
+{\bf Exercício 4.}
+
+Calcule $\derivs(f)$ e $\derivs_0(f)$ para cada uma
+
+das `$f$'s abaixo, até o grau pedido.
+
+\msk
+
+a) $f(x) = e^x$, até grau 4
+
+b) $f(x) = e^{2x}$, até grau 4
+
+c) $f(x) = e^{ix}$, até grau 8
+
+d) $f(x) = \cos x$, até grau 8
+
+e) $f(x) = \sen x$, até grau 8
+
+f) $f(x) = i\sen x$, até grau 8
+
+g) $f(x) = \cos x + i\sen x$, até grau 8
+
+
+
+\newpage
+
+% «approx»  (to ".approx")
+% (c3m212tap 8 "approx")
+% (c3m212taa   "approx")
+
+{\bf A notação com `$≈$'}
+
+\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+
+O sinal `$≈$' que dizer ``é aproximadamente igual a'',
+
+mas ele não diz quão boa é a aproximação...
+
+Estas duas afirmações são ambas verdadeiras:
+%
+$$\begin{array}{rcl}
+  f(0.42) &≈& f(0) + f'(0)·0.42 + \frac{f''(0)}{2}(0.42)^2 \\[5pt]
+  f(0.42) &≈& f(0) + f'(0)·0.42
+              + \frac{f'' (0)}{2}(0.42)^2
+              + \frac{f'''(0)}{6}(0.42)^3 \\
+  \end{array}
+$$
+
+Até dé pra formalizar essa igualdade aqui embaixo
+
+usando um limite - veja a página 4 deste PDF:
+
+\ssk
+
+{\scriptsize
+
+%    https://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf
+\url{https://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf}
+
+}
+%
+%
+$$f(x) \;\;=\;\;
+  f(0) + f'(0)·x + \frac{f''(0)}{2}x^2
+$$
+
+Mas eu não sei como formalizar precisamente
+
+a versão com $0.42$ no lugar do $x$... \quad $\frown$
+
+%}\anothercol{
+}}
+
+\newpage
+
+% «versoes-truncadas»  (to ".versoes-truncadas")
+% (c3m222taylorp 9 "versoes-truncadas")
+% (c3m222taylora   "versoes-truncadas")
+
+{\bf As versões truncadas de $\derivs$, $\derivs_0$ e $\derivs_p$}
+
+\scalebox{0.85}{\def\colwidth{13cm}\firstcol{
+
+Vamos definir $\derivs^n$ e $\derivs_0^n$ como as versões ``truncadas até grau $n$''
+
+de $\derivs$ e $\derivs_0$...
+
+\msk
+
+
+$\derivs^n(f)$ vai ser a lista com as primeiras $\ColorRed{n+1}$ entradas de $\derivs^n(f)$, e
+
+$\derivs^n_0(f)$ vai ser a lista com as primeiras $\ColorRed{n+1}$ entradas de $\derivs_0^n(f)$.
+
+\msk
+
+Além disso $\derivs_p(f)$ vai ser a lista infinita $(f(p), f'(p), f''(p), \ldots)$, e
+
+$\derivs_p^n(f)$ vai ser a lista com as primeiras $\ColorRed{n+1}$ entradas de $\derivs_p^n(f)$.
+
+\msk
+
+Exemplo:
+%
+$$\derivs_{42}^2(f) \;\;=\;\; (f(42), f'(42), f''(42)).
+$$
+
+Vamos nos referir a $\derivs_p^n(f)$ como ``as derivadas de $f$ até grau $n$ no
+
+ponto $p$''. Repare que $f(42)$ é a ``derivada de $f$ de grau 0 no ponto 42'',
+
+$f'(42)$ é a ``derivada de $f$ de grau 1 no ponto 42'', etc...
+
+\msk
+
+Antes o termo ``grau'' não servia pra falar de número de vezes que uma
+
+função foi derivada, mas agora passou a servir. \quad $\smile$
+
+
+%}\anothercol{
+}}
+
+\newpage
+
+{\bf Notação de físicos: introdução}
+
+Links:
+
+% (c3m221nfp 1 "title")
+% (c3m221nfa   "title")
+% (c3m212nfp 1 "title")
+% (c3m212nfa   "title")
+
+\ssk
+
+{\scriptsize
+
+%    https://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf
+\url{https://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf}
+
+% (c3m221nfp 5 "exercicio-2")
+% (c3m221nfa   "exercicio-2")
+% (find-books "__analysis/__analysis.el" "bortolossi")
+% (find-books "__analysis/__analysis.el" "bortolossi" "a notação D_1 f é a mais clara")
+%    http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-5.pdf
+\url{http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-5.pdf} (páginas 171--173)
+
+% (find-books "__analysis/__analysis.el" "thompson")
+%    https://www.gutenberg.org/files/33283/33283-pdf.pdf
+\url{https://www.gutenberg.org/files/33283/33283-pdf.pdf} ``Calculus Made Easy'' (1914)
+
+%    (find-TH "mathologer-calculus-easy" "legendas")
+%    http://angg.twu.net/mathologer-calculus-easy.html
+\url{http://angg.twu.net/mathologer-calculus-easy.html}
+
+% (c3m221nfp 1)
+% (c3m221nfp 5 "exercicio-2")
+% (c3m221nfa   "exercicio-2")
+% (c3m221nfp 6 "truques-de-traducao")
+% (c3m221nfa   "truques-de-traducao")
+%    http://angg.twu.net/LATEX/2022-1-C3-notacao-de-fisicos.pdf
+\url{http://angg.twu.net/LATEX/2022-1-C3-notacao-de-fisicos.pdf} (p.5: linearizações)
+
+% (c3m212nfp 1)
+%    http://angg.twu.net/LATEX/2021-2-C3-notacao-de-fisicos.pdf
+\url{http://angg.twu.net/LATEX/2021-2-C3-notacao-de-fisicos.pdf}
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-books "__analysis/__analysis.el" "miranda" "Aproximações Lineares")
+% (find-dmirandacalcpage 117 "4.7 Aproximações Lineares e Diferencial")
+%    http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=117
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=117}
+
+}
+
+
+\bsk
+
+Na aula de 2022sep23 a gente usou os links acima
+
+e eu escrevi um montão de coisas no quadro --
+
+\ColorRed{que eu vou digitar assim que der!!!}
+
+
+
+\newpage
+
+% «exercicio-5»  (to ".exercicio-5")
+% (c3m222taylorp 6 "exercicio-5")
+% (c3m222taylora    "exercicio-5")
+% (c3m221nfp 5 "exercicio-2")
+% (c3m221nfa   "exercicio-2")
+
+{\bf Exercício 5.}
+
+\scalebox{0.8}{\def\colwidth{13cm}\firstcol{
+
+Leia a seção 4.7 do livro do Daniel Miranda:
+
+\ssk
+
+{\scriptsize
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-books "__analysis/__analysis.el" "miranda" "Aproximações Lineares")
+% (find-dmirandacalcpage 117 "4.7 Aproximações Lineares e Diferencial")
+% http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=117
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=117}
+
+}
+
+
+\msk
+
+Os livros mais modernos:
+
+i) distinguem $dx$ e $Δx$,
+
+ii) escrevem $y=f(x)$ ao invés de $y=y(x)$,
+
+iii) evitam a convenção $x_1 = x_0+Δx$.
+
+\bsk
+
+a) Traduza o início da seção 4.7 do Miranda - até o fim
+
+da página 118 - pra notação do Thompson. Dicas:
+%
+$$\begin{array}[c]{rcl}
+  f(x) &≈& f(p)+f'(p)(x-p) \\
+  L(x) &=& f(p)+f'(p)(x-p) \\
+  \end{array}
+  \;\;\;⇒\;\;\;
+  \begin{array}[c]{rcl}
+  f(x_1) &≈& f(x_0)+f'(x_0)Δx \\
+  L(x_1) &=& f(x_0)+f'(x_0)Δx \\
+  \end{array}
+$$
+
+e a função $L$ é exatamente a série de Taylor da função $f$ truncada
+até grau 1... lembre que nós quase só vimos séries de Taylor no caso
+em que $x_0$ era $0$, mas ficamos de ver depois o caso em que o
+``ponto base'' não precisava mais ser 0...
+
+%}\anothercol{
+}}
+
+
+
+\newpage
+
+%  _____              _ 
+% |_   _| __ __ _  __| |
+%   | || '__/ _` |/ _` |
+%   | || | | (_| | (_| |
+%   |_||_|  \__,_|\__,_|
+%                       
+% «truques-de-traducao»  (to ".truques-de-traducao")
+% (c3m222taylorp 13 "truques-de-traducao")
+% (c3m222taylora    "truques-de-traducao")
+% (c3m221nfp 6 "truques-de-traducao")
+% (c3m221nfa   "truques-de-traducao")
+
+{\bf Alguns truques de tradução}
+
+\scalebox{0.6}{\def\colwidth{14cm}\firstcol{
+
+Truque 1: quando a gente escreve fórmulas ``com o mesmo formato''
+perto uma da outra o leitor tende a ler a segunda ou como uma
+\ColorRed{tradução} da primeira pra outra notação ou como um
+\ColorRed{caso particular} da primeira...
+
+\ssk
+
+Isto aqui é uma tradução de duas das fórmulas da p.117 do D.\ Miranda
+pra ``notação de físicos'':
+%
+$$\begin{array}[c]{rcl}
+  f(x) &≈& f(p)+f'(p)(x-p) \\
+  L(x) &=& f(p)+f'(p)(x-p) \\
+  \end{array}
+  \;\;\;⇒\;\;\;
+  \begin{array}[c]{rcl}
+  f(x_1) &≈& f(x_0)+f'(x_0)Δx \\
+  L(x_1) &=& f(x_0)+f'(x_0)Δx \\
+  \end{array}
+$$
+
+E isto aqui é um caso particular da primeira fórmula:
+%
+$$f(4.02) ≈ f(4) + f'(4)(4.02 - 4) \qquad\qquad (*)$$
+
+Repare que a fórmula $(*)$ fica mais clara se escrevermos isto
+explicitamente:
+%
+$$ x_1=4.02 \qquad x_0=4 $$
+
+...e repare que se a gente tentar escrever isto aqui direto
+%
+$$\sqrt{4.02} ≈ \sqrt{4} + \sqrt{4}'(4.02 - 4)$$
+
+fica confuso e péssimo --- não existe uma notação padrão pra derivada
+de $\sqrt{x}$ em $x=4$!!! Aqui a gente TEM que usar um truque novo ---
+a gente tem que dar um nome pra função $\sqrt{x}$. Por exemplo...
+
+}\anothercol{
+}}
+
+
+\newpage
+
+%  _____              _   ____  
+% |_   _| __ __ _  __| | |___ \ 
+%   | || '__/ _` |/ _` |   __) |
+%   | || | | (_| | (_| |  / __/ 
+%   |_||_|  \__,_|\__,_| |_____|
+%                               
+% «truques-de-traducao-2»  (to ".truques-de-traducao-2")
+% (c3m222taylorp 14 "truques-de-traducao-2")
+% (c3m222taylora    "truques-de-traducao-2")
+% (c3m221nfp 7 "truques-de-traducao-2")
+% (c3m221nfa   "truques-de-traducao-2")
+
+{\bf Alguns truques de tradução (2)}
+
+
+\scalebox{0.75}{\def\colwidth{14cm}\firstcol{
+
+Seja $f(x)=\sqrt{x} = x^{1/2}$.
+
+Então $f'(x)=\frac12 x^{-1/2} = \frac12 \frac{1}{x^{1/2}} = \frac{1}{2\sqrt x}$, e
+%
+$$\begin{array}{rrcl}
+    & f(4.02) &≈& f(4) + f'(4)(4.02 - 4) \\
+  ⇒ \qquad
+    & \sqrt{4.02} &≈& \sqrt{4} + \frac{1}{2\sqrt{4}}(4.02 - 4) \\
+  \end{array}
+$$
+
+Repare que acima eu só fiz as subtituições $f(x):=\sqrt{x}$ e
+$f'(x):=\frac{1}{2\sqrt{x}}$ --- eu acho que as contas mais mais
+fáceis de entender se a gente fizer as substituições e as
+simplificações em passos separados:
+
+$$\begin{array}{rrcl}
+    & f(4.02) &≈& f(4) + f'(4)(4.02 - 4) \\
+  ⇒ \qquad
+    & \sqrt{4.02} &≈& \sqrt{4} + \frac{1}{2\sqrt{4}}(4.02 - 4) \\
+    &             &=& 2 + \frac{1}{4}(0.02) \\
+    &             &=& 2 + 0.005 \\
+    &             &=& 2.005 \\
+    & \sqrt{4.02} &=& 2.004993765576342... \\
+  \end{array}
+$$
+
+A última linha acima tem um `$=$' ao invés de um `$≈$', e eu calculei
+o resultado dela com a calculadora.
+
+}\anothercol{
+}}
+
+
+
+
+
+
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T  (find-angg "luatree/luatree.mac")
+%T load       ("~/luatree/luatree.mac");
+%T f(x) := sen(x) + x^2;
+%T y    :  sen(x) + x^2;
+%T luatree(y);
+%T f(2);
+%T subst([x=2], y);
+%T y;
+%T x : 2;
+%T y;
+%T ev(y);
+
+
+
+
+% Agora nós vamos começar a usar o que eu chamo de ``notação de
+% físicos'' (sempre 
+
+% (c3m212nfp 9 "regras-de-traducao")
+% (c3m212nfa   "regras-de-traducao")
+
+\newpage
+
+% «aproximacoes-lineares»  (to ".aproximacoes-lineares")
+% (c3m222taylorp 10 "aproximacoes-lineares")
+% (c3m222taylora    "aproximacoes-lineares")
+
+
+\newpage
+
+{\bf A tradução pra notação de físicos}
+
+Temos:
+%
+$$\begin{array}{rcl}
+  f(x) &≈& f(0) + f'(0)x + \frac{f''(0)}{2}x^2 \\
+  \end{array}
+$$
+
+Acho que vocês devem conseguir acreditar nisso aqui...
+
+(a gente pode checar os detalhes depois!)
+%
+$$\begin{array}{rcl}
+  g(x_0 + Δx) &≈& g(x_0) + g'(x_0)Δx + \frac{g''(x_0)}{2}(Δx)^2 \\[2.5pt]
+  h(x + Δx) &≈& h(x) + h'(x)Δx + \frac{h''(x)}{2}(Δx)^2 \\
+  \end{array}
+$$
+
+E se $y=y(x)$ então:
+%
+$$\begin{array}{rcl}
+  y(x+Δx) &≈& y + y_x Δx + \frac{y_{xx}}{2} (Δx)^2 \\[2.5pt]
+  y(x+Δx) &≈& y + y_x Δx + \frac{y_{xx}}{2} (Δx)^2 + \frac{y_{xxx}}{6} (Δx)^3 \\
+  \end{array}
+$$
+
+\newpage
+
+% «exercicio-5»  (to ".exercicio-5")
+% (c3m212tap 11 "exercicio-5")
+% (c3m212taa    "exercicio-5")
+
+{\bf Exercício 5.}
+
+Digamos que $x_0 = 10$, $f(x)=x^3$, $y_0=f(x_0)$, $g(y)=\sen y$.
+
+\msk
+
+a) Calcule $\derivs_{x_0}^1(f(x))$.
+
+\ssk
+
+b) Calcule $\derivs_{y_0}^1(g(y))$.
+
+\ssk
+
+c) Calcule $\derivs_{x_0}^1(g(f(x)))$.
+
+
+\bsk
+
+Seja $h(x) = g(f(x))$ --- ou seja, $h = g∘f$.
+
+\msk
+
+d) Calcule $\derivs_{x_0}^2(h(x))$.
+
+\newpage
+
+% «exercicio-5-maxima»  (to ".exercicio-5-maxima")
+
+{\bf Exercício 5: gabarito em código}
+
+
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T load("/usr/share/emacs/site-lisp/maxima/emaxima.lisp")$
+%T display2d:'emaxima$
+%T f  : x^3;
+%T g  : sin(y);
+%T h  : subst([y=f], g);
+%T diff(h, x);
+%T [h, diff(h, x)];
+%T x0 : 10;
+%T y0 : subst([x=x0], f);
+%T z0 : subst([x=x0], h);
+%T subst([x=x0], [h, diff(h, x)]);
+
+{\footnotesize
+
+\begin{maximasession}
+\maximaoutput*
+\i3. f  : x^3; \\
+\o3. x^3 \\
+\i4. g  : sin(y); \\
+\o4. \sin y \\
+\i5. h  : subst([y=f], g); \\
+\o5. \sin x^3 \\
+\i6. diff(h, x); \\
+\o6. 3\,x^2\,\cos x^3 \\
+\i7. [h, diff(h, x)]; \\
+\o7. \left[ \sin x^3 , 3\,x^2\,\cos x^3 \right]  \\
+\i8. x0 : 10; \\
+\o8. 10 \\
+\i9. y0 : subst([x=x0], f); \\
+\o9. 1000 \\
+\i10. z0 : subst([x=x0], h); \\
+\o10. \sin 1000 \\
+\i11. subst([x=x0], [h, diff(h, x)]); \\
+\o11. \left[ \sin 1000 , 300\,\cos 1000 \right]  \\
+\end{maximasession}
+
+Obs: aí não tem a resposta do item d...
+
+}
+
+\newpage
+
+
+% «exercicio-6»  (to ".exercicio-6")
+% (c3m212tap 15 "exercicio-6")
+% (c3m212taa    "exercicio-6")
+
+{\bf Exercício 6.}
+
+
+Este exercício é uma versão mais geral do exercício 4.
+
+Digamos que $f$ e $g$ são funções suaves de $\R$ em $\R$.
+
+(Uma função é ``suave'' quando ela pode ser derivada
+
+infinitas vezes. A função $|x|$ não é suave).
+
+Digamos que $x_0∈\R$, $y_0=f(x_0)$, e $h=g∘f$.
+
+\msk
+
+a) Calcule $\derivs_{x_0}^2(h(x))$.
+
+\msk
+
+Repare que neste caso ``calcule'' quer dizer algo como
+
+``expanda e simplifique  a expressão que você obtiver''...
+
+Existem vários tipos de expansão e simplificação, e os
+
+programas de computação simbólica dão um nome pra cada
+
+tipo e permitem que você escolha quais vão ser aplicadas.
+
+
+
+\newpage
+
+{\bf Exercício 5 (cont.)}
+
+
+\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+
+Agora sejam $y=y(x)=f(x)$ e $z=z(y)=g(y)$.
+
+\msk
+
+b) Traduza o seu $\derivs_{x_0}^2(h(x))$ do item (a)
+
+pra notação de físicos.
+
+\msk
+
+Dica (pequena): $\ddx g(f(x_0)) = z_y y_x$.
+
+
+\bsk
+\bsk
+
+c) Calcule $\derivs_{x_0}^{\ColorRed{3}}(z)$ usando notação de físicos.
+
+\msk
+
+Nas próximas páginas eu pus um ``gabarito em código'' do
+
+item (b). O modo mais fácil de usar a ``notação de físicos''
+
+no Maxima é traduzir entre ela e a ``notação de matemáticos''
+
+sempre que necessário. No item (c) as contas em ``notação de
+
+matemáticos'' ficam gigantescas, mas se você conseguir fazer
+
+elas todas em ``notação de físicos'' elas ficam pequenas.
+
+%}\anothercol{
+}}
+
+
+\newpage
+
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T load("/usr/share/emacs/site-lisp/maxima/emaxima.lisp")$
+%T display2d:'emaxima$
+%T gradef(y  (x), y_x (x));
+%T gradef(y_x(x), y_xx(x));
+%T gradef(z  (y), z_y (y));
+%T gradef(z_y(y), z_yy(y));
+%T z     : z(y(x));
+%T z__x  : diff(z,    x);
+%T z__xx : diff(z__x, x);
+%T gradefs;
+%T ex : z__xx;
+%T ex : subst([y   (x)=y],      ex);
+%T ex : subst([y_x (x)=y_x],    ex);
+%T ex : subst([y_xx(x)=y_xx],   ex);
+%T ex : subst([z   (y)=z],      ex);
+%T ex : subst([z_y (y)=z_y],    ex);
+%T ex : subst([z_yy(y)=z_yy],   ex);
+%T ex : expand(ex);
+
+{\footnotesize
+
+\begin{maximasession}
+\maximaoutput*
+\i3. gradef(y  (x), y_x (x)); \\
+\o3. y\left(x\right) \\
+\i4. gradef(y_x(x), y_xx(x)); \\
+\o4. \mathrm{y\_x}\left(x\right) \\
+\i5. gradef(z  (y), z_y (y)); \\
+\o5. z\left(y\right) \\
+\i6. gradef(z_y(y), z_yy(y)); \\
+\o6. \mathrm{z\_y}\left(y\right) \\
+\i7. z     : z(y(x)); \\
+\o7. z\left(y\left(x\right)\right) \\
+\i8. z__x  : diff(z,    x); \\
+\o8. \mathrm{y\_x}\left(x\right)\,\mathrm{z\_y}\left(y\left(x\right)\right) \\
+\i9. z__xx : diff(z__x, x); \\
+\o9. \mathrm{y\_x}\left(x\right)^2\,\mathrm{z\_yy}\left(y\left(x\right)\right)+\mathrm{y\_xx}\left(x\right)\,\mathrm{z\_y}\left(y\left(x\right)\right) \\
+\i10. gradefs; \\
+\o10. \left[ y\left(x\right) , \mathrm{y\_x}\left(x\right) , z\left(y\right) , \mathrm{z\_y}\left(y\right) \right]  \\
+\i11. ex : z__xx; \\
+\o11. \mathrm{y\_x}\left(x\right)^2\,\mathrm{z\_yy}\left(y\left(x\right)\right)+\mathrm{y\_xx}\left(x\right)\,\mathrm{z\_y}\left(y\left(x\right)\right) \\
+\i12. ex : subst([y   (x)=y],      ex); \\
+\o12. \mathrm{y\_x}\left(x\right)^2\,\mathrm{z\_yy}\left(y\right)+\mathrm{y\_xx}\left(x\right)\,\mathrm{z\_y}\left(y\right) \\
+\i13. ex : subst([y_x (x)=y_x],    ex); \\
+\o13. \mathrm{z\_yy}\left(y\right)\,\mathrm{y\_x}^2+\mathrm{y\_xx}\left(x\right)\,\mathrm{z\_y}\left(y\right) \\
+\i14. ex : subst([y_xx(x)=y_xx],   ex); \\
+\o14. \mathrm{z\_y}\left(y\right)\,\mathrm{y\_xx}+\mathrm{z\_yy}\left(y\right)\,\mathrm{y\_x}^2 \\
+\i15. ex : subst([z   (y)=z],      ex); \\
+\o15. \mathrm{z\_y}\left(y\right)\,\mathrm{y\_xx}+\mathrm{z\_yy}\left(y\right)\,\mathrm{y\_x}^2 \\
+\i16. ex : subst([z_y (y)=z_y],    ex); \\
+\o16. \mathrm{y\_xx}\,\mathrm{z\_y}+\mathrm{z\_yy}\left(y\right)\,\mathrm{y\_x}^2 \\
+\i17. ex : subst([z_yy(y)=z_yy],   ex); \\
+\o17. \mathrm{y\_x}^2\,\mathrm{z\_yy}+\mathrm{y\_xx}\,\mathrm{z\_y} \\
+\end{maximasession}
+
+}
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C3/")
+# (find-fline "~/LATEX/2022-2-C3/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C3/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C3/
+       cat <<%%%
+% (find-latexscan-links "C3" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C3-taylor veryclean
+make -f 2019.mk STEM=2022-2-C3-taylor pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3ta"
+% ee-tla: "c3m222taylor"
+% End:

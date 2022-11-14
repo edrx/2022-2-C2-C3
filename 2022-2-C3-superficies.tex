@@ -1,0 +1,355 @@
+% (find-LATEX "2022-2-C3-superficies.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C3-superficies.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C3-superficies.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C3-superficies.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C3-superficies.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C3-superficies.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C3-superficies.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C3-superficies"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C3-superficies.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C3-superficies")
+% (find-pdf-page   "~/LATEX/2022-2-C3-superficies.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-superficies.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-superficies.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C3-superficies.pdf")
+%   file:///home/edrx/LATEX/2022-2-C3-superficies.pdf
+%               file:///tmp/2022-2-C3-superficies.pdf
+%           file:///tmp/pen/2022-2-C3-superficies.pdf
+% http://angg.twu.net/LATEX/2022-2-C3-superficies.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C3-superficies" "3" "c3m222superficies" "c3su")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.links»	(to "links")
+% «.aula-2»	(to "aula-2")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m222superficies" "2022-2-C3-superficies")
+% (code-eevvideo      "c3m222superficies" "2022-2-C3-superficies")
+% (code-eevlinksvideo "c3m222superficies" "2022-2-C3-superficies")
+% (find-c3m222superficiesvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m222superficiesp 1 "title")
+% (c3m222superficiesa   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.2}
+
+\bsk
+
+Aulas 11 e 12: introdução a superfícies
+
+e a diagramas de numerozinhos
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C3.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c3m222superficiesp 2 "links")
+% (c3m222superficiesa   "links")
+
+{\bf Links}
+
+\ssk
+
+Superfícies do Bortolossi (seção 3.2):
+
+%\ssk
+
+{\scriptsize
+
+% (find-books "__analysis/__analysis.el" "bortolossi")
+% (find-books "__analysis/__analysis.el" "bortolossi" "3.2. Funções de duas variáveis")
+% http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-3.pdf#page=3
+\url{http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-3.pdf\#page=3}
+
+}
+
+\ssk
+
+Quádricas no livro do Acker (capítulo 19):
+
+%\ssk
+
+{\scriptsize
+
+% (find-books "__analysis/__analysis.el" "acker")
+% (find-books "__analysis/__analysis.el" "acker" "O elipsoide")
+% http://angg.twu.net/acker/acker__ga_livro3_2021.pdf#page=123
+\url{http://angg.twu.net/acker/acker__ga_livro3_2021.pdf\#page=123}
+
+}
+
+\ssk
+
+Interseção de planos por uma fórmula complicada:
+
+{\scriptsize
+
+% (find-books "__analysis/__analysis.el" "acker")
+% (find-books "__analysis/__analysis.el" "acker" "produto vetorial")
+% http://angg.twu.net/acker/acker__ga_livro2_2020.pdf#page=87
+\url{http://angg.twu.net/acker/acker__ga_livro2_2020.pdf\#page=87}
+
+}
+
+
+\ssk
+
+``Low poly'' e diagramas de numerozinhos:
+
+%\ssk
+
+{\scriptsize
+
+% (c3m221nfp 21 "low-poly")
+% (c3m221nfa    "low-poly")
+% (c3m221nfp 21 "video-cabos")
+% (c3m221nfa    "video-cabos")
+%    http://angg.twu.net/LATEX/2022-1-C3-notacao-de-fisicos.pdf#page=21
+\url{http://angg.twu.net/LATEX/2022-1-C3-notacao-de-fisicos.pdf\#page=21}
+
+% (c3m221p1p 4 "questao-1-gab")
+% (c3m221p1a   "questao-1-gab")
+%    http://angg.twu.net/LATEX/2022-1-C3-P1.pdf#page=4
+\url{http://angg.twu.net/LATEX/2022-1-C3-P1.pdf\#page=4}
+
+% (c3m221vsp 3 "questao-1-gab")
+% (c3m221vsa   "questao-1-gab")
+%    http://angg.twu.net/LATEX/2022-1-C3-VS.pdf#page=3
+\url{http://angg.twu.net/LATEX/2022-1-C3-VS.pdf\#page=3}
+
+% (c3m221vsbp 5 "questao-1-gab")
+% (c3m221vsba   "questao-1-gab")
+%    http://angg.twu.net/LATEX/2022-1-C3-VSB.pdf#page=5
+\url{http://angg.twu.net/LATEX/2022-1-C3-VSB.pdf\#page=5}
+
+}
+
+\ssk
+
+Interseção de planos no olhômetro:
+
+%\ssk
+
+{\scriptsize
+
+% (mpgp 45 "R3-retas-e-planos")
+% (mpga    "R3-retas-e-planos")
+%    http://angg.twu.net/LATEX/material-para-GA.pdf#page=45
+\url{http://angg.twu.net/LATEX/material-para-GA.pdf#page=45}
+
+}
+
+\ssk
+
+Quadros:
+
+{\scriptsize
+
+% (find-angg ".emacs" "c3q222")
+% (find-angg ".emacs" "c3q222" "Diagramas de numerozinhos")
+% (find-c3q222page 8 "set28: Diagramas de numerozinhos.")
+%    http://angg.twu.net/2022.2-C3/C3-quadros.pdf#page=8
+\url{http://angg.twu.net/2022.2-C3/C3-quadros.pdf\#page=8}
+
+}
+
+
+% (mpgp 24 "Fxy")
+% (mpg     "Fxy")
+% (find-books "__analysis/__analysis.el" "bortolossi")
+% (find-books "__analysis/__analysis.el" "bortolossi" "3.2. Funções de duas variáveis")
+% (find-books "__analysis/__analysis.el" "acker")
+% (find-books "__analysis/__analysis.el" "acker" "elipsoide")
+% (c3m201taylor2p 2 "sombrero")
+% (c3m201taylor2    "sombrero")
+% (c3m202mt1p 7 "gabarito")
+% (c3m202mt1    "gabarito")
+
+% (find-anggfile "LUA/CabosNaDiagonal.lua")
+
+\newpage
+
+% «aula-2»  (to ".aula-2")
+% (find-angg ".emacs" "c3-2022-1-quadros" "mai25: pirâmide")
+
+Ainda não digitei o que a gente viu nessas aulas!
+
+Por enquanto veja as fotos dos quadros, nas
+
+páginas 8 e 9 daqui:
+
+\ssk
+
+{\scriptsize
+
+% (find-angg ".emacs" "c3q222")
+% (find-angg ".emacs" "c3q222" "Diagramas de numerozinhos")
+% (find-c3q222page 8 "set28: Diagramas de numerozinhos.")
+%    http://angg.twu.net/2022.2-C3/C3-quadros.pdf#page=8
+\url{http://angg.twu.net/2022.2-C3/C3-quadros.pdf\#page=8}
+
+}
+
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C3/")
+# (find-fline "~/LATEX/2022-2-C3/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C3/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C3/
+       cat <<%%%
+% (find-latexscan-links "C3" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C3-superficies veryclean
+make -f 2019.mk STEM=2022-2-C3-superficies pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3su"
+% ee-tla: "c3m222superficies"
+% End:

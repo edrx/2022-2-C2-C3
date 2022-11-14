@@ -1,0 +1,608 @@
+% (find-LATEX "2022-2-C2-TFC1-e-TFC2.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C2-TFC1-e-TFC2.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C2-TFC1-e-TFC2.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C2-TFC1-e-TFC2.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C2-TFC1-e-TFC2.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C2-TFC1-e-TFC2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C2-TFC1-e-TFC2.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C2-TFC1-e-TFC2"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C2-TFC1-e-TFC2.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C2-TFC1-e-TFC2")
+% (find-pdf-page   "~/LATEX/2022-2-C2-TFC1-e-TFC2.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-TFC1-e-TFC2.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-TFC1-e-TFC2.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C2-TFC1-e-TFC2.pdf")
+%   file:///home/edrx/LATEX/2022-2-C2-TFC1-e-TFC2.pdf
+%               file:///tmp/2022-2-C2-TFC1-e-TFC2.pdf
+%           file:///tmp/pen/2022-2-C2-TFC1-e-TFC2.pdf
+% http://angg.twu.net/LATEX/2022-2-C2-TFC1-e-TFC2.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C2-TFC1-e-TFC2" "2" "c2m222tfcs" "c2tf")
+
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.links»		(to "links")
+% «.def-inf-e-sup»	(to "def-inf-e-sup")
+% «.def-integral»	(to "def-integral")
+% «.exercicio-2»	(to "exercicio-2")
+%
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m222tfcs" "2022-2-C2-TFC1-e-TFC2")
+% (code-eevvideo      "c2m222tfcs" "2022-2-C2-TFC1-e-TFC2")
+% (code-eevlinksvideo "c2m222tfcs" "2022-2-C2-TFC1-e-TFC2")
+% (find-c2m222tfcsvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% (find-LATEX "edrxgac2.tex" "C2")
+
+\def\Rext{\overline{\R}}
+
+\def\into{\overline ∫}
+\def\intu{\underline∫}
+\def\intou{\overline{\underline∫}}
+\def\INTx#1#2#3#4{#1_{x=#2}^{x=#3} #4 \, dx}
+\def\INTP  #1#2#3{#1_{#2}          #3 \, dx}
+
+\def\mname#1{\ensuremath{[\text{#1}]}}
+\def\minf{\mname{inf}}
+\def\msup{\mname{sup}}
+\def\sse {\text{sse}}
+
+\sa{into_P     f(x) dx}{\INTP{\into} {P}{f(x)}}
+\sa{intu_P     f(x) dx}{\INTP{\intu} {P}{f(x)}}
+\sa{intou_P    f(x) dx}{\INTP{\intou}{P}{f(x)}}
+\sa{into_ab2k  f(x) dx}{\INTP{\into} {[a,b]_{2^k}}{f(x)}}
+\sa{intu_ab2k  f(x) dx}{\INTP{\intu} {[a,b]_{2^k}}{f(x)}}
+\sa{intou_ab2k f(x) dx}{\INTP{\intou}{[a,b]_{2^k}}{f(x)}}
+\sa{into_xab   f(x) dx}{\INTx{\into} {a}{b}{f(x)}}
+\sa{intu_xab   f(x) dx}{\INTx{\intu} {a}{b}{f(x)}}
+\sa{intou_xab  f(x) dx}{\INTx{\intou}{a}{b}{f(x)}}
+\sa{int_xab    f(x) dx}{\INTx{\int}  {a}{b}{f(x)}}
+
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m222tfcsp 1 "title")
+% (c2m222tfcsa   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.2}
+
+\bsk
+
+Aula 19: o TFC1 e o TFC2.
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C2.html}
+
+\end{center}
+
+\newpage
+
+% % «links»  (to ".links")
+% % (c2m222tfcsp 2 "links")
+% % (c2m222tfcsa   "links")
+% 
+% Infs e sups
+% % (c2m222srp 25 "na-semana-academica")
+% % (c2m222sra    "na-semana-academica")
+% 
+% Partições
+% % (c2m212somas1p 9 "particoes")
+% % (c2m212somas1a   "particoes")
+% 
+% Partição preferida
+% 
+% Partições cada vez mais finas
+% % (c2m202escadasp 4 "exercicio-2")
+% % (c2m202escadas    "exercicio-2")
+% 
+% Definição da integral
+% % (c2m221isp 19 "definicao-integral")
+% % (c2m221isa    "definicao-integral")
+% 
+% Funções de Dirichlet (a original e a diagonal)
+% % (c2m212somas2p 51 "dirichlet")
+% % (c2m212somas2a    "dirichlet")
+% 
+% TFC1 no vídeo do Mathologer (localizar)
+% % (find-TH "mathologer-calculus-easy" "legendas")
+% 
+% TFC2 no vídeo do Mathologer (localizar)
+% 
+% Revisão de derivadas laterais
+% % (c2m221tfc1p 11 "exercicio-4-dicas")
+% % (c2m221tfc1a    "exercicio-4-dicas" "laterais")
+% 
+% Quando os TFCs não valem
+% 
+% Quais livros usam ai e bi? Quais usam $Δx$?
+% 
+% Animacoes sobre def integral e TFC1
+% 
+% % (find-books "__analysis/__analysis.el" "leithold" "5.5. A integral definida")
+% % (find-books "__analysis/__analysis.el" "martins-martins" "Integral Definida")
+% % (find-books "__analysis/__analysis.el" "miranda" "7.2. Integral definida")
+% (find-books "__analysis/__analysis.el" "thomas" "5.3 The definite integral")
+
+\newpage
+
+Os próximos 3 slides são uma versão melhorada (?)
+
+das definições de partições, de inf e sup, e de
+
+integral definida destes PDFs antigos:
+
+\ssk
+
+Partições:
+
+{\scriptsize
+
+% (c2m212somas1p 9 "particoes")
+% (c2m212somas1a   "particoes")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf#page=9
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf\#page=9} (até a p.12)
+
+}
+
+\ssk
+
+
+Infs e sups:
+
+{\scriptsize
+
+% (c2m221isp 2 "uma-figura")
+% (c2m221isa   "uma-figura")
+%    http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf#page=2
+\url{http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf\#page=2} (até a p.15)
+
+}
+
+\ssk
+
+Integral definida como limite -- definições:
+
+{\scriptsize
+
+% (c2m221isp 16 "aproximacoes-por-cima")
+% (c2m221isa    "aproximacoes-por-cima")
+%    http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf#page=16
+\url{http://angg.twu.net/LATEX/2022-1-C2-infs-e-sups.pdf\#page=16} (até a p.21)
+
+% (c2m212somas2p 35 "exercicio-13")
+% (c2m212somas2a    "exercicio-13")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=35
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf\#page=35} -- $[a,b]_n$
+
+% (c2m212somas1p 16 "exercicio-9-dicas")
+% (c2m212somas1a    "exercicio-9-dicas")
+% http://angg.twu.net/LATEX/2021-1-C2-somas-1.pdf#page=16
+\url{http://angg.twu.net/LATEX/2021-1-C2-somas-1.pdf\#page=16} -- simplificações
+
+}
+
+\ssk
+
+Integral definida como limite -- uma animação:
+
+{\scriptsize
+
+% (c2m221tfc1p 35 "descontinuidades-2")
+% (c2m221tfc1a    "descontinuidades-2")
+%    http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf#page=35
+\url{http://angg.twu.net/LATEX/2022-1-C2-TFC1.pdf\#page=35} (até a p.41)
+
+}
+
+
+
+\newpage
+
+{\bf A definição de partição}
+
+\scalebox{0.85}{\def\colwidth{11cm}\firstcol{
+
+Se $P$ é um subconjunto \ColorRed{finito} e \ColorRed{não-vazio} de $\R$,
+
+então podemos interpretar $P$ como uma partição...
+
+Por exemplo, se $P=\{200,20,42,99,63,33,20,20\}$
+
+então $P=\{20,33,42,63,99,200\}$, e aí vamos interpretar
+
+esse conjunto de 6 pontos -- ordenados em ordem crescente --
+
+como uma partição do intervalo $I = [a,b] = [20,200]$ em
+
+5 subintervalos (``$N=5$''), assim:
+
+$$\begin{array}{ccccccl}
+  20 & 33 & 42 & 63 & 99 & 200 \\
+  x_0 & x_1 & x_2 & x_3 & x_4 & x_5 \\
+  a_1 & b_1 &     &     &     &     & I_1=[a_1,b_1] \\
+      & a_2 & b_2 &     &     &     & I_2=[a_2,b_2] \\
+      &     & a_3 & b_3 &     &     & I_3=[a_3,b_3] \\
+      &     &     & a_4 & b_4 &     & I_4=[a_4,b_4] \\
+      &     &     &     & a_5 & b_5 & I_5=[a_5,b_5] \\
+   a  &     &     &     &     &  b  & I  = [a,b] = [x_0,x_N]\\
+  \end{array}
+$$
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «def-inf-e-sup»  (to ".def-inf-e-sup")
+% (c2m222tfcsp 3 "def-inf-e-sup")
+% (c2m222tfcsa   "def-inf-e-sup")
+% (c2m221isp 3 "algumas-definicoes")
+% (c2m221isa   "algumas-definicoes")
+
+{\bf As definições de inf e sup}
+
+\scalebox{0.9}{\def\colwidth{10cm}\firstcol{
+
+Digamos que $f:\R→\R$ e $B⊂\R$.
+
+Vamos definir $\inf(f(B))$ e $\sup(f(B))$ ---
+
+e também $\inf(D)$ e $\sup(D)$, pra $D⊂\R$ ---
+
+desta forma:
+%
+$$\begin{array}{rcl}
+  \Rext &=& \R∪\{-∞,+∞\} \\
+  C  &=& \setofst{(x,f(x))}{x∈B} \\
+  D  &=& \setofst{f(x)}{x∈B} \\
+  D' &=& \setofst{y∈\R}{∃x∈B.\ f(x)=y} \\
+  L &=& \setofst{y∈\Rext}{∀d∈D.\;y≤d} \\
+  U &=& \setofst{y∈\Rext}{∀d∈D.\;d≤y} \\
+  (α=\inf(D)) &=& α∈L ∧ (∀ℓ∈L.\;ℓ \le α) \\
+  (β=\sup(D)) &=& β∈U ∧ (∀u∈U.\;β \le u) \\
+  \end{array}
+$$
+
+Com isto podemos definir a integral definida.
+
+A definição formal dela está na próxima página.
+
+}\anothercol{
+}}
+
+\newpage
+
+% «def-integral»  (to ".def-integral")
+% (c2m222tfcsp 5 "def-integral")
+% (c2m222tfcsa   "def-integral")
+
+\vspace*{-0.25cm}
+
+$$\scalebox{0.44}{$
+  \begin{array}{rcl}
+  [a,b]_N &=& \setofst{a+k(\frac{b-a}{N})}{k∈\{0,\ldots,N\}} \\
+          &=& \{ a+0(\frac{b-a}{N}),
+              \; a+1(\frac{b-a}{N}),
+              \; \ldots,
+              \; a+N(\frac{b-a}{N}) \} \\
+          &=& \{ a,
+              \; a + \frac{b-a}{N},
+              \; a + 2\frac{b-a}{N},
+              \; a + 3\frac{b-a}{N},
+              \; \ldots, \; b\} \\
+  \D \ga{into_P  f(x) dx} &=&    \msup_P \\[-5pt]
+                          &=& \D \sum_{i=1}^{n} \sup(f([a_i,b_i])) (b_i-a_i) \\
+  \D \ga{intu_P  f(x) dx} &=&    \minf_P \\[-5pt]
+                          &=& \D \sum_{i=1}^{n} \inf(f([a_i,b_i])) (b_i-a_i) \\ \\[-5pt]
+  \D \ga{intou_P f(x) dx} &=& \D \INTP{\into}{P}{f(x)}
+                               - \INTP{\intu}{P}{f(x)} \\ \\[-5pt]
+  \D \ga{into_xab  f(x) dx} &=& \D \lim_{k→∞} \ga{into_ab2k f(x) dx} \\
+  \D \ga{intu_xab  f(x) dx} &=& \D \lim_{k→∞} \ga{intu_ab2k f(x) dx} \\ \\[-5pt]
+  \D \ga{intou_xab f(x) dx} &=& \D \ga{into_xab f(x) dx}
+                                 - \ga{intu_xab f(x) dx} \\ \\[-5pt]
+  \D \left( \ga{int_xab f(x) dx} \text{\;\;existe} \right)
+                             &=& \D \left( \ga{into_xab  f(x) dx}
+                                         = \ga{intu_xab  f(x) dx} \right)     \\ \\[-7pt]
+                             &=& \D \left( \ga{intou_xab f(x) dx} = 0 \right) \\ \\[-7pt]
+  \D \ga{int_xab f(x) dx}    &=& \D \ga{into_xab f(x) dx}
+                                 \qquad \text{(se a integral existir)} \\  \\[-7pt]
+                             &=& \D \ga{intu_xab f(x) dx}
+                                 \qquad \text{(se a integral existir)} \\
+  \end{array}
+  $}
+$$
+
+
+\newpage
+
+{\bf Exercício 1.}
+
+Leia isto aqui:
+
+\ssk
+
+{\scriptsize
+
+% (c2m212somas1p 9 "particoes")
+% (c2m212somas1a   "particoes")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf#page=9
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-1.pdf\#page=9} (até a p.12)
+
+}
+
+\msk
+
+a) Seja $P=\{4,2,1,1.5\}$.
+
+Interprete $P$ como uma partição.
+
+Diga quem são o $N$, o $a$ e o $b$ dela e monte
+
+a tabela dos subintervalos dela (p.10 do link acima).
+
+\msk
+
+b) Seja $P=[2,4]_6$.
+
+Diga quem são os pontos da partição $P$.
+
+\msk
+
+c) Seja $P=[2,5]_{2^3}$.
+
+Diga quem são os pontos da partição $P$.
+
+
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c2m222tfcsp 6 "exercicio-2")
+% (c2m222tfcsa    "exercicio-2")
+% (c2m221isp 12 "exercicio-5")
+% (c2m221isa    "exercicio-5")
+
+{\bf Exercício 2.}
+
+%L Pict2e.bounds = PictBounds.new(v(0,0), v(9,7))
+%L spec   = "(0,3)--(2,1)o (2,3)c (2,5)o--(7,0)"
+%L pws    = PwSpec.from(spec)
+%L curve  = pws:topict()
+%L p = PictList { curve:prethickness("2pt") }
+%L p:addputstrat(v(2.7,5.5), "\\cell{(2,5)}")
+%L p:addputstrat(v(7.7,0.5), "\\cell{(7,0)}")
+%L p:pgat("pgatc"):preunitlength("17pt"):sa("Exercicio 2"):output()
+\pu
+
+\msk
+
+Sejam
+%
+$f(x) = \scalebox{0.5}{$\ga{Exercicio 2}$}$
+
+e $B=[1,3]$.
+
+\msk
+
+Represente graficamente B, $f(B)$ e os conjuntos abaixo:
+%
+$$\begin{array}{rcl}
+
+  % \Rext &=& \R∪\{-∞,+∞\} \\
+  C  &=& \setofst{(x,f(x))}{x∈B} \\
+  D  &=& \setofst{f(x)}{x∈B} \\
+  D' &=& \setofst{y∈\R}{∃x∈B.\ f(x)=y} \\
+  L &=& \setofst{y∈\Rext}{∀d∈D.\;y≤d} \\
+  U &=& \setofst{y∈\Rext}{∀d∈D.\;d≤y} \\
+  % (α=\inf(D)) &=& α∈L ∧ (∀ℓ∈L.\;ℓ \le α) \\
+  % (β=\sup(D)) &=& β∈U ∧ (∀u∈U.\;β \le u) \\
+  \end{array}
+$$
+
+
+\newpage
+
+{\bf Exercício 3.}
+
+\scalebox{0.9}{\def\colwidth{9cm}\firstcol{
+
+Sejam
+%
+$f(x) = \scalebox{0.5}{$\ga{Exercicio 2}$}$ \; .
+
+e $P=\{1,3,4,5\}$.
+
+\msk
+
+Represente graficamente:
+
+\msk
+
+a) $\ga{into_P  f(x) dx}$
+
+\msk
+
+b) $\ga{intu_P  f(x) dx}$
+
+\msk
+
+c) $\ga{intou_P f(x) dx}$
+
+\msk
+
+d) $\INTP{\intou}{[1,5]_2}{f(x)}$
+
+\msk
+
+e) $\INTP{\intou}{[1,5]_4}{f(x)}$
+
+}\anothercol{
+}}
+
+
+\newpage
+
+{\bf Exercício 4.}
+
+
+\scalebox{0.9}{\def\colwidth{12cm}\firstcol{
+
+Dê uma olhada nesses 4 slides sobre a função de Dirichlet:
+
+\ssk
+
+{\scriptsize
+
+% (c2m212somas2p 51 "dirichlet")
+% (c2m212somas2a    "dirichlet")
+%    http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf#page=51
+\url{http://angg.twu.net/LATEX/2021-2-C2-somas-2.pdf\#page=51} (até a p.54)
+
+}
+
+\ssk
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  f(x) &=&
+  \begin{cases}
+     0 & \text{quando $x∈\Q$}, \\
+     1 & \text{quando $x∈\R∖\Q$} \\
+  \end{cases} \; , \\
+  g(x) &=& f(x) + x. \\
+  \end{array}
+$$
+
+Represente graficamente:
+
+\msk
+
+a) $g(x)$
+
+b) $\INTP{\intou}{[0,4]_1}{g(x)}$
+
+c) $\INTP{\intou}{[0,4]_2}{g(x)}$
+
+d) $\INTP{\intou}{[0,4]_4}{g(x)}$
+
+e) $\INTP{\intou}{[0,4]_8}{g(x)}$
+
+}\anothercol{
+}}
+
+
+% (c2m212somas2p 51 "dirichlet")
+% (c2m212somas2a    "dirichlet")
+
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C2-TFC1-e-TFC2 veryclean
+make -f 2019.mk STEM=2022-2-C2-TFC1-e-TFC2 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2tf"
+% ee-tla: "c2m222tfcs"
+% End:

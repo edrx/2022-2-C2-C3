@@ -1,0 +1,282 @@
+% (find-LATEX "2022-2-C3-dicas-pra-P1.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C3-dicas-pra-P1.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C3-dicas-pra-P1.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C3-dicas-pra-P1.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C3-dicas-pra-P1.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C3-dicas-pra-P1.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C3-dicas-pra-P1.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C3-dicas-pra-P1"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C3-dicas-pra-P1.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C3-dicas-pra-P1")
+% (find-pdf-page   "~/LATEX/2022-2-C3-dicas-pra-P1.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-dicas-pra-P1.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-dicas-pra-P1.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C3-dicas-pra-P1.pdf")
+%   file:///home/edrx/LATEX/2022-2-C3-dicas-pra-P1.pdf
+%               file:///tmp/2022-2-C3-dicas-pra-P1.pdf
+%           file:///tmp/pen/2022-2-C3-dicas-pra-P1.pdf
+% http://angg.twu.net/LATEX/2022-2-C3-dicas-pra-P1.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C3-dicas-pra-P1" "3" "c3m222dicasp1" "c3d1")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.links»	(to "links")
+%
+% «.djvuize»	(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m222dicasp1" "2022-2-C3-dicas-pra-P1")
+% (code-eevvideo      "c3m222dicasp1" "2022-2-C3-dicas-pra-P1")
+% (code-eevlinksvideo "c3m222dicasp1" "2022-2-C3-dicas-pra-P1")
+% (find-c3m222dicasp1video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m222dicasp1p 1 "title")
+% (c3m222dicasp1a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.2}
+
+\bsk
+
+Dicas pra P1
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C3.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c3m222dicasp1p 2 "links")
+% (c3m222dicasp1a   "links")
+
+\newpage
+
+
+\scalebox{0.9}{\def\colwidth{14cm}\firstcol{
+
+Primeira dica:
+
+A P1 vai ter uma questão que vai valer muitos pontos
+
+que vai ser parecida com a questão 1 da VSB do
+
+semestre passado. Links:
+
+{\footnotesize
+
+% (c3m221vsbp 2 "questao-1")
+% (c3m221vsba   "questao-1")
+%    http://angg.twu.net/LATEX/2022-1-C3-VSB.pdf#page=2
+\url{http://angg.twu.net/LATEX/2022-1-C3-VSB.pdf\#page=2}
+
+% (c3m221tudop 70 "title")
+% (c3m221tudoa    "title")
+%    http://angg.twu.net/LATEX/2022-1-C3-tudo.pdf#page=70
+\url{http://angg.twu.net/LATEX/2022-1-C3-tudo.pdf\#page=70}
+
+% (c3m222dpp 2 "links")
+% (c3m222dpa   "links")
+%    http://angg.twu.net/LATEX/2022-2-C3-derivadas-parciais.pdf#page=2
+\url{http://angg.twu.net/LATEX/2022-2-C3-derivadas-parciais.pdf\#page=2}
+
+% (c3m222tudop 63 "title")
+% (c3m222tudoa    "title")
+%    http://angg.twu.net/LATEX/2022-2-C3-tudo.pdf#page=63
+\url{http://angg.twu.net/LATEX/2022-2-C3-tudo.pdf\#page=63}
+
+%    http://angg.twu.net/2022.2-C3/C3-quadros.pdf
+\url{http://angg.twu.net/2022.2-C3/C3-quadros.pdf}
+
+}
+
+\bsk
+
+Segunda dica:
+
+A P1 vai ter uma questão de desenhar curvas de nível
+
+e vetores gradientes. Você pode treinar pra ela
+
+fazendo o Exercício 1 daqui:
+
+\ssk
+
+{\footnotesize
+
+% (c3m211gradp 3 "exercicio-1")
+% (c3m211grada   "exercicio-1")
+%    http://angg.twu.net/LATEX/2021-1-C3-gradiente.pdf#page=3
+\url{http://angg.twu.net/LATEX/2021-1-C3-gradiente.pdf\#page=3}
+
+% (c3m211tudop 177 "title")
+% (c3m211tudoa     "title")
+%    http://angg.twu.net/LATEX/2021-1-C3-tudo.pdf#page=177
+\url{http://angg.twu.net/LATEX/2021-1-C3-tudo.pdf\#page=177}
+
+}
+
+
+
+\bsk
+
+{\it Mais dicas em breve!}
+
+}\anothercol{
+}}
+
+\newpage
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C3/")
+# (find-fline "~/LATEX/2022-2-C3/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C3/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C3/
+       cat <<%%%
+% (find-latexscan-links "C3" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C3-dicas-pra-P1 veryclean
+make -f 2019.mk STEM=2022-2-C3-dicas-pra-P1 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3d1"
+% ee-tla: "c3m222dicasp1"
+% End:

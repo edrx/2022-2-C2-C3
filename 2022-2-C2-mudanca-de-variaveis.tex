@@ -1,0 +1,602 @@
+% (find-LATEX "2022-2-C2-mudanca-de-variaveis.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C2-mudanca-de-variaveis.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C2-mudanca-de-variaveis.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C2-mudanca-de-variaveis.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C2-mudanca-de-variaveis.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C2-mudanca-de-variaveis.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C2-mudanca-de-variaveis.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C2-mudanca-de-variaveis"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C2-mudanca-de-variaveis.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C2-mudanca-de-variaveis")
+% (find-pdf-page   "~/LATEX/2022-2-C2-mudanca-de-variaveis.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-mudanca-de-variaveis.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-mudanca-de-variaveis.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C2-mudanca-de-variaveis.pdf")
+%   file:///home/edrx/LATEX/2022-2-C2-mudanca-de-variaveis.pdf
+%               file:///tmp/2022-2-C2-mudanca-de-variaveis.pdf
+%           file:///tmp/pen/2022-2-C2-mudanca-de-variaveis.pdf
+% http://angg.twu.net/LATEX/2022-2-C2-mudanca-de-variaveis.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C2-mudanca-de-variaveis" "2" "c2m222mv" "c2mv")
+
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.sas»		(to "sas")
+% «.links»		(to "links")
+% «.uma-conta-com-mv»	(to "uma-conta-com-mv")
+% «.justificando-cada»	(to "justificando-cada")
+% «.exercicio-1»	(to "exercicio-1")
+% «.exercicio-2»	(to "exercicio-2")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m222mv" "2022-2-C2-mudanca-de-variaveis")
+% (code-eevvideo      "c2m222mv" "2022-2-C2-mudanca-de-variaveis")
+% (code-eevlinksvideo "c2m222mv" "2022-2-C2-mudanca-de-variaveis")
+% (find-c2m222mvvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m222mvp 1 "title")
+% (c2m222mva   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.2}
+
+\bsk
+
+Aula 10: Mudança de variáveis
+
+(e integrais de potências de senos e cossenos)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C2.html}
+
+\end{center}
+
+\newpage
+
+%  ___              _       
+% ( ) \   ___  __ _( )  ___ 
+%  \|\ \ / __|/ _` |/  / __|
+%     \ \\__ \ (_| |   \__ \
+%      \_\___/\__,_|   |___/
+%                           
+% «sas»  (to ".sas")
+
+\def\P    #1{\left(#1\right)}
+\def\und#1#2{\underbrace{#1}_{#2}}
+\def\uu   #1{\und{#1}{u}}
+\def\ududx#1{\und{#1}{\frac{du}{dx}}}
+\def\udu  #1{\und{#1}{du}}
+\def\intxu#1#2{\int #1 \udu{\ududx{#2}\,dx}}
+
+\sa{[MVI]}{\CFname{MVI}{}}
+\sa{(MVI)}{\P {\ga{MVI}}}
+\sa {MVI} {{\D \intx{f'(g(x))g'(x)} \;=\; \intu{f'(u)}}}
+
+\sa{[MVA]}{\CFname{MVA}{}}
+\sa{(MVA)}{\P {\ga{MVA}}}
+\sa {MVA} {
+  \begin{array}{rcl}
+  \D \intxu {f'( \uu{g(x)} )}{g'(x)}
+    &=& \D \intu{f'(u)} \\[-25pt]
+    &=& \D f(u)         \\
+    &=& \D f(g(x))      \\
+  \end{array}
+  }
+
+\sa{(MVA sen)}{\P{\ga{MVA sen}}}
+\sa {MVA sen} {
+  \begin{array}{rcl}
+  \D \intxu {\cos( \uu{x^2} )·}{2x}
+    &=& \D \intu{\cos(u)} \\[-25pt]
+    &=& \D \sen(u)        \\
+    &=& \D \sen(x^2)      \\
+  \end{array}
+  }
+
+\sa{S1}{\bmat{
+     f(x) := \sen x \\
+    f'(x) := \cos x \\
+     g(x) := x^2 \\
+    g'(x) := 2x \\
+  }}
+
+
+\newpage
+
+% «links»  (to ".links")
+% (c2m222mvp 2 "links")
+% (c2m222mva   "links")
+% (c2m221atisp 1 "title")
+% (c2m221atisa   "title")
+% (c2m221atisp 12 "substituicao-figura")
+% (c2m221atisa    "substituicao-figura")
+% (c2m221atisp 14 "exemplo-contas")
+% (c2m221atisa    "exemplo-contas")
+% (c2m221atisp 16 "exemplo-contas-2")
+% (c2m221atisa    "exemplo-contas-2")
+% (c2m221vsbp 8 "questao-3-gab")
+% (c2m221vsba   "questao-3-gab")
+% (find-books "__analysis/__analysis.el" "leithold")
+% (find-books "__analysis/__analysis.el" "leithold" "5.2.1. Regra da cadeia")
+% (find-books "__analysis/__analysis.el" "leithold" "9.2" "potências de seno e co-seno")
+% (find-books "__analysis/__analysis.el" "thomas")
+% (find-books "__analysis/__analysis.el" "thomas" "5: The substitution rule")
+% (find-books "__analysis/__analysis.el" "thomas" "5: The substitution rule" "Example 3")
+% (find-books "__analysis/__analysis.el" "thomas" "Substitution in definite integrals")
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-books "__analysis/__analysis.el" "miranda" "6.2 Integração por Substituição")
+% (find-books "__analysis/__analysis.el" "miranda" "Exemplo 6.6")
+% (find-books "__analysis/__analysis.el" "miranda" "8.3 Integrais Trigonométricas")
+% (find-pdf-page "/home/angg_slow_html/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf")
+% http://angg.twu.net/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf
+% (find-fline "/home/angg_slow_html/eev-videos/" "2020_int_subst_1.mp4")
+% (find-LATEX "2020-1-C2-int-subst.tex" "videos" "2020_int_subst_1")
+
+{\bf Links}
+
+
+\scalebox{0.7}{\def\colwidth{14cm}\firstcol{
+
+    A mudança de variáveis na integral {\sl indefinida} (``MVI'') é
+    uma gambiarra que eu até hoje ainda não sei interpretar
+    geometricamente.
+
+\msk
+
+A mudança de variáveis na integral {\sl definida} (``MVD'') -- que nós
+vamos ver depois! -- é fácil de interpretar geometricamente: ela muda
+os limites de integração. Veja esta figura aqui:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221atisp 12 "substituicao-figura")
+% (c2m221atisa    "substituicao-figura")
+%    http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf#page=12
+\url{http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf\#page=12}
+
+}
+
+\msk
+
+Nós vamos tentar entender a MVI pela seção 5.2.1 do Leithold, pela
+seção 6.2 do Miranda e pela seção 5.5 do Thomas. Links:
+
+\ssk
+
+{\footnotesize
+
+% (find-dmirandacalcpage 189 "6.2 Integração por Substituição")
+% http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=192
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=192}
+
+% http://angg.twu.net/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf
+% (find-pdf-page "/home/angg_slow_html/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf")
+\url{http://angg.twu.net/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf}
+
+}
+
+\msk
+
+O Miranda explica como integrar potências de senos e cossenos na seção
+8.3:
+
+\ssk
+
+{\footnotesize
+
+% (find-dmirandacalcpage 255 "8.3 Integrais Trigonométricas")
+% http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=255
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=255}
+
+}
+
+\msk
+
+Veja também:
+
+\ssk
+
+{\footnotesize
+
+% (c2m221atisp 16 "um-exemplo")
+% (c2m221atisa    "um-exemplo")
+%    http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf#page=16
+\url{http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf\#page=16}
+
+% (c2m221atisp 39 "gambiarras")
+% (c2m221atisa    "gambiarras")
+%    http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf#page=39
+\url{http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf\#page=39}
+
+% (c2m221vsbp 8 "questao-3-gab")
+% (c2m221vsba   "questao-3-gab")
+%    http://angg.twu.net/LATEX/2022-1-C2-VSB.pdf#page=8
+\url{http://angg.twu.net/LATEX/2022-1-C2-VSB.pdf\#page=8}
+
+% (find-extra-file-links "/sda5/videos/Math/Matematica_Calculo_2_-_Aula_05_-_Regra_da_Substituicao-PTCUjrEBc4g.webm" "rsubs")
+% (code-video "rsubsvideo" "/sda5/videos/Math/Matematica_Calculo_2_-_Aula_05_-_Regra_da_Substituicao-PTCUjrEBc4g.webm")
+% (find-rsubsvideo "0:00")
+% (find-rsubsvideo "4:35")
+\url{http://www.youtube.com/watch?v=PTCUjrEBc4g\#t=4m35s} (até 10:00)
+
+}
+
+}\anothercol{
+}}
+
+
+
+
+\newpage
+
+% «uma-conta-com-mv»  (to ".uma-conta-com-mv")
+% (c2m222mvp 3 "uma-conta-com-mv")
+% (c2m222mva   "uma-conta-com-mv")
+
+{\bf Uma conta com mudança de variáveis}
+
+\vspace*{-0.3cm}
+
+\scalebox{0.7}{\def\colwidth{12cm}\firstcol{
+
+\ga{[MVI]}: mudança de variáveis na integral indefinida.
+
+\ga{[MVA]}: uma aplicação típica do \ga{[MVI]} (caso geral).
+
+$\ga{[MVA]}\,[\ldots]$: uma aplicação típica do \ga{[MVI]} (caso particular).
+
+\ssk
+
+Compare com o Teorema 5 e o Exemplo 3 daqui:
+
+{\footnotesize
+
+% (find-pdf-page "/home/angg_slow_html/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf")
+%    http://angg.twu.net/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf
+\url{http://angg.twu.net/2020.2-C2/thomas_secoes_5.5_e_5.6.pdf}
+
+}
+
+$$\begin{array}{rcl}
+    \ga{[MVI]}         &=& \ga{(MVI)} \\ \\[-5pt]
+    \ga{[MVA]}         &=& \ga{(MVA)} \\ \\[-5pt]
+    \ga{[MVA]} \ga{S1} &=& \ga{(MVA sen)} \\
+  \end{array}
+$$
+
+}\anothercol{
+}}
+
+
+
+\newpage
+
+% «justificando-cada»  (to ".justificando-cada")
+% (c2m222mvp 4 "justificando-cada")
+% (c2m222mva   "justificando-cada")
+
+{\bf Justificando cada igualdade}
+
+% do \ga{[MVA]}
+
+\sa{MVA H}{
+   \D \intx{f'(g(x))g'(x)}
+   \;=\;
+   \D \intu{f'(u)}
+   \;=\;
+   f(u)
+   \;=\;
+   f(g(x))
+  }
+\sa{MVA Hund}{
+   \und{ \D\ddx\P{ \intx{f'(g(x))g'(x)}} }{f'(g(x))g'(x)}
+   \;=\;
+   \und{ \D\ddx \und{\und{\intu{f'(u)}}{f(u)}}{f(g(x))} }{f'(g(x))g'(x)}
+   \;=\;
+   \und{ \D\ddx \und{f(u)}{f(g(x))} }{f'(g(x))g'(x)}
+   \;=\;
+   \und{ \D\ddx f(g(x)) }{f'(g(x))g'(x)}
+  }
+
+
+\scalebox{0.7}{\def\colwidth{12cm}\firstcol{
+
+Quando os livros dizem ``$u=g(x)$'' eles não dizem claramente
+
+em quais lugares podemos substituir $u$ por $g(x)$...
+
+Por exemplo, será que podemos fazer isto aqui?
+%
+$$\intu{f'(u)} \;=\; \intu{f'(g(x))}$$
+
+Eu \ColorRed{acho} que não, mas até hoje eu não sei as regras exatas...
+
+\ColorRed{Me parece} que o melhor modo de justificar estas três igualdades
+%
+$$\begin{array}{c}
+  \ga{MVA H} \\
+  \end{array}
+$$
+
+é assim:
+%
+$$\begin{array}{c}
+  \ga{MVA Hund} \\
+  \end{array}
+$$
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «exercicio-1»  (to ".exercicio-1")
+% (c2m222mvp 4 "exercicio-1")
+% (c2m222mva   "exercicio-1")
+
+{\bf Exercício 1.}
+
+Leia a seção 6.2 do Miranda. Ela começa na página 189:
+
+\ssk
+
+{\scriptsize
+
+% (find-dmirandacalcpage 189 "6.2 Integração por Substituição")
+% (find-dmirandacalcpage 192   "Exemplo 6.6")
+% (find-dmirandacalcpage 196   "Exercícios")
+% http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=189
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=189}
+
+}
+
+\ssk
+
+Entenda bem o exemplo 6.6 da página 192 dele.
+
+Faça os exercícios de 1 a 13 das páginas 196 e 197,
+
+exceto pelos exercícios que envolvem secantes.
+
+\msk
+
+Dê uma olhada no meu modo preferido de não me enrolar
+
+na mudança de variáveis, que é o método das ``caixinhas
+
+de anotações'', explicado aqui, nas páginas 39--44,
+
+\ssk
+
+{\scriptsize
+
+% (c2m221atisp 39 "gambiarras")
+% (c2m221atisa    "gambiarras")
+%    http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf#page=39
+\url{http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf\#page=39}
+
+}
+
+\ssk
+
+e tente usá-lo.
+
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c2m222mvp 6 "exercicio-2")
+% (c2m222mva   "exercicio-2")
+% (c2m221atisp 16 "exemplo-contas-2")
+% (c2m221atisa    "exemplo-contas-2")
+% (find-es "maxima" "int-pow-sin-cos")
+
+{\bf Exercício 2.}
+
+Entenda bem os exemplos 1, 2 e 3 da seção 8.3 do Miranda,
+
+\ssk
+
+{\scriptsize
+
+% (find-books "__analysis/__analysis.el" "miranda" "8.3 Integrais Trigonométricas")
+% (find-dmirandacalcpage 255 "8.3 Integrais Trigonométricas")
+% http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf#page=255
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=255}
+
+}
+
+\ssk
+
+e as ``caixinhas de anotações'':
+
+\ssk
+
+{\footnotesize
+
+% (c2m221atisp 12 "substituicao-figura")
+% (c2m221atisa    "substituicao-figura")
+%    http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf#page=39
+\url{http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf\#page=39}
+
+%    http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf#page=16
+\url{http://angg.twu.net/LATEX/2022-1-C2-algumas-t-ints.pdf\#page=16}
+
+}
+
+\msk
+
+Depois disso resolva estas três integrais:
+
+\ssk
+
+a) $\intx{(\cos x)^4 \sen x}$
+
+b) $\intx{(\cos x)^4 (\sen x)^3}$
+
+c) $\intx{(\cos x)^4 (\sen x)^5}$
+
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-books "__analysis/__analysis.el" "miranda" "6.2 Integração por Substituição")
+% (find-books "__analysis/__analysis.el" "miranda" "Exemplo 6.6")
+
+
+
+
+%\printbibliography
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C2/")
+# (find-fline "~/LATEX/2022-2-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C2-mudanca-de-variaveis veryclean
+make -f 2019.mk STEM=2022-2-C2-mudanca-de-variaveis pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2mv"
+% ee-tla: "c2m222mv"
+% End:
