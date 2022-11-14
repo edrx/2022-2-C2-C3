@@ -25,17 +25,19 @@
 % (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
 % (find-CN-aula-links "2022-2-C3-intro" "3" "c3m222intro" "c3i")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
-% «.aula-1»	(to "aula-1")
-% «.intro-v»	(to "intro-v")
-% «.VT»		(to "VT")
-% «.orbita»	(to "orbita")
-% «.orbita-2»	(to "orbita-2")
-% «.orbita-3»	(to "orbita-3")
-% «.orbita-4»	(to "orbita-4")
+% «.defs»		(to "defs")
+% «.title»		(to "title")
+% «.aula-1»		(to "aula-1")
+% «.intro-v»		(to "intro-v")
+% «.exercicios-1-e-2»	(to "exercicios-1-e-2")
+% «.exs-1-e-2-dicas»	(to "exs-1-e-2-dicas")
+% «.VT»			(to "VT")
+% «.orbita»		(to "orbita")
+% «.orbita-2»		(to "orbita-2")
+% «.orbita-3»		(to "orbita-3")
+% «.orbita-4»		(to "orbita-4")
 %
-% «.djvuize»	(to "djvuize")
+% «.djvuize»		(to "djvuize")
 
 
 
@@ -281,6 +283,10 @@ vetor velocidade.
 
 \newpage
 
+% «exercicios-1-e-2»  (to ".exercicios-1-e-2")
+% (c3m222introp 5 "exercicios-1-e-2")
+% (c3m222introa   "exercicios-1-e-2")
+
 {\bf Exercício 1: uma trajetória com um bico}
 
 Dê uma olhada no item 1e da VS do semestre passado:
@@ -324,6 +330,48 @@ $$
 
 \newpage
 
+% «exs-1-e-2-dicas»  (to ".exs-1-e-2-dicas")
+% (c3m222introp 6 "exs-1-e-2-dicas")
+% (c3m222introa   "exs-1-e-2-dicas")
+
+{\bf Dicas pro exercícios 1 e 2}
+
+Este vídeo aqui tem algumas figuras sobre como desenhar trajetórias:
+
+\ssk
+
+{\footnotesize
+
+% (c3m202introa "video-1")
+
+\url{http://www.youtube.com/watch?v=3yWLubqHsic}
+
+\url{http://angg.twu.net/eev-videos/2020.2-C3-intro.mp4}
+
+}
+
+\bsk
+
+Quase todo mundo achou muito difícil desenhar a trajetória do
+exercício 2 --- se a gente calcula $R(t)$ só pra valores inteiros de
+$t$ a gente não consegue descobrir como a $R(t)$ se comporta entre
+$t=6$ e $t=7$...
+
+\ssk
+
+Um jeito de resolver isso é calcular $R(t)$ para $t=6.1$, $t=6.2$,
+$\ldots$, $t=6.9$, desenhar esses pontos no gráfico, e aí tentar
+descobrir qual é o comportamento da $R(t)$ pra todos os valores em
+$[6,7]$.
+
+\ssk
+
+Um outro jeito é considerar que $R(t)=(x(t),y(t))$ e tentar entender
+as funções $x(t)$ e $y(t)$, que são funções de $\R$ em $\R$.
+
+
+\newpage
+
 % «VT»  (to ".VT")
 % (c3m222introp 6 "VT")
 % (c3m222introa   "VT")
@@ -338,7 +386,9 @@ Vou me referir a esse PDF aqui como ``VT'',
 
 {\footnotesize
 
-% (c3m211vtp 3 "exercicio-2")
+% (c3m211vtp 3 "exercicio-1")
+% (c3m211vta   "exercicio-1")
+% (c3m211vtp 5 "exercicio-2")
 % (c3m211vta   "exercicio-2")
 %    http://angg.twu.net/LATEX/2021-1-C3-vetor-tangente.pdf
 \url{http://angg.twu.net/LATEX/2021-1-C3-vetor-tangente.pdf}
@@ -357,7 +407,7 @@ Faça os exercícios VTex1 e VTex2.
 \newpage
 
 % «orbita»  (to ".orbita")
-% (c3m222introp 7 "orbita")
+% (c3m222introp 8 "orbita")
 % (c3m222introa   "orbita")
 
 {\bf Órbita}

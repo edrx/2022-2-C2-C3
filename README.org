@@ -45,7 +45,7 @@ make
  (eepitch-shell)
 
 cd ~/LATEX/
-getincls0   () { grep incl | tr '\\{}' '   ' }
+getincls0   () { grep ^.incl | tr '\\{}' '   ' }
 getincls    () { getincls0 | awk 'NF==2 && $1=="incl" {print $2       }' }
 getincltexs () { getincls0 | awk 'NF==2 && $1=="incl" {print $2 ".tex"}' }
 cat 2022-2-C2-tudo.tex     | getincls0
@@ -81,22 +81,23 @@ tar -xvzf /tmp/2022-2.tgz
 # (find-fline "~/2022-2-C2-C3/")
 # (find-fline "~/2022-2-C2-C3/Makefile")
 
-  git init
-  git add README.org
-  git add $(cat /tmp/2022-2+.fls)
-  git add Makefile
+# git init
+# git add README.org
+# git add $(cat /tmp/2022-2+.fls)
+# git add Makefile
+# git add .gitignore
 # (magit-status "~/2022-2-C2-C3/")
 
 # git commit -m "Initial commit."
 
-  git branch -M main
-  git remote add origin https://github.com/edrx/2022-2-C2-C3.git
-  git push -u origin main
-  git pull
-  git pull origin
-  git pull origin main
+# git branch -M main
+# git remote add origin https://github.com/edrx/2022-2-C2-C3.git
+# git push -u origin main
+# git pull
+# git pull origin
+# git pull origin main
 
-git add README.org
+# (magit-status "~/2022-2-C2-C3/")
 git commit -m "Small changes."
 git push -u origin main
 

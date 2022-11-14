@@ -52,6 +52,8 @@
 -- «.Numerozinhos-test6»	(to "Numerozinhos-test6")
 -- «.Tracinhos»			(to "Tracinhos")
 -- «.Tracinhos-test»		(to "Tracinhos-test")
+-- «.FromYs»			(to "FromYs")
+-- «.FromYs-tests»		(to "FromYs-tests")
 
 require "Pict2e1"      -- (find-angg "LUA/Pict2e1.lua")
 
@@ -707,6 +709,9 @@ Numerozinhos = Class {
     topict = function (ns, ...)
         return ns:topictbody(...):pgat("Npc"):preunitlength("11pt")
       end,
+    topictu = function (ns, u, ...)
+        return ns:topictbody(...):pgat("Npc"):preunitlength(u)
+      end,
   },
 }
 
@@ -1002,6 +1007,89 @@ end
 
 
 --]]
+
+
+--  _____                 __   __   
+-- |  ___| __ ___  _ __ __\ \ / /__ 
+-- | |_ | '__/ _ \| '_ ` _ \ V / __|
+-- |  _|| | | (_) | | | | | | |\__ \
+-- |_|  |_|  \___/|_| |_| |_|_||___/
+--                                  
+-- «FromYs»  (to ".FromYs")
+-- Based on: (c2m221p1p 7 "escadas-defs")
+--           (c2m221p1a   "escadas-defs")
+--           (c2m221p1p 8 "escadas-gab")
+--           (c2m221p1a   "escadas-gab")
+--
+FromYs = Class {
+  type   = "FromYs",
+  fromys = function (ys) return FromYs {ys=ys} end,
+  __tostring = function (fry) return mytostringv(fry) end,
+  __index = {
+    getYs = function (fry, Y0)
+        fry.Ys = {Y0}
+        for i,y in ipairs(fry.ys) do
+          local lastY = fry.Ys[#fry.Ys]
+          table.insert(fry.Ys, lastY+y)
+        end
+        fry.ymax = foldl1(max, fry.ys)
+        fry.ymin = foldl1(min, fry.ys)
+        fry.Ymax = foldl1(max, fry.Ys)
+        fry.Ymin = foldl1(min, fry.Ys)
+        local hx = function (x, y)
+            return format(" (%s,%s)c--(%s,%s)o", x-1,y, x,y)
+          end
+        fry.yspec = ""
+        for x,y in ipairs(fry.ys) do fry.yspec = fry.yspec .. hx(x, y) end
+        local xY = function (x) return format("(%s,%s)", x, fry.Ys[x+1]) end
+        PP(fry.ys)
+        PP(fry.Ys)
+        PP(xY(0), xY(1), xY(2))
+        fry.Yspec = mapconcat(xY, seq(0, #fry.Ys-1), "--")
+        return fry
+      end,
+    getypict = function (fry, ymin, ymax)
+        ymin = ymin or fry.ymin
+        ymax = ymax or fry.ymax
+        local pws  = PwSpec.from(fry.yspec)
+        local pict = pws:topict():setbounds(v(0, ymin), v(#fry.ys, ymax))
+        return pict
+      end,
+    getYpict = function (fry, Ymin, Ymax)
+        Ymin = Ymin or fry.Ymin
+        Ymax = Ymax or fry.Ymax
+        local pws  = PwSpec.from(fry.Yspec)
+        local pict = pws:topict():setbounds(v(0, Ymin), v(#fry.Ys-1, Ymax))
+        return pict
+      end,
+    getYgrid = function (fry, Ymin, Ymax)
+        Ymin = Ymin or fry.Ymin
+        Ymax = Ymax or fry.Ymax
+        local pws  = PwSpec.from("")
+        local pict = pws:topict():setbounds(v(0, Ymin), v(#fry.Ys-1, Ymax))
+        return pict
+      end,
+  },
+}
+
+-- «FromYs-tests»  (to ".FromYs-tests")
+--[[
+ (eepitch-lua51)
+ (eepitch-kill)
+ (eepitch-lua51)
+dofile "Pict2e1-1.lua"
+require "Piecewise1"
+fryy = FromYs.fromys {0,1,2,3}
+fryy:getYs(10)
+= fryy
+= fryy:getypict()
+= fryy:getYpict()
+= fryy:getYpict():pgat("pgatc")
+= fryy:getYpict():pgat("pgatc"):sa("fig Foo")
+
+--]]
+
+
 
 
 

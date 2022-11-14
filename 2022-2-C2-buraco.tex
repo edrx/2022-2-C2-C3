@@ -24,10 +24,17 @@
 % (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
 % (find-CN-aula-links "2022-2-C2-buraco" "2" "c2m222buraco" "c2bu")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
+% «.defs»			(to "defs")
+% «.title»			(to "title")
+% «.macaco»			(to "macaco")
+% «.derivadas-formais»		(to "derivadas-formais")
+% «.exercicio-2»		(to "exercicio-2")
+% «.exercicio-2-dicas»		(to "exercicio-2-dicas")
+% «.menos-elementares»		(to "menos-elementares")
+% «.chutar-e-testar»		(to "chutar-e-testar")
+% «.leibniz-links»		(to "leibniz-links")
 %
-% «.djvuize»	(to "djvuize")
+% «.djvuize»			(to "djvuize")
 
 
 
@@ -117,7 +124,7 @@
 
 \bsk
 
-Aula 1: a operação `$[:=]$', ou:
+Aulas 1 e 3: a operação `$[:=]$', ou:
 
 aqui o curso tem um buraco
 
@@ -130,6 +137,10 @@ Eduardo Ochs - RCN/PURO/UFF
 \end{center}
 
 \newpage
+
+% «macaco»  (to ".macaco")
+% (c2m222buracop 2 "macaco")
+% (c2m222buracoa   "macaco")
 
 {\bf O macaco}
 
@@ -204,8 +215,277 @@ formato, com os `='s alinhados e as justificativas à direita, e com as
 restrições que eu vou pôr no quadro (vou PDFizar elas depois)...
 
 
-% (find-leitholdptpage (+ 17  68)   "se ... então")
+\newpage
 
+% «derivadas-formais»  (to ".derivadas-formais")
+% (c2m222buracop 5 "derivadas-formais")
+% (c2m222buracoa   "derivadas-formais")
+
+{\bf Aula 3: Derivadas formais (e algumas coisas relacionadas)}
+
+\ssk
+
+% (find-books "__analysis/__analysis.el" "leithold")
+% (find-leitholdptpage (+ 17 156) "3.3. Teoremas sobre derivação de funções algébricas")
+
+Dê uma olhada na seção 3.3 do Leithold (no capítulo 3). Os teoremas
+3.3.1 até 3.3.7 dele correspondem exatamente às operações de derivação
+que o Mathologer usa no vídeo (obs: a regra da cadeia é o teorema
+3.6.1), mas cada um desses teoremas tem uma {\sl fórmula} e as {\sl
+  hipóteses} necessárias pra fórmula valer. O macaco que calcula
+derivadas no vídeo do Methologer no trecho entre 17:00 e 18:15 usa só
+as fórmulas sem checar que as hipóteses valem. O que o macaco faz é
+chamado de {\sl derivação formal}, e está explicado aqui:
+
+\ssk
+
+\url{https://en.wikipedia.org/wiki/Formal_derivative}
+
+\msk
+
+Em Cálculo 2 nós vamos ver várias operações que são tão difíceis que é
+o melhor jeito de aprendê-las, e de debugar erros nelas, é dividindo
+elas em várias partes. Nós acabamos de ver que ``calcular derivadas
+(complicadas)'' pode ser dividido em ``aplicar fórmulas'' e ``checar
+hipóteses'', e você deve lembrar que você passou a maior parte do seu
+curso de Cálculo 1 só ``aplicando fórmulas'' sem ``checar hipóteses'',
+ou checando as hipóteses rapidinho no olho, mas sem escrever nada tipo
+``aqui as hipóteses fulana e beltrana valem, então blá''.
+
+Nos últimos semestres {\sl mooooooontes} de alunos chegaram em Cálculo
+2 sem saber ``aplicar fórmulas'' direito. Eu também vou dividir a
+operação de ``aplicar uma fórmula'' em várias partes, até chegar a uma
+parte --- a operação `$[:=]$' --- que é fácil de implementar num
+computador e que corresponde exatamente ao que o macaco que do
+Mathologer faz, mas que o Mathologer não explica explicitamente.
+
+\msk
+
+{\sl Se você tiver qualquer dificuldade com essa operação `[:=]' o
+  melhor modo de estudá-la é estudando a matéria de Cálculo 1 e
+  Cálculo 2 pelo Leithold e vendo como essa operação aparece
+  implicitamente em todo lugar, mas sempre acompanhada do ``checar
+  hipóteses''.}
+
+{\sl Eu costumo dividir essa operação de ``aplicar fórmula'' em várias
+  operações separadas e dar um nome ``padrão'' pra cada uma dessas
+  operações. Os programas de computação simbólica também fazem essa
+  divisão em várias suboperações, porque cada suboperação corresponde
+  a uma função diferente, e essas funções podem ser chamadas em
+  separado. Eu vou usar a terminologia do Maxima, que é o programa de
+  computação simbólica que eu tenho usado... o Maxima considera
+  ``substituição'' e ``simplificação'' como operações separadas. O
+  ``Maxima Workbook'' explica substituição na seção 11.4 e
+  simplificação no capítulo 12; ele também explica ``formas
+  canônicas'' nas seções 9.2 e 9.3, e eu vou considerar que ``pôr uma
+  expressão na sua forma canônica'' é uma forma de simplificação.
+  Link:}
+
+\url{http://roland-salz.de/Maxima_Workbook.pdf}
+
+\msk
+
+Deixa eu dar um exemplo mais básico disso. Nós conhecemos a fórmula
+$2a = a+a$. Se nós {\sl só} substituirmos todos os `$a$' nesta fórmula
+por 10 o resultado é $2·10 = 10+10$; trocar $2·10$ por 20, ou $10+10$
+por 20, são consideradas ``simplificações''.
+
+A substituição sempre substitui {\sl variáveis} por {\sl expressões}.
+
+\msk
+
+No vídeo do Mathologer ele às vezes abrevia $f(x)$ como $f$, e
+desabrevia isso depois, e ele às vezes escreve `$df$' pra
+``diferencial'' (veja a seção 4.9 do Leithold). É muito mais difícil
+formalizar contas de Cálculo --- ou seja, justificar formalmente cada
+passo delas --- quando a gente permite esses truques (que são parte da
+``notação de Leibniz''). Na maior parte do meu curso esses truques vão
+ser proibidos; ele às vezes vão ser permitidos temporariamente, mas a
+gente sempre vai ver como tratar as contas em que eles são permitidos
+como ``versões abreviadas'' de contas em que eles são proibidos.
+Depois eu vou disponibilizar um monte de links sobre porque é que os
+matemáticos pararam de usar a notação de Leibniz.
+
+% (find-books "__comp/__comp.el" "maxima-workbook")
+
+\newpage
+
+% «exercicio-2»  (to ".exercicio-2")
+% (c2m222buracop 9 "exercicio-2")
+% (c2m222buracoa   "exercicio-2")
+
+{\bf Exercício 2: árvores}
+
+\ssk
+
+Vai ser muito mais fácil a gente entender como o macaco derivador
+funciona se a gente souber tratar expressões matemáticas como árvores.
+
+Veja os dois screenshots abaixo --- eles mostram como Maxima e o Sympy
+representam certas expressões como árvores. {\sl Note que as
+  representações são diferentes!}
+
+\ssk
+
+% (find-TH "eev-maxima" "luatree")
+
+%         (find-fline "~/IMAGES/luatree.png")
+%    http://angg.twu.net/IMAGES/luatree.png
+\url{http://angg.twu.net/IMAGES/luatree.png}
+
+%         (find-fline "~/IMAGES/luatree-sympy.png")
+%    http://angg.twu.net/IMAGES/luatree-sympy.png
+\url{http://angg.twu.net/IMAGES/luatree-sympy.png}
+
+\ssk
+
+Pegue algumas expressões que você obteve no exercício 1 e represente
+elas como árvores no formato do Maxima.
+
+
+\newpage
+
+% «exercicio-2-dicas»  (to ".exercicio-2-dicas")
+% (c2m222buracop 11 "exercicio-2-dicas")
+% (c2m222buracoa    "exercicio-2-dicas")
+
+{\bf Exercício 2: dicas}
+
+\ssk
+
+Lembre que nas árvores não aparecem parênteses.
+
+Lembre que $a-b-c = (a-b)-c$.
+
+Lembre que $a-(b-c) ≠ (a-b)-c$.
+
+Lembre que $a-(b-c)$ e $(a-b)-c$ dão árvores diferentes.
+
+Lembre que $a^{b^c} = a^{(b^c)}$.
+
+\bsk
+
+\standout{MUITO IMPORTANTE:} lembre que na maior parte do curso a
+expressão `$dx$' não vai poder aparecer sozinha... eu vou até me
+referir a ela a toda hora como ``uma espécie de fecha parêntese'' pra
+fazer as pessoas lembrarem disso.
+
+
+\newpage
+
+% «menos-elementares»  (to ".menos-elementares")
+% (c2m222buracop 12 "menos-elementares")
+% (c2m222buracoa    "menos-elementares")
+
+{\bf Funções menos elementares}
+
+No vídeo o Mathologer primeiro define ``funções elementares'' de um
+jeito, e depois, a partir do 27:26, ele diz que poderíamos ter
+incluído nas nossas operação que criam novas funções elementares a
+operação que obtém a inversa de uma função... ele não dá detalhes, mas
+repara que se a gente puder obter a inversa de toda função a gente vai
+ter que poder obter a inversa de funções constantes, como por exemplo
+$f(x)=1$... então provavelmente o que ele quer dizer é que a gente
+quer considerar como ``elementares'' coisas como $\sqrt{x}$,
+$\sqrt[3]{x}$, $\arcsen x$, $\arccos x$, etc...
+
+\bsk
+
+Obs: falta \LaTeX ar as coisas que a gente viu no final da aula de
+2022aug31! As fotos dos quadros desse dia estão aqui:
+
+% (find-angg ".emacs" "c2-2022-2-quadros")
+% http://angg.twu.net/2022.2-C2/C2-quadros.pdf#page=3
+\url{http://angg.twu.net/2022.2-C2/C2-quadros.pdf\#page=3}
+
+
+\newpage
+
+% «chutar-e-testar»  (to ".chutar-e-testar")
+% (c2m222buracop 13 "chutar-e-testar")
+% (c2m222buracoa    "chutar-e-testar")
+% (find-angg ".emacs" "c2q221")
+
+{\bf EDOs por chutar-e-testar}
+
+Links pros exercícios de hoje:
+
+\ssk
+
+{\footnotesize
+
+% (c2m212introp 12 "EDOs-chutar-testar")
+% (c2m212introa    "EDOs-chutar-testar")
+%    http://angg.twu.net/LATEX/2021-2-C2-intro.pdf#page=12
+\url{http://angg.twu.net/LATEX/2021-2-C2-intro.pdf#page=12}
+
+% (c2q221  4 "abr06 E1" "EDOs por chutar e testar; [S1]")
+% http://angg.twu.net/2022.1-C2/C2-quadros.pdf#page=4
+\url{http://angg.twu.net/2022.1-C2/C2-quadros.pdf\#page=4}
+
+% (c2m221vsbp 9 "questao-4-gab")
+% (c2m221vsba   "questao-4-gab")
+%    http://angg.twu.net/LATEX/2022-1-C2-VSB.pdf#page=9
+\url{http://angg.twu.net/LATEX/2022-1-C2-VSB.pdf\#page=9}
+
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-books "__analysis/__analysis.el" "miranda" " 185 ")
+% (find-dmirandacalcpage 185   "Exercícios")
+%    http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf
+\url{http://hostel.ufabc.edu.br/~daniel.miranda/calculo/calculo.pdf\#page=185}
+
+}
+
+
+\msk
+
+...e os exercícios da seção 5.1 do Leithold.
+
+% (find-leitholdptpage (+ 17 294) "Exercícios 5.1")
+
+
+
+\ssk
+
+
+
+% (c2plp 2 "plano-de-curso")
+% (c2pla   "plano-de-curso")
+
+% Definição de solução de EDO. Integração como EDO. Integral indefinida.
+
+
+
+% http://roland-salz.de/Maxima_Workbook.pdf#page=101
+
+% Integrais como parênteses
+
+% Integral dupla: bolo
+
+% Funções menos elementares: adicionar arcsen, adicionar f e f'
+
+
+
+
+
+% «leibniz-links»  (to ".leibniz-links")
+% https://math.stackexchange.com/questions/726950/how-is-it-that-treating-leibniz-notation-as-a-fraction-is-fundamentally-incorrec
+% https://math.stackexchange.com/questions/23902/what-is-the-practical-difference-between-a-differential-and-a-derivative
+% https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio/21209#21209
+% https://math.stackexchange.com/questions/21869/if-fracdydtdt-doesnt-cancel-then-what-do-you-call-it
+% https://math.stackexchange.com/questions/21199/dy-dx-is-not-a-ratio/21209#21209
+% https://news.ycombinator.com/item?id=12196295 Mathematical Notation Is Awful (blackhole12.blogspot.com)
+% https://blackhole12.blogspot.com/2016/07/mathematical-notation-is-awful.html
+% https://math.stackexchange.com/questions/1966777/newton-vs-leibniz-notation
+
+
+% (find-leitholdptpage (+ 17  68)   "se ... então")
+% (find-fline "~/TH/2022.1-C2.blogme" "harper")
+% forall, bound variables, lambda, 
+% (find-books "__logic/__logic.el" "nederpelt-geuvers")
+% https://en.wikipedia.org/wiki/Formal_calculation
+% https://en.wikipedia.org/wiki/Formal_derivative
+% (find-books "__analysis/__analysis.el" "livshits")
 
 
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'

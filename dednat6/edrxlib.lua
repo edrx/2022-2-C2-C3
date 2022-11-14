@@ -10,6 +10,7 @@
 -- See: (find-angg ".zshrc" "lua" "LUA_INIT")
 --      (find-lua51manual "#6" "LUA_INIT" "@filename")
 --      (find-es "lua5" "LUA_INIT")
+--      (find-es "lua5" "lua-init-from-emacs")
 --
 -- This is _also_ the module "edrxlib.lua" in dednat6, blogme3, and emlua!
 -- I use these sexps to keep them in sync:
@@ -83,6 +84,8 @@
 --   «.SetL»			(to "SetL")
 -- «.Path»			(to "Path")
 -- «.DGetInfo»			(to "DGetInfo")
+--   «.DGetInfo-method»		(to "DGetInfo-method")
+--   «.DGetInfo-luatb»		(to "DGetInfo-luatb")
 -- «.DGetInfos»			(to "DGetInfos")
 -- «.Rect»			(to "Rect")
 --   «.SynTree»			(to "SynTree")
@@ -159,6 +162,8 @@
 -- «.hms_to_s»			(to "hms_to_s")
 -- «.s_to_hms»			(to "s_to_hms")
 -- «.icollect»			(to "icollect")
+-- «.Repl1.lua»			(to "Repl1.lua")
+-- «.Repl2.lua»			(to "Repl2.lua")
 --
 -- «.mytraceback»		(to "mytraceback")
 -- «.errorfb_line»		(to "errorfb_line")
@@ -166,8 +171,8 @@
 -- «.interactor»		(to "interactor")
 -- «.MyXpcall»			(to "MyXpcall")
 -- «.Repl»			(to "Repl")
---
 -- «.loadluarepl»		(to "loadluarepl")
+
 -- «.replaceranges»		(to "replaceranges")
 -- «.string.replace»		(to "string.replace")
 --
@@ -245,6 +250,10 @@ ee_expand = function (path)
   end
 
 -- «ee_dofile»  (to ".ee_dofile")
+-- For example,
+--   ee_dofile("~/LUA/tikz1.lua")
+-- works as expected; with the standard dofile we would need this:
+--   dofile(os.getenv("HOME").."/LUA/tikz1.lua")
 ee_dofile  = function (path) return dofile(ee_expand(path)) end
 
 -- «readfile»  (to ".readfile")
@@ -355,6 +364,10 @@ seq = function (a, b, c)
     for i=a,b,(c or 1) do table.insert(arr, i) end
     return arr
   end
+seqn = function (a, b, n)
+    local f = function (k) return a + (b-a)*(k/n) end
+    return map(f, seq(0, n))
+  end
 
 nop = function () end
 id  = function (...) return ... end
@@ -420,11 +433,17 @@ sorted = function (tbl, lt) table.sort(tbl, lt); return tbl end
 
 -- «fold»  (to ".fold")
 -- (find-es "lua5" "fold")
+-- (find-es "haskell" "foldr")
 -- (find-hugsbasefile "Prelude.hs" "\nfoldl ")
 -- foldl :: (a -> b -> a) -> a -> [b] -> a
 foldl = function (f, a, B, i, j)
     for k=(i or 1),(j or #B) do a = f(a, B[k]) end
     return a
+  end
+foldl1 = function (f, A)
+    local o = A[1]
+    for i=2,#A do o = f(o, A[i]) end
+    return o
   end
 
 -- «min-and-max» (to ".min-and-max")
@@ -890,6 +909,7 @@ Path = Class {
 
 -- «DGetInfo»  (to ".DGetInfo")
 -- Commented version: (find-angg "LUA/GetInfo.lua")
+-- TODO: update the commented version!
 -- Idea: running something like
 --
 --   dgi = DGetInfo.atlevel(99, "getvalues")
@@ -925,31 +945,86 @@ DGetInfo = Class {
     local func_type = info.namewhat.." "
     local source_desc = (info.short_src == "[C]" and "C code")
                       or info.short_src or "Unknown"
-    if func_type == " " then func_type = "" end
+    if   func_type == " "
+    then func_type = ""
+    end
     if info.short_src == "[C]" then
-      line = "[ C ] "..func_type.."C function "
-           ..(info.name and ("%q"):format(info.name) or "(unknown name)")
+      line = "[ C ] "
+             ..func_type
+             .."C function "
+             ..(info.name and ("%q"):format(info.name) or "(unknown name)")
     elseif info.what == "main" then
-      line = "[Lua] "..info.short_src.." line "..info.currentline
+      line = "[Lua] "
+             ..info.short_src
+             .." line "
+             ..info.currentline
     else
       local name = info.name or " "
-      if name ~= " "
+      if   name ~= " "
       then name = ("%q"):format(name)
       end
-      if func_type == "global " or func_type == "local "
+      if   func_type == "global " or func_type == "local "
       then func_type = func_type.."function "
       end
-      line = "[Lua] "..info.short_src.." line "..
-        info.currentline.." in "..func_type..name..
-        " (defined on line "..info.linedefined..")"
+      line = "[Lua] "
+             ..info.short_src
+             .." line "
+             ..info.currentline
+             .." in "
+             ..func_type
+             ..name
+             .." (defined on line "
+             ..info.linedefined
+             ..")"
     end
     return line
   end,
   --  
-  __tostring = function (dgi)
-      return dgi:funname().." :: "..dgi:vars()
-    end,
+  __tostring = function (dgi) return dgi:tb() end,
   __index = {
+    -- «DGetInfo-method»  (to ".DGetInfo-method")
+    -- method = "fvtb",
+    -- method = "prosodytb",
+    method    = "luatb",
+    tb        = function (dgi) return dgi[dgi.method](dgi) end,
+    tbi       = function (dgi, i) return format("%2d -> %s", i, dgi:tb()) end,
+    prosodytb = function (dgi) return DGetInfo.prosodytraceback(dgi) end,
+    fvtb      = function (dgi) return dgi:funname().." :: "..dgi:vars() end,
+    --
+    -- «DGetInfo-luatb»  (to ".DGetInfo-luatb")
+    -- See: (find-angg ".emacs" "find-luatb")
+    luatb = function (dgi)
+        if dgi.short_src == "[C]"         then return dgi:luatb_C() end
+        if dgi.what      == "main"        then return dgi:luatb_main() end
+        if dgi.short_src == "(tail call)" then return dgi:luatb_tailcall() end
+        return dgi:luatb_other()
+      end,
+    luatb_C = function (dgi)
+        return "[ C ]"
+               .." "..dgi.namewhat
+               .." C function"
+               .." "..(dgi.name and format("%q", dgi.name) or "(unknown name)")
+      end,
+    luatb_main = function (dgi)
+        return "[Lua] "
+               ..dgi.short_src
+               .." line "
+               ..dgi.currentline
+      end,
+    luatb_other = function (dgi)
+        return -- "[Lua] (find-luatb "
+               " (find-luatb "
+               ..'"'..(dgi.short_src or "")
+               .." "..(dgi.linedefined or "")
+               .." "..(dgi.currentline or "")
+               .." "..(dgi.namewhat or "")
+               .." "..(dgi.name or "")
+               ..'")'
+      end,
+    luatb_tailcall = function (dgi)
+        return "[Lua] tail call"
+      end,
+    --
     funname = function (dgi) return dgi.name or "(noname)" end,
     vars = function (dgi)
         return table.concat(dgi, " ")
@@ -961,17 +1036,13 @@ DGetInfo = Class {
         return namens
       end,
     vs = function (dgi)
-        local values = {}
+        local values = VTableP({})
         for i,name in ipairs(dgi) do values[name] = dgi.values[i] end
         return values
       end,
     v = function (dgi, name)
         local n = dgi:varns()[name] or error("Bad var name: "..tostring(name))
         return dgi.values[n]
-      end,
-    --
-    tb = function (dgi)
-        return DGetInfo.prosodytraceback(dgi)
       end,
     --
     find_fline = function (dgi, line)
@@ -984,11 +1055,25 @@ DGetInfo = Class {
         local l2  = dgi.lastlinedefined
         return dgi:find_fline(l1)
       end,
+    --
+    -- 2022jul17:
+    info = function (dgi, tostr)
+        return pformat("spec: %s\nsrc: %s\n%s", dgi, dgi:fline(), dgi:infovalns(tostr))
+      end,
+    infovaln = function (dgi, n, tostr)
+        tostr = tostr or mytostring
+        return format(" %d %q: %s", n, dgi[n], tostr(dgi.values[n]))
+      end,
+    infovalns = function (dgi, tostr)
+        local f = function (i) return dgi:infovaln(i, tostr) end
+        return mapconcat(f, seq(1, #dgi), "\n")
+      end,
   },
 }
 
 -- «DGetInfos»  (to ".DGetInfos")
 -- Commented version: (find-angg "LUA/GetInfo.lua" "GetInfos")
+-- TODO: update the commented version!
 -- Idea: running something like
 --
 --   dgis = DGetInfos.newv()
@@ -1028,18 +1113,12 @@ DGetInfos = Class {
         return seq(a, b, dir)
       end,
     tostring = function (dgis, a, b, dir)
-        local f = function (i) return format("%d -> %s", i, tostring(dgis[i])) end
+        local f = function (i) return dgis[i]:tbi(i) end
         return mapconcat(f, dgis:seq(a, b, dir), "\n")
       end,
     --
-    tbn = function (dgis, a, b, dir)
-        local f = function (i) return format("%2d -> %s", i, dgis[i]:tb()) end
-        return mapconcat(f, dgis:seq(a, b, dir), "\n")
-      end,
-    tb = function (dgis, a, b, dir)
-        local f = function (i) return dgis[i]:tb() end
-        return mapconcat(f, dgis:seq(a, b, dir), "\n")
-      end,
+    tb  = function (dgis, a, b, dir) return dgis:tostring(a, b, dir) end,
+    tbn = function (dgis, a, b, dir) return dgis:tostring(a, b, dir) end,
   },
 }
 
@@ -2205,6 +2284,30 @@ icollect = function (n, f, s, var)
   end
 
 
+-- «Repl1.lua»  (to ".Repl1.lua")
+-- (find-angg "LUA/Repl1.lua")
+run_my_repl_now = function ()
+    ee_dofile "~/LUA/Repl1.lua"
+    r = EdrxRepl.new()
+    r:repl()
+  end
+stop_my_repl_now = function ()
+    dg = dgis
+    r.STOP = "please"
+  end
+
+-- «Repl2.lua»  (to ".Repl2.lua")
+-- (find-angg "LUA/Repl2.lua" "Repl2")
+-- (find-angg "LUA/Repl2.lua" "Repl2" "while not r.STOP do")
+run_repl2_now = function ()
+    ee_dofile "~/LUA/Repl2.lua"
+    r = Repl2.new()
+    r:repl()
+  end
+stop_repl2_now = function ()
+    r.STOP = "please"
+  end
+
 -- «mytraceback»  (to ".mytraceback")
 -- «errorfb_line»  (to ".errorfb_line")
 -- Obsolete.
@@ -2261,6 +2364,7 @@ icollect = function (n, f, s, var)
 -- Obsolete. See: (find-es "lua5" "Repl")
 -- Superseded by: (find-angg "edrxrepl/edrxrepl.lua")
 --                (find-angg "edrxrepl/edrxrepl.lua" "Repl")
+--                (find-angg "LUA/Repl1.lua")
 
 -- «loadluarepl» (to ".loadluarepl")
 -- (find-es "lua5" "lua-repl-0.8")
