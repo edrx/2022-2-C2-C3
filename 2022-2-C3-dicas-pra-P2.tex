@@ -1,0 +1,277 @@
+% (find-LATEX "2022-2-C3-dicas-pra-P2.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C3-dicas-pra-P2.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C3-dicas-pra-P2.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C3-dicas-pra-P2.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C3-dicas-pra-P2.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C3-dicas-pra-P2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C3-dicas-pra-P2.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C3-dicas-pra-P2"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C3-dicas-pra-P2.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C3-dicas-pra-P2")
+% (find-pdf-page   "~/LATEX/2022-2-C3-dicas-pra-P2.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-dicas-pra-P2.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-dicas-pra-P2.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C3-dicas-pra-P2.pdf")
+%   file:///home/edrx/LATEX/2022-2-C3-dicas-pra-P2.pdf
+%               file:///tmp/2022-2-C3-dicas-pra-P2.pdf
+%           file:///tmp/pen/2022-2-C3-dicas-pra-P2.pdf
+% http://angg.twu.net/LATEX/2022-2-C3-dicas-pra-P2.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C3-dicas-pra-P2" "3" "c3m222dicasp2" "c3d2")
+
+% «.defs»	(to "defs")
+% «.title»	(to "title")
+% «.links»	(to "links")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m222dicasp2" "2022-2-C3-dicas-pra-P2")
+% (code-eevvideo      "c3m222dicasp2" "2022-2-C3-dicas-pra-P2")
+% (code-eevlinksvideo "c3m222dicasp2" "2022-2-C3-dicas-pra-P2")
+% (find-c3m222dicasp2video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+%\usepackage[backend=biber,
+%   style=alphabetic]{biblatex}            % (find-es "tex" "biber")
+%\addbibresource{catsem-slides.bib}        % (find-LATEX "catsem-slides.bib")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m222dicasp2p 1 "title")
+% (c3m222dicasp2a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.2}
+
+\bsk
+
+Dicas pra P2
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C3.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c3m222dicasp2p 2 "links")
+% (c3m222dicasp2a   "links")
+% (c3m222plcp 1 "conteudo")
+% (c3m222plca   "conteudo")
+
+{\bf Assuntos da prova}
+
+\scalebox{0.8}{\def\colwidth{12cm}\firstcol{
+
+As principais questões da P2 vão ser sobre estes itens do
+programa do curso:
+
+\msk
+
+\begin{tabular}{lp{9cm}}
+2.3. & Noções de conjuntos abertos e fechados no $\R^n$. \\
+2.4. & Limite e continuidade. Definição e propriedades. \\
+3.1. & Derivadas parciais. \\
+3.7. & Derivadas parciais de ordens superiores. \\
+3.8. & Fórmula de Taylor. \\
+4.   & Máximos e mínimos. \\
+4.1. & Extremos relativos. Condição necessária para a existência de extremos relativos. \\
+4.2. & Ponto crítico. Teste da derivada segunda. \\
+4.3. & Máximos e mínimos sobre um compacto. \\
+\end{tabular}
+
+\msk
+
+As questões vão ser principalmente sobre os itens 4, 4.1, 4.2 e 4.3,
+mas você vai precisar dos itens 2.3, 2.4, 3.1, 3.7 e 3.8 pra fazer
+algumas partes delas.
+
+}\anothercol{
+}}
+
+\newpage
+
+{\bf Como estudar em casa}
+
+\scalebox{0.8}{\def\colwidth{13.5cm}\firstcol{
+
+    Comecem entendendo os conceitos dos itens 4, 4.1, 4.2 e 4.3. O
+    Bortolossi tem boas explicações pra eles nos capítulos 10, 11 e
+    12:
+
+\msk
+
+{\footnotesize
+
+% (find-bortolossi10page (+ -350 351) "10. Máximos e mínimos de funções de várias variáveis")
+% (find-bortolossi10page (+ -350 351) "10.1. Definições e exemplos")
+% (find-bortolossi10page (+ -350 357) "10.2. Exercícios")
+\url{http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-10.pdf}
+
+% (find-bortolossi11page (+ -364 365) "11. Otimização sem restrições")
+% (find-bortolossi11page (+ -364 365)   "Teorema 11.1: A regra de Fermat")
+% (find-bortolossi11page (+ -364 371) "11.2. Polinômios de Taylor")
+% (find-bortolossi11page (+ -364 375)   "Teorema 11.3: Condições de segunda ordem")
+% (find-bortolossi11page (+ -364 376)   "Polinômios de Taylor de ordem k")
+% (find-bortolossi11page (+ -364 383) "11.3. Formas quadráticas e matrizes definidas")
+% (find-bortolossi11page (+ -364 391)   "Teorema 11.7: Condições de segunda ordem")
+% (find-bortolossi11page (+ -364 395) "11.4. Menores de uma matriz")
+% (find-bortolossi11page (+ -364 405) "11.5. Questões de globalidade e convexidade")
+% (find-bortolossi11page (+ -364 420) "11.6. O método dos mínimos quadrados")
+% (find-bortolossi11page (+ -364 426) "11.7. Exercícios")
+\url{http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-11.pdf}
+
+% (find-bortolossi12page (+ -456 457) "12. Otimização com restrições")
+% (find-bortolossi12page (+ -456 457)   "multiplicadores de Lagrange")
+% (find-bortolossi12page (+ -456 459) "12.1. Otimização com uma restrição em igualdade")
+% (find-bortolossi12page (+ -456 462)   "Teorema 12.1")
+% (find-bortolossi12page (+ -456 463)     "Lagrangeano")
+% (find-bortolossi12page (+ -456 472)   "Teorema 12.3")
+% (find-bortolossi12page (+ -456 473) "12.2. Otimização com várias restrições em igualdade")
+% (find-bortolossi12page (+ -456 495) "12.4")
+% (find-bortolossi12page (+ -456 506) "12.5")
+% (find-bortolossi12page (+ -456 512) "12.6")
+% (find-bortolossi12page (+ -456 514) "12.7")
+% (find-bortolossi12page (+ -456 515) "12.8")
+% (find-bortolossi12page (+ -456 520) "12.9")
+% (find-bortolossi12page (+ -456 521) "12.10 Exercícios")
+\url{http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-12.pdf}
+
+}
+
+\msk
+
+Comece lendo as partes mais legíveis desses capítulos e entendendo as
+figu\-ras. Depois tente entender os enunciados dos exercícios.
+
+\msk
+
+Nas próximas aulas nós vamos fazer muitos exercícios que são versões
+``desmontadas'' de exercícios do Bortolossi. Por exemplo, os
+exercícios 1 a 4 daqui
+
+\ssk
+
+{\footnotesize
+
+% (c3m222topp 4 "exercicios-1-e-2")
+% (c3m222topa   "exercicios-1-e-2")
+%    http://angg.twu.net/LATEX/2022-2-C3-topologia.pdf#page=4
+\url{http://angg.twu.net/LATEX/2022-2-C3-topologia.pdf\#page=4}
+
+}
+
+\ssk
+
+são parecidos com passos do exercício 8 da página 359 do Bortolossi:
+
+\ssk
+
+{\footnotesize
+
+% (find-bortolossi10page (+ -350 359)   "[08] Use o Teorema de Weierstrass")
+\url{http://angg.twu.net/2019.2-C3/Bortolossi/bortolossi-cap-10.pdf\#page=9}
+
+}
+
+
+}\anothercol{
+}}
+
+
+
+
+
+
+% (find-books "__analysis/__analysis.el" "bortolossi" "10. Máximos e mínimos")
+% (find-books "__analysis/__analysis.el" "bortolossi" "11. Otimização sem restrições")
+% (find-books "__analysis/__analysis.el" "bortolossi" "12. Otimização com restrições")
+% (find-angg ".emacs" "c3q192" "e Teorema de Weierstrass")
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3d2"
+% ee-tla: "c3m222dicasp2"
+% End:

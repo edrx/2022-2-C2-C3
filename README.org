@@ -130,6 +130,28 @@ git clone https://github.com/edrx/2022-2-C2-C3 .
 # (find-fline "/tmp/2022-2-C2-C3/Makefile")
 make
 
+# Test 3:
+cd           ~/2022-2-C2-C3/
+tar -cvzf /tmp/2022-2-C2-C3.tgz *
+rm -Rfv   /tmp/2022-2-C2-C3/
+mkdir     /tmp/2022-2-C2-C3/
+cd        /tmp/2022-2-C2-C3/
+tar -xvzf /tmp/2022-2-C2-C3.tgz
+
+rm -Rv /tmp/fake-home-dir/
+mkdir  /tmp/fake-home-dir/
+#cd    /tmp/fake-home-dir/
+{
+  export LUA_INIT=
+  export HOME=/tmp/fake-home-dir
+  cd        /tmp/2022-2-C2-C3/
+  make
+}
+
+# (find-fline "/tmp/2022-2-C2-C3/")
+# (find-pdf-page "/tmp/2022-2-C2-C3/2022-2-C2-tudo.pdf")
+# (find-pdf-page "/tmp/2022-2-C2-C3/2022-2-C3-tudo.pdf")
+
 #+end_comment
 
 #+begin_comment
