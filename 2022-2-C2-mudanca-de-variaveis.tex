@@ -32,6 +32,9 @@
 % «.justificando-cada»	(to "justificando-cada")
 % «.exercicio-1»	(to "exercicio-1")
 % «.exercicio-2»	(to "exercicio-2")
+% «.miranda»		(to "miranda")
+% «.miranda-p196-6.7»	(to "miranda-p196-6.7")
+% «.miranda-p197-6.8»	(to "miranda-p197-6.8")
 %
 % «.djvuize»		(to "djvuize")
 
@@ -536,6 +539,140 @@ c) $\intx{(\cos x)^4 (\sen x)^5}$
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
 \end{document}
+
+% «miranda»  (to ".miranda")
+% (c2m222mvp 7 "miranda")
+% (c2m222mva   "miranda")
+% (find-books "__analysis/__analysis.el" "miranda")
+% (find-books "__analysis/__analysis.el" "miranda" "6.2 Integração por Substituição")
+% (find-books "__analysis/__analysis.el" "miranda" "196" "Exercícios")
+
+
+ (eepitch-maxima)
+ (eepitch-kill)
+ (eepitch-maxima)
+ Exemplo 4, p.190 - tem um erro de digitação
+f :        x^2 / sqrt(1+x^3);
+integrate(f, x);
+f : 2*x * (x^2 / sqrt(1+x^3));
+integrate(f, x);
+
+
+% «miranda-p196-6.7»  (to ".miranda-p196-6.7")
+
+ (eepitch-maxima)
+ (eepitch-kill)
+ (eepitch-maxima)
+ (find-dmirandacalcpage 196 "Exercícios" "Ex. 6.7 1-5")
+f : 3*x^2*(x^3-5)^7;
+integrate(f, x);
+f : (2*x-5)*(x^2-5*x+7)^3;
+integrate(f, x);
+f : x*(x^2+1)^8;
+integrate(f, x);
+f : (12*x+14)*(3*x^2+7*x-1)^5;
+integrate(f, x);
+f : (3*x^2+2*x)*(5*x^3+5*x^2+2)^8;
+integrate(f, x);
+
+ (find-dmirandacalcpage 196 "Exercícios" "Ex. 6.7 6-11")
+f : sin(x)^2*cos(x);
+integrate(f, x);
+f : cos(3-6*x);
+integrate(f, x);
+f : sec(4-x)^2;
+integrate(f, x);
+f : 1/(2*x+7);
+integrate(f, x);
+f : 1/sqrt(2*x+3);
+integrate(f, x);
+f : x/sqrt(x+3);
+integrate(f, x);
+
+ (find-dmirandacalcpage 197 "Exercícios" "Ex. 6.7 12-26")
+f : x^2 / (x^3+3)^2;
+integrate(f, x);
+f : x / sqrt(1-x^2);
+integrate(f, x);
+f : sec(2*x);
+integrate(f, x);
+f : (x^3-x) / sqrt(x);
+integrate(f, x);
+f : exp(sqrt(x)) / sqrt(x);
+integrate(f, x);
+f : x^4 / sqrt(x^5+1);
+integrate(f, x);
+f : (1/x+1) / x^2;
+integrate(f, x);
+f : log(x) / x;
+integrate(f, x);
+f : tan(x)^2 * sec(x)^2;
+integrate(f, x);
+f : 1 / (x-5);
+integrate(f, x);
+f : 7 / (3*x+2);
+integrate(f, x);
+f : x * cos(x^2);
+integrate(f, x);
+f : x * cos(x^2);
+integrate(f, x);
+f : x^2 * csc(x^3+1)^2; /* dificil */
+integrate(f, x);
+f : tan(x)^2;
+integrate(f, x);
+f : sin(x)*sqrt(cos(x));
+integrate(f, x);
+
+ (eepitch-maxima)
+ (eepitch-kill)
+ (eepitch-maxima)
+ «miranda-p197-6.8»  (to ".miranda-p197-6.8 1-3")
+f : exp(3*x-1);
+integrate(f, x);
+f : exp(x^3)*x^2;
+integrate(f, x);
+f : exp(x^2-2*x+1) * (x-1);
+integrate(f, x);
+
+ 4-11
+f : (exp(x) + 1) / exp(x);
+integrate(f, x);
+f : (exp(x) - exp(-x)) / exp(2*x);
+integrate(f, x);
+f : 3^(3*x);
+integrate(f, x);
+f : 4^(2*x);
+integrate(f, x);
+f : log(x)/x;
+integrate(f, x);
+f : log(x)^2/x;
+integrate(f, x);
+f : log(x^3)/x;
+integrate(f, x);
+f : 1 / (x*log(x^2));
+integrate(f, x);
+
+ (find-dmirandacalcpage 197 "Exercícios" "Ex. 6.8 12-21")
+f : (x^2+3*x+1) / x;
+integrate(f, x);
+f : (x^3+x^2+x+1) / x;
+integrate(f, x);
+f : (x^2+2*x-5) / (x+3);
+integrate(f, x);
+f : (3*x^2 -5*x +7) / (x+1);
+integrate(f, x);
+f : (3*x^3 +4*x^2 +2*x -22) / (x^2 + 3*x +5);
+integrate(f, x);
+f : (2*x + 7) / (x^2 + 7*x +3);
+integrate(f, x);
+f : 9*(2*x + 3) / (3*x^2 + 9*x +7);
+integrate(f, x);
+f : (-x^3 + 14*x^2 -46*x -7) / (x^2 - 7*x +1);
+integrate(f, x);
+
+ (find-dmirandacalcpage 198 "Exercícios" "Ex. 6.8 22-26")
+
+
 
 %  ____  _             _         
 % |  _ \(_)_   ___   _(_)_______ 

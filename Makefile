@@ -13,10 +13,17 @@
 all: compile_all_texs
 
 compile_basic_texs:
+	lualatex 2022-2-C2-P1.tex
+	lualatex 2022-2-C2-P2.tex
 	lualatex 2022-2-C2-TFC1-e-TFC2.tex
+	lualatex 2022-2-C2-VR.tex
+	lualatex 2022-2-C2-VS.tex
 	lualatex 2022-2-C2-areas-e-volumes.tex
 	lualatex 2022-2-C2-buraco.tex
 	lualatex 2022-2-C2-dicas-pra-P1.tex
+	lualatex 2022-2-C2-dicas-pra-P2.tex
+	lualatex 2022-2-C2-dicas-pra-VS.tex
+	lualatex 2022-2-C2-edos-exatas.tex
 	lualatex 2022-2-C2-edos-lineares.tex
 	lualatex 2022-2-C2-edovs.tex
 	lualatex 2022-2-C2-fracoes-parciais.tex
@@ -26,6 +33,8 @@ compile_basic_texs:
 	lualatex 2022-2-C2-somas-de-riemann.tex
 	lualatex 2022-2-C2-subst-trig.tex
 	lualatex 2022-2-C3-P1.tex
+	lualatex 2022-2-C3-P2.tex
+	lualatex 2022-2-C3-VR.tex
 	lualatex 2022-2-C3-derivadas-parciais.tex
 	lualatex 2022-2-C3-dicas-pra-P1.tex
 	lualatex 2022-2-C3-dicas-pra-P2.tex
@@ -40,10 +49,17 @@ compile_basic_texs:
 	lualatex 2022-2-C3-topologia.tex
 
 compile_all_texs:
+	lualatex 2022-2-C2-P1.tex
+	lualatex 2022-2-C2-P2.tex
 	lualatex 2022-2-C2-TFC1-e-TFC2.tex
+	lualatex 2022-2-C2-VR.tex
+	lualatex 2022-2-C2-VS.tex
 	lualatex 2022-2-C2-areas-e-volumes.tex
 	lualatex 2022-2-C2-buraco.tex
 	lualatex 2022-2-C2-dicas-pra-P1.tex
+	lualatex 2022-2-C2-dicas-pra-P2.tex
+	lualatex 2022-2-C2-dicas-pra-VS.tex
+	lualatex 2022-2-C2-edos-exatas.tex
 	lualatex 2022-2-C2-edos-lineares.tex
 	lualatex 2022-2-C2-edovs.tex
 	lualatex 2022-2-C2-fracoes-parciais.tex
@@ -53,6 +69,8 @@ compile_all_texs:
 	lualatex 2022-2-C2-somas-de-riemann.tex
 	lualatex 2022-2-C2-subst-trig.tex
 	lualatex 2022-2-C3-P1.tex
+	lualatex 2022-2-C3-P2.tex
+	lualatex 2022-2-C3-VR.tex
 	lualatex 2022-2-C3-derivadas-parciais.tex
 	lualatex 2022-2-C3-dicas-pra-P1.tex
 	lualatex 2022-2-C3-dicas-pra-P2.tex
