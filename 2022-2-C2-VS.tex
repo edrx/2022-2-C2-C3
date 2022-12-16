@@ -1,0 +1,521 @@
+% (find-LATEX "2022-2-C2-VS.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C2-VS.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C2-VS.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C2-VS.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C2-VS.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C2-VS.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-VSA.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C2-P2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C2-VR.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C2-VS"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C2-VS.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C2-VS")
+% (find-pdf-page   "~/LATEX/2022-2-C2-VS.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-VS.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-VS.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C2-VS.pdf")
+%   file:///home/edrx/LATEX/2022-2-C2-VS.pdf
+%               file:///tmp/2022-2-C2-VS.pdf
+%           file:///tmp/pen/2022-2-C2-VS.pdf
+% http://angg.twu.net/LATEX/2022-2-C2-VS.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C2-VS" "2" "c2m222vs" "c2vs")
+
+% «.defs»		(to "defs")
+% «.defs-T-and-B»	(to "defs-T-and-B")
+% «.title»		(to "title")
+% «.links»		(to "links")
+% «.questao-1»		(to "questao-1")
+% «.questao-1-maxima»	(to "questao-1-maxima")
+% «.questao-2»		(to "questao-2")
+% «.questao-2-maxima»	(to "questao-2-maxima")
+% «.anexo-L»		(to "anexo-L")
+% «.anexo-R»		(to "anexo-R")
+% «.anexo»		(to "anexo")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m222vs" "2022-2-C2-VS")
+% (code-eevvideo      "c2m222vs" "2022-2-C2-VS")
+% (code-eevlinksvideo "c2m222vs" "2022-2-C2-VS")
+% (find-c2m222vsvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L dofile "2022-1-C2-P2.lua"         -- (find-LATEX "2022-1-C2-P2.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+\sa{[M]}{\CFname{M}{}}
+\sa{[F]}{\CFname{F}{}}
+\sa{[S]}{\CFname{S}{}}
+
+\def\Smile{\emoji{slightly-smiling-face}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m222vsp 1 "title")
+% (c2m222vsa   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.2}
+
+\bsk
+
+Prova suplementar (VS)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C2.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+
+\newpage
+
+%   ___                  _                _ 
+%  / _ \ _   _  ___  ___| |_ __ _  ___   / |
+% | | | | | | |/ _ \/ __| __/ _` |/ _ \  | |
+% | |_| | |_| |  __/\__ \ || (_| | (_) | | |
+%  \__\_\\__,_|\___||___/\__\__,_|\___/  |_|
+%                                           
+% «questao-1»  (to ".questao-1")
+% (c2m222vsp 2 "questao-1")
+% (c2m222vsa   "questao-1")
+%
+%L namedang("EDOVSintro", "", [[
+%L    \begin{array}{rcl}
+%L      \ga{[M]} &=& <EDOVSG> \\ \\[-5pt]
+%L      \ga{[F]} &=& <EDOVSP> \\
+%L    \end{array}
+%L ]])
+%L namedang("metodo", "", [[ <EDOVSG> ]])
+%L metodo:sa("FOO"):output()
+\pu
+
+\scalebox{0.6}{\def\colwidth{9.5cm}\firstcol{
+
+    {\bf \large Questão 1}
+
+    \T(Total: 6.0 pts)
+    
+    \ssk
+
+    A primeira EDO com variáveis separáveis (``EDOVS'') que nós vimos
+    no curso foi $\frac{dy}{dx}=-\frac{x}{y}$. As soluções
+    particulares dela eram pedaços das curvas de nível de $x^2+y^2=C$
+    --- e esses pedaços eram ou semicírculos acima do eixo $x$ ou
+    semicírculos abaixo do eixo $y$.
+
+    \msk
+
+    Na P2 eu pus uma questão sobre uma EDOVS um pouco mais complicada
+    do que essa dos semicírculos, e muitas pessoas fizeram erros de
+    conta horríveis {\sl que eu acho que foram causados por
+      desorganização na hora de fazer as contas}... por exemplo,
+    várias pessoas escreveram ``$H(x)=\sqrt{x}$'' num lugar das contas
+    e ``$H(x)=\sqrt{x+3}$'' em outro --- o que OBVIAMENTE é um erro
+    conceitual GRAVÍSSIMO, né, {\sl a menos que você explique em
+      português direitinho que $H(x)$ vai ser $\sqrt{x}$ em um
+      contexto e $\sqrt{x+3}$ em outro contexto separado...}
+
+    \msk
+
+
+}\anothercol{
+
+  \vspace*{0.85cm}
+
+  Seja $(*)$ esta EDOVS:
+  % 
+  $$\frac{dy}{dx} = \frac{4x^3}{4(y+3)^3} \qquad (*)
+  $$
+
+  Encontre as duas soluções gerais da EDO $(*)$ --- uma ``positiva'' e
+  outra ``negativa'' ---, encontre as soluções particulares que passam
+  pelos pontos $(1,-1)$ e $(1,-5)$, e teste tudo.
+
+  \msk
+
+  {\sl Nesta questão eu vou avaliar principalmente se você sabe usar
+    direito os truques do anexo da página 4.} Ou seja, não vai bastar
+  você usar o ``método'' para resolver EDOVSs, que é esse aqui:
+  %
+  $$\ga{[M]} \;=\; \scalebox{0.85}{$\ga{FOO}$}$$
+
+}}
+
+
+% «questao-1-maxima»  (to ".questao-1-maxima")
+% (c2m222vsp 2 "questao-1-maxima")
+% (c2m222vsa   "questao-1-maxima")
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T define(G(x), x^4);
+%T define(H(y), (y+3)^4);
+%T 
+%T define(g(x), diff(G(x),x));
+%T define(h(y), diff(H(y),y));
+%T edo : dydx = g(x) / h(y);
+%T 
+%T eq_a   : x = H(y);
+%T          solve(eq_a, y);
+%T 
+%T getsol(n,C31,x1,y1) := (
+%T   eq_b   : solve(eq_a, y)[n],
+%T   define(Hinv(x), rhs(eq_b)),
+%T   eq_c   : y = Hinv(G(x) + C3),
+%T   eq_d   : y = Hinv(G(x) + C31),
+%T   define(f  (x), rhs(eq_c)),
+%T   define(f1 (x), rhs(eq_d))
+%T   );
+%T 
+%T getsol(4,15, 1,-1);
+%T f(x);  
+%T f1(x);
+%T f1(1);
+%T 
+%T getsol(3,15, 1,-5);
+%T f(x);  
+%T f1(x);
+%T f1(1);
+
+
+\newpage
+
+%   ___                  _                ____  
+%  / _ \ _   _  ___  ___| |_ __ _  ___   |___ \ 
+% | | | | | | |/ _ \/ __| __/ _` |/ _ \    __) |
+% | |_| | |_| |  __/\__ \ || (_| | (_) |  / __/ 
+%  \__\_\\__,_|\___||___/\__\__,_|\___/  |_____|
+%                                               
+% «questao-2»  (to ".questao-2")
+% (c2m222vsp 3 "questao-2")
+% (c2m222vsa   "questao-2")
+
+\scalebox{0.7}{\def\colwidth{9cm}\firstcol{
+
+{\bf \large Questão 2}
+
+\T(Total: 4.0 pts)
+
+\ssk
+
+Calcule a integral abaixo usando pelo menos três mudanças de
+variáveis.
+%
+$$\intx{ \frac{8e^{4x}\ln(e^{4x}+2)}{e^{4x}+2} }
+$$
+
+Obs: no curso nós vimos que qualquer integral que pode ser resolvida
+por uma sequência de mudanças de variáveis também pode ser resolvida
+por uma mudança de variável só, mas aqui é pra usar pelo menos três!
+
+% «questao-2-maxima»  (to ".questao-2-maxima")
+% (c2m222vsp 3 "questao-2-maxima")
+% (c2m222vsa   "questao-2-maxima")
+% (setq eepitch-preprocess-regexp "^")
+% (setq eepitch-preprocess-regexp "^%T ")
+%
+%T  (eepitch-maxima)
+%T  (eepitch-kill)
+%T  (eepitch-maxima)
+%T b(x) := exp(x);
+%T c(x) := x^4 + 2;
+%T d(x) := log(x)^2;
+%T F : d(c(b(x)));
+%T f : diff(F, x);
+%T integrate(f, x);
+
+}\anothercol{
+}}
+
+
+
+\newpage
+
+%     _                         
+%    / \   _ __   _____  _____  
+%   / _ \ | '_ \ / _ \ \/ / _ \ 
+%  / ___ \| | | |  __/>  < (_) |
+% /_/   \_\_| |_|\___/_/\_\___/ 
+%                               
+% (c2m222p2p 5 "questao-1-gab")
+% (c2m222p2a   "questao-1-gab")
+% «anexo-L»  (to ".anexo-L")
+\def\anexoL{
+
+A substituição é:
+%
+$$\ga{[S]} \;=\;
+  \bmat{
+    G(x) := x^4 + 5 \\
+    H(y) := y^2 + 3 \\
+    g(x) := 4x^3 \\
+    h(y) := 2y \\
+    H^{-1}(x) := \sqrt{x-3} \\
+  }
+$$
+
+a) Seja:
+%
+$$\frac{dy}{dx} = \frac{4x^3}{2y} \qquad (*)$$
+
+b)
+%
+ $\begin{array}[t]{lrcl}
+  \text{Seja:}  & H^{-1}(x) &=& \sqrt{x-3}. \\
+  \text{Temos:} & H^{-1}(H(y)) &=& \sqrt{H(y)-3} \\
+                &              &=& \sqrt{(y^2+3)-3} \\
+                &              &=& y. \\
+  \end{array}
+ $
+
+\msk
+
+c) $\begin{array}[t]{lrcl}
+       & y &=& H^{-1}(G(x)+C_3) \\
+          &&=& \sqrt{(G(x)+C_3)-3} \\
+          &&=& \sqrt{((x^4+5)+C_3)-3} \\
+          &&=& \sqrt{x^4+2+C_3} \\
+    \text{Seja:} &
+      f(x) &=& \sqrt{x^4+2+C_3}. \\
+    \end{array}
+   $
+
+}
+
+
+% «anexo-R»  (to ".anexo-R")
+
+\def\anexoR{
+
+d) $\begin{array}[t]{l}
+    \text{Será que $f(x)$ obedece $(*)$?} \\
+    \text{Temos }
+    f'(x) = \frac{2x^3}{\sqrt{x^4 + 2 + C_3}},
+    \text{ e com isso:}
+    \\
+    \\[-5pt]
+    \left(
+      f'(x) = \frac{4x^3}{2f(x)}
+    \right)
+    \bmat{
+      f(x) = \sqrt{x^4+2+C_3} \\
+      f'(x) = \frac{2x^3}{\sqrt{x^4 + 2 + C_3}} \\
+    }
+    \\
+    = \;\;
+    \left(
+      \frac{2x^3}{\sqrt{x^4 + 2 + C_3}}
+      = \frac{4x^3}{2\sqrt{x^4+2+C_3}}
+    \right)
+    \qquad \smile \\
+    \end{array}
+   $
+
+\bsk
+
+e) $\begin{array}[t]{lrcl}
+    \text{Se}    & f(x_1) &=& y_1, \\
+    \text{i.e.,} & f(1)   &=& 2,   \\
+    \text{então} & f(1)   &=& \sqrt{1^4+2+C_3} \\
+                         &&=& \sqrt{3+C_3} \\
+                         &&=& 2 \\
+                 & 2^2    &=& \sqrt{3+C_3}^2 \\
+                 & 4      &=&       3+C_3    \\
+                 & C_3    &=& 1 \\
+                 & f(x)   &=& \sqrt{x^4+2+C_3} \\
+                 &        &=& \sqrt{x^4+3} \\
+    \text{Seja:} & f_1(x) &=& \sqrt{x^4+3}. \\
+    \end{array}
+   $
+
+\bsk
+
+f) $\begin{array}[t]{lrcl}
+    \text{Será que} & f_1(x_1) &=& y_1, \\
+    \text{i.e.,}    & f_1(1)   &=& 2?   \\
+                & \sqrt{1^4+3} &=& \sqrt{4} \\
+                              &&=& 2 \qquad \smile \\
+    \end{array}
+   $
+
+}
+
+% «anexo»  (to ".anexo")
+
+\scalebox{0.6}{\def\colwidth{9cm}\firstcol{
+
+\vspace*{-0.5cm}
+
+{\bf Anexo: gabarito de}
+
+{\bf uma questão da P2}
+
+\ssk
+
+\anexoL
+
+}\anothercol{
+
+\anexoR
+
+}}
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C2/")
+# (find-fline "~/LATEX/2022-2-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C2-VS veryclean
+make -f 2019.mk STEM=2022-2-C2-VS pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2vs"
+% ee-tla: "c2m222vs"
+% End:

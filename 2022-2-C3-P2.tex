@@ -1,0 +1,677 @@
+% (find-LATEX "2022-2-C3-P2.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C3-P2.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C3-P2.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C3-P2.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C3-P2.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C3-P2.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C3-P2.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C3-P2"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C3-P2.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C3-P2")
+% (find-pdf-page   "~/LATEX/2022-2-C3-P2.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-P2.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C3-P2.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C3-P2.pdf")
+%   file:///home/edrx/LATEX/2022-2-C3-P2.pdf
+%               file:///tmp/2022-2-C3-P2.pdf
+%           file:///tmp/pen/2022-2-C3-P2.pdf
+% http://angg.twu.net/LATEX/2022-2-C3-P2.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C3-P2" "3" "c3m222p2" "c3p2")
+
+% «.defs»		(to "defs")
+% «.defs-T-and-B»	(to "defs-T-and-B")
+% «.title»		(to "title")
+% «.links»		(to "links")
+% «.questao-1»		(to "questao-1")
+%   «.elipse»		(to "elipse")
+% «.questao-2»		(to "questao-2")
+% «.questao-3»		(to "questao-3")
+% «.questao-4»		(to "questao-4")
+% «.grids»		(to "grids")
+% «.dicas-diferenciais»	(to "dicas-diferenciais")
+%
+% «.questao-1-gab»	(to "questao-1-gab")
+% «.questao-2-gab»	(to "questao-2-gab")
+% «.questao-3-gab»	(to "questao-3-gab")
+% «.questao-4-gab»	(to "questao-4-gab")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c3m222p2" "2022-2-C3-P2")
+% (code-eevvideo      "c3m222p2" "2022-2-C3-P2")
+% (code-eevlinksvideo "c3m222p2" "2022-2-C3-P2")
+% (find-c3m222p2video "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+% %L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+% %L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+% %L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+% %L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C3.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C3.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c3m222p2p 1 "title")
+% (c3m222p2a   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 3 - 2022.2}
+
+\bsk
+
+P2 (Segunda prova)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C3.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c3m222dicasp2p 6 "abertos-e-fechados")
+% (c3m222dicasp2a   "abertos-e-fechados")
+% (c3m222dicasp2p 5 "maximos-e-minimos")
+% (c3m222dicasp2a   "maximos-e-minimos")
+% (c3m222dicasp2p 6 "notacao-de-fisicos")
+% (c3m222dicasp2a   "notacao-de-fisicos")
+%   (c3m222dpp 3 "um-exemplo")
+%   (c3m222dpa   "um-exemplo")
+%   (c3m222dpp 2 "links")
+%   (c3m222dpa   "links")
+%   (find-books "__analysis/__analysis.el" "leithold")
+%   (find-books "__analysis/__analysis.el" "leithold"   "reescritas usando")
+%   (find-leitholdptpage (+ 17 275)   "reescritas usando notação de Leibniz")
+
+
+%   ___                  _                _ 
+%  / _ \ _   _  ___  ___| |_ __ _  ___   / |
+% | | | | | | |/ _ \/ __| __/ _` |/ _ \  | |
+% | |_| | |_| |  __/\__ \ || (_| | (_) | | |
+%  \__\_\\__,_|\___||___/\__\__,_|\___/  |_|
+%                                           
+% «questao-1»  (to ".questao-1")
+% «elipse»  (to ".elipse")
+% (c3m222p2p 2 "elipse")
+% (c3m222p2a   "elipse")
+
+%L Pict2e.bounds = PictBounds.new(v(-2,-2), v(2,2))
+%L spec = "(0,1)--(1,1)--(2,4)--(3,5)--(4,4)o (4,3)c (4,1)o--(6,3)--(7,3)"
+%L spec = ""
+%L pws = PwSpec.from(spec)
+%L pws:topict():prethickness("1pt"):pgat("pgatc"):sa("grid Q1"):output()
+\pu
+
+
+\scalebox{0.5}{\def\colwidth{10.5cm}\firstcol{
+
+%\vspace*{-0.4cm}
+
+{\Large \bf Questão 1}
+
+\ssk
+
+\T(Total: 3.5 pts)
+
+\msk
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  P(x,y) &=& x^2 + y^2, \\
+  H(x,y) &=& xy, \\ 
+  E(x,y) &=& x^2 + 4y^2. \\ 
+  % A &=& \setofxyst{x,y∈\{-2,-1,0,1,2\}} \\ 
+  \end{array}
+$$
+
+Represente graficamente:
+
+a) \B (0.1 pts) o diagrama de numerozinhos de $P(x,y)$,
+
+b) \B (0.2 pts) o digrama de numerozinhos de $H(x,y)$,
+
+c) \B (0.2 pts) o diagrama de numerozinhos de $E(x,y)$,
+
+d) \B (0.1 pts) pelo menos 5 curvas de nível de $P(x,y)$,
+
+e) \B (0.2 pts) pelo menos 5 curvas de nível de $H(x,y)$,
+
+f) \B (0.2 pts) pelo menos 5 curvas de nível de $E(x,y)$,
+
+\msk
+
+E os conjuntos abaixo:
+
+g) \B (0.2 pts) $C_1 = E^{-1}(4)$
+
+h) \B (0.2 pts) $C_2 = E^{-1}(1)$
+
+i) \B (0.3 pts) $C_3 = E^{-1}([1,4))$
+
+j) \B (0.3 pts) $C_4 = H^{-1}([-2,1))$
+
+k) \B (0.5 pts) $C_5 = C_3 ∩ C_4$
+
+l) \B (0.5 pts) $C_6 = \Int(C_5)$
+
+m) \B (0.5 pts) $C_7 = \overline{C_5}$
+
+
+
+\msk
+
+Use os grids da página 4.
+
+Indique claramente qual desenho é a resposta de cada item e quais
+desenhos são rascunhos.
+
+}\anothercol{
+
+% «questao-2»  (to ".questao-2")
+% (c3m222p2p 2 "questao-2")
+% (c3m222p2a   "questao-2")
+
+{\Large \bf Questão 2}
+
+\ssk
+
+\T(Total: 2.5 pts)
+
+\msk
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  z &=& (x-x_0)^4 (y-y_0)^6, \\
+  α &=& x+y, \\
+  β &=& x-y, \\
+  w &=& (α^3-α)+β^2. \\
+  \end{array}
+$$
+
+Nesta questão eu vou ver principalmente quais dos truques da ``notação
+de físicos'' você sabe usar direito.
+
+\msk
+
+A página 5 tem um monte de dicas de ``notação de físicos'' que você
+pode usar como referência. A coluna da esquerda dessa página tem um
+exemplo grande que nós vimos em aula; a parte de cima da coluna da
+direita tem uma tabela que eu copiei da página 275 do Leithold, na
+qual ele mostra como reescrever certas regras de derivação usando
+diferenciais; e a parte de baixo da coluna da direita é uma versão
+adaptada do primeiro exemplo do capítulo XVI do Silvanus Thompson, em
+que ele mostra como fazer contas ficarem menores criando variáveis
+dependentes novas.
+
+\msk
+
+Calcule:
+
+a) \B (0.2 pts) $\frac{dz}{dx}$,
+
+b) \B (0.3 pts) $z_{xx}$,
+
+c) \B (0.5 pts) $dz$,
+
+d) \B (1.5 pts) $dw$.
+
+\msk
+
+No item c tente chegar até uma expressão da forma $z_xdx + z_ydy$, e
+no item d tente chegar até uma expressão da forma forma
+$w_xdx + w_ydy$.
+
+
+
+}}
+
+\newpage
+
+% «questao-3»  (to ".questao-3")
+% (c3m222p2p 3 "questao-3")
+% (c3m222p2a   "questao-3")
+
+\scalebox{0.6}{\def\colwidth{9cm}\firstcol{
+
+{\Large \bf Questão 3}
+
+\ssk
+
+\T(Total: 3.0 pts)
+
+\msk
+
+Sejam
+%
+$$\begin{array}{rcl}
+  z(x,y) &=& dx^2 + exy + fy^2, \\
+  h(x) &=& z(x,1). \\
+  \end{array}
+$$
+
+Vou dizer que a função $h(x,y)$ é a ``função homogênea de grau 2
+associada a $h(x)$''.
+
+\msk
+
+a) \B (1.5 pts) Digamos que
+%
+$$h(x) = -2(x-1)(x+1).$$
+%
+Faça o diagrama de sinais da $h(x)$ (em $\R$), os numerozinhos da
+função $z(x,y)$ nos pontos com $y=1$ e $x∈\{-2,-1,0,1,2\}$ (siiiim, só
+5 pontos!) e o diagrama de sinais da função $z(x,y)$ (em $\R^2$), e
+diga se o ponto $(0,0)$ é um mínimo, máximo, ponto de sela, etc, etc.
+
+\msk
+
+b) \B (1.5 pts) Agora digamos que
+%
+$$h(x) = (x-i)(x+i) = x^2+1.$$
+%
+Faça as mesmas coisas para esta função $h(x)$ e para a função $z(x,y)$
+associada a ela.
+
+}\anothercol{
+
+% «questao-4»  (to ".questao-4")
+% (c3m222p2p 3 "questao-4")
+% (c3m222p2a   "questao-4")
+
+{\Large \bf Questão 4}
+
+\ssk
+
+\T(Total: 3.0 pts)
+
+\msk
+
+Sejam:
+%
+$$\begin{array}{rcl}
+  H(x,y) &=& xy, \\ 
+  E(x,y) &=& x^2 + 4y^2, \\ 
+  D &=& E^{-1}([0,16]), \\
+  F &:& D \to \R \\
+    && (x,y) \mapsto H(x,y) \\
+  % A &=& \setofxyst{x,y∈\{-2,-1,0,1,2\}} \\ 
+  \end{array}
+$$
+
+Agora só queremos olhar pro que acontece dentro do ``domínio'' $D$,
+que é uma elipse; note que a função $F(x,y)$ só está definida em $D$.
+
+Faça pelo menos 5 curvas de nível de $z=F(x,y)$ (obs: só dentro da
+elipse!!!) e mostre no seu gráfico quais dos pontos de $D$ são máximos
+locais, mínimos locais ou pontos de sela.
+
+
+
+
+}}
+
+
+
+%  (eepitch-maxima)
+%  (eepitch-kill)
+%  (eepitch-maxima)
+% z : (x-x0)^4 * (y-y0^6);
+% diff(z,x);
+% diff(z,x,2);
+% aa : x+y;
+% bb : x-y;
+
+
+
+
+\newpage
+
+% «grids»  (to ".grids")
+% (c3m222p2p 4 "grids")
+% (c3m222p2a   "grids")
+
+\unitlength=10pt
+
+\def\Gr{\scalebox{1.2}{$\ga{grid Q1}$}}
+
+$\begin{matrix}
+ \Gr & \Gr & \Gr & \Gr & \Gr \\
+ \Gr & \Gr & \Gr & \Gr & \Gr \\
+ \Gr & \Gr & \Gr & \Gr & \Gr \\
+ \Gr & \Gr & \Gr & \Gr & \Gr \\
+ \end{matrix}
+$
+
+
+
+\newpage
+
+%  ____  _                     _ _  __  __     
+% |  _ \(_) ___ __ _ ___    __| (_)/ _|/ _|___ 
+% | | | | |/ __/ _` / __|  / _` | | |_| |_/ __|
+% | |_| | | (_| (_| \__ \ | (_| | |  _|  _\__ \
+% |____/|_|\___\__,_|___/  \__,_|_|_| |_| |___/
+%                                              
+% «dicas-diferenciais»  (to ".dicas-diferenciais")
+% (c3m222p2p 5 "dicas-diferenciais")
+% (c3m222p2a   "dicas-diferenciais")
+
+\sa{myexample-body}{
+   z &=& (x^3 + y^4)^5 \\
+  \\[-7pt]
+  \frac{∂z}{∂x} &=& \frac{∂}{∂x}(x^3+y^4)^5 \\
+                &=& 5(x^3 + y^4)^4 \frac{∂}{∂x}(x^3+y^4) \\
+                &=& 5(x^3 + y^4)^4 (\frac{∂}{∂x}x^3+\frac{∂}{∂x}y^4) \\
+                &=& 5(x^3 + y^4)^4 (3x^2) \\
+  \\[-7pt]
+  \frac{∂z}{∂y} &=& \frac{∂}{∂y}(x^3+y^4)^5 \\
+                &=& 5(x^3 + y^4)^4 \frac{∂}{∂y}(x^3+y^4) \\
+                &=& 5(x^3 + y^4)^4 (\frac{∂}{∂y}x^3+\frac{∂}{∂y}y^4) \\
+                &=& 5(x^3 + y^4)^4 (4y^3) \\
+  \\[-7pt]
+  dz &=& 5(x^3 + y^4)^4 \, d(x^3+y^4) \\
+     &=& 5(x^3 + y^4)^4 (dx^3+dy^4) \\
+     &=& 5(x^3 + y^4)^4 (3x^2 \, dx + 4y^3 \, dy) \\
+     &=& 5(x^3 + y^4)^4 (3x^2) dx + 5(x^3 + y^4)^4 (4y^3) dy \\
+  \\[-7pt]
+  dz &=& z_x dx + z_y dy \\
+}
+
+\sa{leithold-body}{
+  \frac{d(c)}{dx}   &=& 0 \\
+  \frac{d(x^n)}{dx} &=& nx^{n-1} \\
+  \frac{d(cu)}{dx}  &=& c\frac{du}{dx} \\
+  \frac{d(u+v)}{dx} &=& \frac{du}{dx} + \frac{dv}{dx} \\
+  \frac{d(uv)}{dx}  &=& u\frac{dv}{dx} + v\frac{du}{dx} \\
+  \frac{d(\frac{u}{v})}{dx} &=&
+     \frac{v\frac{du}{dx} - u\frac{dv}{dx}}{v^2} \\
+  \frac{d(u^n)}{dx} &=& nu^{n-1} \frac{du}{dx} \\
+  \\[-7pt]
+}
+
+\sa{leithold-body2}{
+  d(c)   &=& 0 \\
+  d(x^n) &=& nx^{n-1}dx \\
+  d(cu)  &=& c\,du \\
+  d(u+v) &=& du+dv  \\
+  d(uv)  &=& u\,dv + v\,du \\
+  d(\frac{u}{v}) &=&
+     \frac{v\,du - u\,dv}{v^2} \\
+  d(u^n) &=& nu^{n-1} du \\
+}
+
+\sa{thompson-body}{
+  y &=& (x^2+a^2)^{3/2} \\
+  u &=& x^2+a^2 \\
+  du &=& 2x\,dx \\
+  dy &=& d((x^2+a^2)^{3/2}) \\
+     &=& d(u^{3/2}) \\
+     &=& u^{1/2}\,du \\
+     &=& u^{1/2}·2x\,dx \\
+     &=& (x^2+a^2)^{1/2}·2x\,dx \\
+}
+
+
+\scalebox{0.65}{\def\colwidth{9cm}\firstcol{
+
+\msk
+
+$\begin{array}{rcl}
+ \ga{myexample-body}
+ \end{array}
+ %\qquad
+ \hspace*{-1cm}
+ \begin{array}{c}
+   \begin{array}{rcl}
+   \ga{leithold-body}
+   \end{array}
+   \quad
+   \begin{array}{rcl}
+   \ga{leithold-body2}
+   \end{array}
+   \\
+   \\
+   \begin{array}{rcl}
+   \ga{thompson-body}
+   \end{array}
+ \end{array}
+$
+
+
+}\anothercol{
+}}
+
+
+\newpage
+
+% «questao-1-gab»  (to ".questao-1-gab")
+% «questao-2-gab»  (to ".questao-2-gab")
+% (c3m222p2p 6 "questao-2-gab")
+% (c3m222p2a   "questao-2-gab")
+
+\def\dzdx{\frac{dz}{dx}}
+\def\und#1#2{\underbrace{#1}_{#2}}
+
+
+\scalebox{0.55}{\def\colwidth{10.5cm}\firstcol{
+
+{\bf \Large Questão 2: gabarito}
+
+\bsk
+
+$\begin{array}[t]{lrcl}
+  \text{Temos:} &
+    z &=& (x-x_0)^4 (y-y_0)^6 \\
+  \text{Sejam:} &
+    u &=& x-x_0, \\
+  & v &=& y-y_0. \\
+    \\[-5pt]
+  \text{Então:}
+  & z     &=& u^4 v^6, \\
+  & \dzdx &=& \ddx(u^4)v^6 + u^4\ddx(v^6) \\
+         &&=& (4u^3\ddx u)v^6 + u^4(6v^5\ddx v) \\
+         &&=& (4u^3\ddx(x-x_0))v^6 + u^4(6v^5\ddx(y-y_0)) \\
+         &&=& 4u^3v^6 \\
+         &&=& 4(x-x_0)^3(y-y_0)^6, \\
+    \\[-5pt]
+  & z_{xx} &=& \ddx \ddx z \\
+          &&=& \ddx (4u^3v^6) \\
+          &&=& 4(\ddx(u^3)v^6 + u^3\ddx(v^6)) \\
+          &&=& 4(\ddx(u^3)v^6) \\
+          &&=& 4(3u^2\ddx(u)v^6) \\
+          &&=& 4(3u^2v^6) \\
+          &&=& 12u^2v^6 \\
+          &&=& 12(x-x_0)^2(y-y_0)^6, \\
+    \\[-5pt]
+  & dz &=& d(u^4v^6) \\
+      &&=& d(u^4)v^6 + u^4d(v^6) \\
+      &&=& (4u^3du)v^6 + u^4(6v^5dv) \\
+      &&=& (4u^3v^6)dx + (6u^4v^5)dy \\
+      &&=& 4(x-x_0)^3(y-y_0)^6dx + 6(x-x_0)^4(y-y_0)^5dy \\
+  %\text{Obs:}
+  \end{array}
+$
+
+}\anothercol{
+
+\vspace*{0.5cm}
+
+$\begin{array}[t]{lrcl}
+  \text{Temos:} &
+    α &=& x+y, \\
+  & β &=& x-y, \\
+  & w &=& (α^3-α)+β^2. \\
+    \\[-5pt]
+  \text{Então:} &
+    dw &=& d(α^3+α) + d(β^2) \\
+      &&=& (2α+1)dα + 2βdβ \\
+      &&=& (2α+1)d(x+y) + 2βd(x-y) \\
+      &&=& (2α+1)(dx+dy) + 2β(dx-dy) \\
+      &&=& (2α+1+2β)dx + (2α+1-2β)dy \\
+      &&=& (2(x+y)+1+2(x-y))dx \\
+      &&+& (2(x+y)+1-2(x-y))dy \\
+      &&=& (4x+1)dx + (4y+1)dx \\
+  \end{array}
+$
+
+}}
+
+
+\newpage
+
+
+
+% «questao-3-gab»  (to ".questao-3-gab")
+% «questao-4-gab»  (to ".questao-4-gab")
+
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C3/")
+# (find-fline "~/LATEX/2022-2-C3/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C3/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C3/
+       cat <<%%%
+% (find-latexscan-links "C3" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C3-P2 veryclean
+make -f 2019.mk STEM=2022-2-C3-P2 pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c3p2"
+% ee-tla: "c3m222p2"
+% End:

@@ -1,0 +1,364 @@
+% (find-LATEX "2022-2-C2-VR.tex")
+% (defun c () (interactive) (find-LATEXsh "lualatex -record 2022-2-C2-VR.tex" :end))
+% (defun C () (interactive) (find-LATEXsh "lualatex 2022-2-C2-VR.tex" "Success!!!"))
+% (defun D () (interactive) (find-pdf-page      "~/LATEX/2022-2-C2-VR.pdf"))
+% (defun d () (interactive) (find-pdftools-page "~/LATEX/2022-2-C2-VR.pdf"))
+% (defun e () (interactive) (find-LATEX "2022-2-C2-VR.tex"))
+% (defun o () (interactive) (find-LATEX "2022-1-C2-VR.tex"))
+% (defun o () (interactive) (find-LATEX "2022-2-C2-P2.tex"))
+% (defun u () (interactive) (find-latex-upload-links "2022-2-C2-VR"))
+% (defun v () (interactive) (find-2a '(e) '(d)))
+% (defun d0 () (interactive) (find-ebuffer "2022-2-C2-VR.pdf"))
+% (defun cv () (interactive) (C) (ee-kill-this-buffer) (v) (g))
+%          (code-eec-LATEX "2022-2-C2-VR")
+% (find-pdf-page   "~/LATEX/2022-2-C2-VR.pdf")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-VR.pdf /tmp/")
+% (find-sh0 "cp -v  ~/LATEX/2022-2-C2-VR.pdf /tmp/pen/")
+%     (find-xournalpp "/tmp/2022-2-C2-VR.pdf")
+%   file:///home/edrx/LATEX/2022-2-C2-VR.pdf
+%               file:///tmp/2022-2-C2-VR.pdf
+%           file:///tmp/pen/2022-2-C2-VR.pdf
+% http://angg.twu.net/LATEX/2022-2-C2-VR.pdf
+% (find-LATEX "2019.mk")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Piecewise1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
+% (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
+% (find-CN-aula-links "2022-2-C2-VR" "2" "c2m222vr" "c2vr")
+
+% «.defs»		(to "defs")
+% «.defs-T-and-B»	(to "defs-T-and-B")
+% «.title»		(to "title")
+% «.links»		(to "links")
+% «.questao-2»		(to "questao-2")
+%
+% «.djvuize»		(to "djvuize")
+
+
+
+% <videos>
+% Video (not yet):
+% (find-ssr-links     "c2m222vr" "2022-2-C2-VR")
+% (code-eevvideo      "c2m222vr" "2022-2-C2-VR")
+% (code-eevlinksvideo "c2m222vr" "2022-2-C2-VR")
+% (find-c2m222vrvideo "0:00")
+
+\documentclass[oneside,12pt]{article}
+\usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pict2e}
+\usepackage[x11names,svgnames]{xcolor} % (find-es "tex" "xcolor")
+\usepackage{colorweb}                  % (find-es "tex" "colorweb")
+%\usepackage{tikz}
+%
+% (find-dn6 "preamble6.lua" "preamble0")
+%\usepackage{proof}   % For derivation trees ("%:" lines)
+%\input diagxy        % For 2D diagrams ("%D" lines)
+%\xyoption{curve}     % For the ".curve=" feature in 2D diagrams
+%
+\usepackage{edrx21}               % (find-LATEX "edrx21.sty")
+\input edrxaccents.tex            % (find-LATEX "edrxaccents.tex")
+\input edrx21chars.tex            % (find-LATEX "edrx21chars.tex")
+\input edrxheadfoot.tex           % (find-LATEX "edrxheadfoot.tex")
+\input edrxgac2.tex               % (find-LATEX "edrxgac2.tex")
+%\usepackage{emaxima}              % (find-LATEX "emaxima.sty")
+%
+% (find-es "tex" "geometry")
+\usepackage[a6paper, landscape,
+            top=1.5cm, bottom=.25cm, left=1cm, right=1cm, includefoot
+           ]{geometry}
+%
+\begin{document}
+
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"}  % (find-LATEX "dednat6load.lua")
+%L dofile "Piecewise1.lua"           -- (find-LATEX "Piecewise1.lua")
+%%L dofile "QVis1.lua"                -- (find-LATEX "QVis1.lua")
+%%L dofile "Pict3D1.lua"              -- (find-LATEX "Pict3D1.lua")
+%L dofile "C2Formulas1.lua"          -- (find-LATEX "C2Formulas1.lua")
+%L dofile "2022-1-C2-P2.lua"         -- (find-LATEX "2022-1-C2-P2.lua")
+%L Pict2e.__index.suffix = "%"
+\pu
+\def\pictgridstyle{\color{GrayPale}\linethickness{0.3pt}}
+\def\pictaxesstyle{\linethickness{0.5pt}}
+\def\pictnaxesstyle{\color{GrayPale}\linethickness{0.5pt}}
+\celllower=2.5pt
+
+% «defs»  (to ".defs")
+% (find-LATEX "edrx21defs.tex" "colors")
+% (find-LATEX "edrx21.sty")
+
+\def\u#1{\par{\footnotesize \url{#1}}}
+
+\def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
+\def\drafturl{http://angg.twu.net/2022.2-C2.html}
+\def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+\sa{[M]}{\CFname{M}{}}
+\sa{[F]}{\CFname{F}{}}
+
+% «defs-T-and-B»  (to ".defs-T-and-B")
+\long\def\ColorOrange#1{{\color{orange!90!black}#1}}
+\def\T(Total: #1 pts){{\bf(Total: #1)}}
+\def\T(Total: #1 pts){{\bf(Total: #1 pts)}}
+\def\T(Total: #1 pts){\ColorRed{\bf(Total: #1 pts)}}
+\def\B       (#1 pts){\ColorOrange{\bf(#1 pts)}}
+
+
+
+%  _____ _ _   _                               
+% |_   _(_) |_| | ___   _ __   __ _  __ _  ___ 
+%   | | | | __| |/ _ \ | '_ \ / _` |/ _` |/ _ \
+%   | | | | |_| |  __/ | |_) | (_| | (_| |  __/
+%   |_| |_|\__|_|\___| | .__/ \__,_|\__, |\___|
+%                      |_|          |___/      
+%
+% «title»  (to ".title")
+% (c2m222vrp 1 "title")
+% (c2m222vra   "title")
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1.2cm}
+
+{\bf \Large Cálculo 2 - 2022.2}
+
+\bsk
+
+Prova de reposição (VR)
+
+\bsk
+
+Eduardo Ochs - RCN/PURO/UFF
+
+\url{http://angg.twu.net/2022.2-C2.html}
+
+\end{center}
+
+\newpage
+
+% «links»  (to ".links")
+% (c2m222p1p 1 "questao-1")
+% (c2m222p1a   "questao-1")
+
+
+\scalebox{0.6}{\def\colwidth{9cm}\firstcol{
+
+{\bf Questão 1}
+
+\T(Total: 4.0 pts)
+
+\msk
+
+Calcule:
+
+$$\intx{x^3 \sqrt{1-4x^2}}\;.$$
+
+\bsk
+
+{\bf Dicas:} 1) Você provavelmente vai precisar de pelo menos duas
+mudanças de variável pra chegar no resultado final. 2) No curso nós
+vimos dois modos de fazer mudanças de variável de um jeito legível: um
+modo usava chaves sob subexpressões e o outro modo usava ``caixinhas
+de anotações'' como a abaixo,
+%
+$$\bmat{
+  u = \sen x \\
+  \frac{du}{dx} = \frac{d}{dx} \sen x = \cos x \\
+  \cos x \, dx = du \\
+  x = \arcsen u \\
+  }
+$$
+
+em que todas as outras linhas da caixinha eram consequência da
+primeira.
+
+}\anothercol{
+
+% «questao-2»       (to ".questao-2")
+% «int-por-partes»  (to ".int-por-partes")
+% (c2m222p1p 2 "int-por-partes")
+% (c2m222p1a   "int-por-partes")
+% (c2m222ippp 1 "title")
+% (c2m222ippa   "title")
+
+{\bf Questão 2}
+
+\T(Total: 1.0 pts)
+
+\msk
+
+Calcule:
+%
+$$\Intx{5}{6}{(2x+3)^4} 
+$$
+
+Lembre que no curso nós vimos que existem várias noções diferentes do
+que é ``simplificar uma expressão''... por exemplo, no ensino médio os
+professores exigem que a gente ``simplifique''
+$\frac{1}{11} + \frac{1}{12} + \frac{1}{13}$ pra $\frac{661}{3036}$,
+mas em Cálculo 2 a gente geralmente considera
+$\frac{1}{11} + \frac{1}{12} + \frac{1}{13}$ mais ``simples'' do que
+$\frac{661}{3036}$.
+
+
+
+}}
+
+
+
+\newpage
+
+
+% «questao-2»  (to ".questao-2")
+
+\newpage
+
+% (c2m222vrp 2 "questao-2")
+% (c2m222vra   "questao-2")
+% (c2m222p2p 2 "questao-1")
+% (c2m222p2a   "questao-1")
+
+{\bf Questão 3}
+
+%L namedang("EDOVSintro", "", [[
+%L    \begin{array}{rcl}
+%L      \ga{[M]} &=& <EDOVSG> \\ \\[-5pt]
+%L      \ga{[F]} &=& <EDOVSP> \\
+%L    \end{array}
+%L ]])
+%L EDOVSintro:sa("FOO"):output()
+\pu
+
+\scalebox{0.55}{\def\colwidth{10cm}\firstcol{
+
+\vspace*{-0.4cm}
+
+\T(Total: 5.0 pts)
+
+Lembre que nós vimos que o ``método'' para resolver EDOs com variáveis
+separáveis --- ``EDOVSs'' --- pode ser escrito como a demonstração
+$\ga{[M]}$ abaixo, e a ``fórmula'' para resolver EDOVSs pode ser
+escrita como $\ga{[F]}$:
+
+\bsk
+
+$\ga{FOO}$
+
+}\anothercol{
+
+  Quando a gente quer criar exercícios de EDOVSs que sejam fácil de
+  resolver a gente começa escolhendo $G(x)$ e $H(y)$, não $g(x)$ e
+  $h(y)$.
+
+  Digamos que $G(x)=x^4+5$ e $H(y)=y^2+3$.
+
+  \msk
+
+  a) \B (0.5 pts) Diga qual é a EDO da forma
+  $\frac{dy}{dx} = \frac{g(x)}{h(y)}$ associada a esta escolha de
+  $G(x)$ e $H(y)$. Chame-a de $(*)$. Não esqueça do ``Seja''!
+
+  \ssk
+
+  b) \B (0.5 pts) Escolha uma função $H^{-1}$ adequada. Defina ela com
+  um ``Seja'' e verifique que ela obedece o que esperamos dela.
+
+  \ssk
+
+  c) \B (1.0 pts) Encontre a solução geral da EDO $(*)$. Chame-a de
+  $f(x)$ e defina ela com um ``Seja''.
+
+  \ssk
+
+  d) \B (1.0 pts) Verifique que essa função $f(x)$ obedece $(*)$.
+
+  \ssk
+
+  e) \B (1.0 pts) Encontre uma solução da EDO $(*)$ que passe pelo
+  ponto $(x_1,y_1)=(1,2)$. Chame-a de $f_1(x)$ e defina-a com um
+  ``Seja''.
+
+  \ssk
+
+  f) \B (1.0 pts) Verifique que a sua $f_1(x)$ realmente passa pelo
+  ponto $(x_1,y_1)$.
+
+
+
+% (find-es "maxima" "2022-2-C2-P2")
+
+}}
+
+
+
+\GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
+
+\end{document}
+
+%  ____  _             _         
+% |  _ \(_)_   ___   _(_)_______ 
+% | | | | \ \ / / | | | |_  / _ \
+% | |_| | |\ V /| |_| | |/ /  __/
+% |____// | \_/  \__,_|_/___\___|
+%     |__/                       
+%
+% «djvuize»  (to ".djvuize")
+% (find-LATEXgrep "grep --color -nH --null -e djvuize 2020-1*.tex")
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-fline "~/2022.2-C2/")
+# (find-fline "~/LATEX/2022-2-C2/")
+# (find-fline "~/bin/djvuize")
+
+cd /tmp/
+for i in *.jpg; do echo f $(basename $i .jpg); done
+
+f () { rm -v $1.pdf;  textcleaner -f 50 -o  5 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 10 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+f () { rm -v $1.pdf;  textcleaner -f 50 -o 20 $1.jpg $1.png; djvuize $1.pdf; xpdf $1.pdf }
+
+f () { rm -fv $1.png $1.pdf; djvuize $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 15" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 30" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 1.0 -f 45" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.5" $1.pdf; xpdf $1.pdf }
+f () { rm -fv $1.png $1.pdf; djvuize WHITEBOARDOPTS="-m 0.25" $1.pdf; xpdf $1.pdf }
+f () { cp -fv $1.png $1.pdf       ~/2022.2-C2/
+       cp -fv        $1.pdf ~/LATEX/2022-2-C2/
+       cat <<%%%
+% (find-latexscan-links "C2" "$1")
+%%%
+}
+
+f 20201213_area_em_funcao_de_theta
+f 20201213_area_em_funcao_de_x
+f 20201213_area_fatias_pizza
+
+
+
+%  __  __       _        
+% |  \/  | __ _| | _____ 
+% | |\/| |/ _` | |/ / _ \
+% | |  | | (_| |   <  __/
+% |_|  |_|\__,_|_|\_\___|
+%                        
+% <make>
+
+ (eepitch-shell)
+ (eepitch-kill)
+ (eepitch-shell)
+# (find-LATEXfile "2019planar-has-1.mk")
+make -f 2019.mk STEM=2022-2-C2-VR veryclean
+make -f 2019.mk STEM=2022-2-C2-VR pdf
+
+% Local Variables:
+% coding: utf-8-unix
+% ee-tla: "c2vr"
+% ee-tla: "c2m222vr"
+% End:
