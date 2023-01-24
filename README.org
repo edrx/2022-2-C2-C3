@@ -16,6 +16,7 @@
 # (defun cv () (interactive) (c) (v))
 # 
 # (find-mygitrepo-links "2022-2-C2-C3")
+# (find-C2C3git-links   "2022-2")
 # (find-orgnode "Table of Contents")
 #+OPTIONS: toc:nil num:nil
 
@@ -83,7 +84,7 @@ tar -xvzf /tmp/2022-2.tgz
 
 # git init
 # git add README.org
-# git add $(cat /tmp/2022-2+.fls)
+git add $(cat /tmp/2022-2+.fls)
 # git add Makefile
 # git add .gitignore
 # (magit-status "~/2022-2-C2-C3/")
