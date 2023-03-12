@@ -1,8 +1,8 @@
--- This file: http://angg.twu.net/LUA/lua50init.lua.html
---            http://angg.twu.net/LATEX/dednat6/edrxlib.lua.html
---            http://angg.twu.net/dednat6/dednat6/edrxlib.lua.html
---            http://angg.twu.net/blogme3/edrxlib.lua.html
---            http://angg.twu.net/emlua/edrxlib.lua.html
+-- This file: http://anggtwu.net/LUA/lua50init.lua.html
+--            http://anggtwu.net/LATEX/dednat6/edrxlib.lua.html
+--            http://anggtwu.net/dednat6/dednat6/edrxlib.lua.html
+--            http://anggtwu.net/blogme3/edrxlib.lua.html
+--            http://anggtwu.net/emlua/edrxlib.lua.html
 --
 -- This is my "init file" for Lua. As I have LUA_INIT set
 -- to "@$HOME/LUA/lua50init.lua", the Lua interpreter loads
@@ -17,6 +17,7 @@
 --   (find-tkdiff    "~/LUA/lua50init.lua"   "~/LATEX/dednat6/edrxlib.lua")
 --   (find-tkdiff    "~/LUA/lua50init.lua" "~/dednat6/dednat6/edrxlib.lua")
 --   (find-sh0 "cp -v ~/LUA/lua50init.lua     ~/LATEX/dednat6/edrxlib.lua")
+--   (find-sh0 "cp -v ~/LUA/lua50init.lua     ~/LATEX/dednat7/edrxlib.lua")
 --   (find-sh0 "cp -v ~/LUA/lua50init.lua   ~/dednat6/dednat6/edrxlib.lua")
 --   (find-sh0 "cp -v ~/LUA/lua50init.lua           ~/blogme3/edrxlib.lua")
 --   (find-sh0 "cp -v ~/LUA/lua50init.lua             ~/emlua/edrxlib.lua")
@@ -24,7 +25,7 @@
 -- See also: (to "edrxlib")
 --
 -- Author: Eduardo Ochs <eduardoochs@gmail.com>
--- Version: 2022may31  <- don't trust this date
+-- Version: 2023jan31  <- don't trust this date
 -- Public domain.
 --
 -- Note: "dednat4.lua" and "dednat6.lua" try to load this at startup,
@@ -139,6 +140,7 @@
 -- «.load_PP»			(to "load_PP")
 -- «.PPeval»			(to "PPeval")
 -- «.loadlpeg»			(to "loadlpeg")
+-- «.loadlpegrex»		(to "loadlpegrex")
 -- «.loadbitlib»		(to "loadbitlib")
 -- «.autoload»			(to "autoload")
 -- «.loadtcl»			(to "loadtcl")
@@ -175,6 +177,7 @@
 
 -- «.replaceranges»		(to "replaceranges")
 -- «.string.replace»		(to "string.replace")
+-- «.anggurl-and-angg_url»	(to "anggurl-and-angg_url")
 --
 -- «.Sexp»			(to "Sexp")
 -- «.youtube_make_url»		(to "youtube_make_url")
@@ -1901,13 +1904,6 @@ PPeval = function (str)
 -- (find-es "lua5" "lpeg")
 loadlpeg = function ()
     local oldcpath = package.cpath
-    -- package.cpath = ee_expand("~/usrc/lpeg-0.4/?.so")
-    -- package.cpath = ee_expand("~/usrc/lpeg-0.5/?.so")
-    -- package.cpath = ee_expand("~/usrc/lpeg-0.7/?.so")..";"..oldcpath
-    -- (find-lua51manual "#pdf-package.cpath")
-    -- (find-sh0 "lua51 -e 'print(package.path)'")
-    -- (find-sh0 "lua51 -e 'print(package.cpath)'")
-    -- package.cpath = ee_expand("~/usrc/lpeg-0.8.1/?.so")..";"..oldcpath
     package.cpath = ee_expand("~/usrc/lpeg-0.9/?.so")..";"..oldcpath
     require "lpeg"
     package.cpath = oldcpath
@@ -1919,35 +1915,21 @@ loadlpeg = function ()
     lpeg.Balanced = lpeg_balanced   -- (to "lpeg_balanced")
   end
 
--- «loadbitlib»  (to ".loadbitlib")
--- Obsolete.
--- -- (find-es "lua5" "bitlib-51")
--- loadbitlib = function (fname)
---     if bit then return "bitlib already loaded" end
---     fname = fname or "~/usrc/bitlib-25/lbitlib.so"
---     assert(package.loadlib(ee_expand(fname), "luaopen_bit"))()
---   end
+-- «loadlpegrex»  (to ".loadlpegrex")
+-- (find-es "lpeg" "lpegrex")
+loadlpegrex = function ()
+    Path.prepend("path",  "~/usrc/lpeglabel/?.lua")
+    Path.prepend("cpath", "~/usrc/lpeglabel/?.so")
+    Path.prepend("path",  "~/usrc/lpegrex/?.lua")
+    lpegrex = require 'lpegrex'
+  end
 
+
+-- «loadbitlib»  (to ".loadbitlib")
+-- Obsolete. See: (find-es "lua5" "bitlib-51")
 
 -- «autoload»  (to ".autoload")
 -- Obsolete.
--- -- Like in elisp. For global functions only.
--- -- (find-lua51manual "#pdf-require")
--- --
--- autoload = function (funname, loader)
---     _G[funname] = function (...)
---         loader()
---         return _G[funname](unpack(arg)) -- todo: change to "..." (a 5.1-ism)
---       end
---   end
--- 
--- tcl = function (...)   -- <-- this is a kind of autoload
---     local filename = ee_expand("~/.lua51/luatclbridge.so")
---     local initname = "luaopen_luatclbridge"
---     tcl = assert(package.loadlib(filename, initname))()
---     return tcl(unpack(arg))             -- todo: change to "..." (a 5.1-ism)
---   end
-
 
 -- «loadtcl»  (to ".loadtcl")
 -- Obsolete.
@@ -2003,23 +1985,13 @@ loadlpeg = function ()
 
 
 -- «loadalarm»  (to ".loadalarm")
--- Obsolete.
--- -- (find-es "lua5" "signal")
--- loadalarm = function ()
---     if not alarm then
---       assert(package.loadlib(ee_expand("~/usrc/alarm/lalarm.so"), "luaopen_alarm"))()
---     end
---   end
+-- Obsolete. See: (find-es "lua5" "signal")
 
 -- «loadposix»  (to ".loadposix")
 -- New way (active below):  (find-es "lua5" "luaposix")
--- old way (commented out): (find-es "lua5" "posix-lua51")
+-- old way (deleted):       (find-es "lua5" "posix-lua51")
 loadposix = function ()
     userocks(); require "posix"
-    -- if not posix then
-    --   -- assert(package.loadlib(ee_expand("~/usrc/posix/lposix.so"), "luaopen_posix"))()
-    --   ee_loadlib("~/usrc/luaposix-5.1.4/posix.so", "luaopen_posix")
-    -- end
   end
 
 -- «curl» (to ".curl")
@@ -2314,50 +2286,14 @@ stop_repl2_now = function ()
 -- See: (find-angg "LUA/Repl1.lua")
 -- and: (find-angg "LUA/lua50init.lua" "DGetInfos")
 --      (find-angg "LUA/lua50init.lua" "DGetInfos" "tb =")
---
--- -- Old notes:
--- -- (find-es "lua5" "traceback")
--- -- (find-lua51file "src/ldblib.c" "{\"traceback\", db_errorfb},")
--- -- (find-lua51file "src/ldblib.c" "static int db_errorfb")
--- -- (find-lua51file "src/ldblib.c" "static int db_errorfb" "lua_getinfo")
--- -- http://www.lua.org/source/5.1/ldblib.c.html#db_errorfb
--- -- http://www.lua.org/source/5.1/ldblib.c.html#dblib
--- -- (find-es "lua5" "loadstring_and_eof")
--- -- http://lua-users.org/lists/lua-l/2011-11/msg00110.html
--- -- (find-es "lua5" "lua_getstack")
--- 
--- errorfb_line = function (ar)
---     local s = "\t"
---     local p = function (...) s = s..format(...) end
---     p("%s:", ar.short_src)
---     if ar.currentline > 0 then p("%d:", ar.currentline) end
---     if ar.namewhat ~= ""  then p(" in function '%s'", ar.name) else
---       if ar.what == "main" then p(" in main chunk")
---       elseif ar.what == "C" or ar.what == "tail" then p(" ?")
---       else p(" in function <%s:%d>", ar.short_src, ar.linedefined)
---       end
---     end
---     return s
---   end
--- errorfb_lines = function (a, b, step, f)
---     local T = {}
---     for level=a,b,(step or 1) do
---       T[#T+1] = (f or errorfb_line)(debug.getinfo(level))
---     end
---     return table.concat(T, "\n")
---   end
-
-
 
 -- «interactor»  (to ".interactor")
 -- Obsolete (from 2007). Deleted.
 -- (find-es "lua5" "interactor")
 -- (find-TH "repl")
 
-
 -- «MyXpcall»  (to ".MyXpcall")
--- Obsolete.
--- Moved to: (find-angg "LUA/myxpcall.lua" "MyXpcall")
+-- Obsolete! Moved to: (find-angg "LUA/myxpcall.lua" "MyXpcall")
 -- Superseded by: (find-angg "edrxrepl/edrxpcall.lua")
 --
 -- «Repl» (to ".Repl")
@@ -2367,33 +2303,10 @@ stop_repl2_now = function ()
 --                (find-angg "LUA/Repl1.lua")
 
 -- «loadluarepl» (to ".loadluarepl")
--- (find-es "lua5" "lua-repl-0.8")
--- (find-dednat6 "dednat6/luarepl.lua")
--- TODO: stop using this, use instead the Repl class defined above.
---
--- loadluarepl = function (dir)
---     if repl then return "lua-repl-0.8 already loaded (it seems)" end
---     -- repldir   = ee_expand(dir or "~/usrc/lua-repl-0.8/")
---     repldir      = ee_expand(dir or "~/dednat6/dednat6/lua-repl/")
---     package.path = repldir.."?/init.lua;"..package.path
---     package.path = repldir.."?.lua;"     ..package.path
---     repl         = require "repl"
---     sync         = require "repl.sync"
---     function sync:showprompt() print ">>>" end
---     function sync:showprompt() io.write ">>> " end
---     function sync:showprompt(n) print(n); io.write ">>> " end
---     function sync:showprompt(p) io.write(p == ">" and ">>> " or ">>>> ") end
---     function sync:lines() return io.stdin:lines() end
---     function sync:displayerror(err) print(err) end
---     function sync:displayresults(results)
---         if results.n == 0 then return end
---         print(unpack(results, 1, results.n))
---       end
---     -- luarepl = function () print(); print(); sync:run() end
---     luarepl = function () sync:run() end
---     return "Loaded lua-repl-0.8"
---   end
-
+-- Obsolete.
+-- See: (find-es "lua5" "lua-repl-0.8")
+-- And: (find-dednat6 "dednat6/luarepl.lua")
+-- TODO: replace all uses of this by the Repl class defined above.
 
 
 -- «replaceranges» (to ".replaceranges")
@@ -2439,7 +2352,9 @@ string.replace = function (s, x, r, w)
   end
 
 
--- 2013jan16; to be moved to blogme3 / blogme4
+-- «anggurl-and-angg_url»  (to ".anggurl-and-angg_url")
+-- Obsolete! TODO: replace this by a class that shortens
+-- local filenames correctly.
 string.revgsub = function (str, ...)
     return str:reverse():gsub(...):reverse()
   end
@@ -2647,41 +2562,7 @@ url_split = function (url)
 
 
 -- «Blogme» (to ".Blogme")
--- An attempto to reimplement this: (find-blogme3 "brackets.lua")
--- as a class. Unfinished. (?)
-Blogme = Class {
-  type    = "Blogme",
-  __index = {
-    ps = function (bme)  -- parse space chars
-        local s, p = bme.str:match("^([ \t\n]+)()", bme.pos)
-        if s then bme.pos = p; return s end
-      end,
-    pw = function (bme)  -- parse word chars (i.e., no spaces, no brackets)
-        local s, p = bme.str:match("^([^%[%] \t\n]+)()", bme.pos)
-        if s then bme.pos = p; return s end
-      end,
-    pr = function (bme)  -- parse regular chars (i.e., no brackets)
-        local s, p = bme.str:match("^([^%[%]]+)()", bme.pos)
-        if s then bme.pos = p; return s end
-      end,
-    pb0 = function (bme) -- parse bracket (without evaluation)
-        local b, e = bme.str:match("^()%b[]()", bme.pos)
-        if b then bme.pos = e; return b+1, e-1 end
-      end,
-    pqarg0 = function (bme) -- parse a quoted argument (without evaluation)
-        bme:ps()
-        local b = bme.pos
-        while bme:pb0() or bme:pw() do end
-        return b, bme.pos
-      end,
-    sub = function (bme, b, e) return b and bme.str:sub(b, e-1) end,
-  },
-}
-
-
-
-
-
+-- Obsolete, deleted! Superseded by: (find-anggfile "LUA/BlogMe3.lua")
 
 -- (find-blogme3 "anggdefs.lua" "basic-words-for-html" "HREF")
 HREF  = function (url, str) return format('<a href="%s">%s</a>', url, str) end
@@ -2860,6 +2741,7 @@ code_video = function (c, urlorfnameorhash)
 
 
 -- «getsexp» (to ".getsexp")
+-- New version: (find-angg "LUA/SexpAtEol1.lua" "SexpAtEol-tests")
 -- (find-es "lua5" "getsexp")
 -- (find-blogme3 "sexp.lua" "getsexp")
 -- Version: 2019jan08.
@@ -3032,8 +2914,7 @@ ELispInfo = Class {
 --   end
 
 -- «SexpLine» (to ".SexpLine")
--- Obsolete.
--- Tests: (find-es "lua5" "SexpLine")
+-- Obsolete. See: (find-es "lua5" "SexpLine")
 -- This was intended to replace some parts of: (find-blogme3 "escripts.lua")
 --
 -- SexpLine = Class {
