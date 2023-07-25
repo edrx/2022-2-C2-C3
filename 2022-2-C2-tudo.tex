@@ -24,22 +24,17 @@
 % (find-sh0 "cd ~/LUA/; cp -v Pict2e1.lua Pict2e1-1.lua Pict3D1.lua ~/LATEX/")
 % (find-sh0 "cd ~/LUA/; cp -v C2Subst1.lua C2Formulas1.lua ~/LATEX/")
 % (find-CN-aula-links "2022-2-C2-tudo" "2" "c2m222tudo" "c2tu")
+% (find-MM-tudo-links "22" "2" "C2")
 
 % (find-angg "2022-2-C2-C3/README.org")
 
 % «.defs»		(to "defs")
+% «.defs-toclines»	(to "defs-toclines")
 % «.title»		(to "title")
 % «.parts»		(to "parts")
 % «.dicas-pra-P2»	(to "dicas-pra-P2")
+% «.writetoc»		(to "writetoc")
 
-
-
-% <videos>
-% Video (not yet):
-% (find-ssr-links     "c2m222tudo" "2022-2-C2-tudo")
-% (code-eevvideo      "c2m222tudo" "2022-2-C2-tudo")
-% (code-eevlinksvideo "c2m222tudo" "2022-2-C2-tudo")
-% (find-c2m222tudovideo "0:00")
 
 \documentclass[oneside,12pt]{article}
 \usepackage[colorlinks,citecolor=DarkRed,urlcolor=DarkRed]{hyperref} % (find-es "tex" "hyperref")
@@ -75,6 +70,14 @@
 \def\drafturl{http://angg.twu.net/LATEX/2022-2-C2.pdf}
 \def\drafturl{http://angg.twu.net/2022.2-C2.html}
 \def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
+
+% «defs-toclines»  (to ".defs-toclines")
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"} % (find-LATEX "dednat6load.lua")
+%L require "TocLines1"              -- (find-angg "LUA/TocLines1.lua")
+%L output(TocLines.texdefs)         -- (find-angg "LUA/TocLines1.lua" "texdefs")
+%L toclines = TocLines.new(status.filename)
+\pu
 
 
 
@@ -117,7 +120,7 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c2m222tudop 2 "parts")
 % (c2m222tudoa   "parts")
 % (find-angg ".emacs" "c2-2022-2")
-\def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
+%%\def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
 
 % (c2m222buracoa "title")
 % (c2m222buracoa "title" "Aula 1: a operação `$[:=]$', ou:" "aqui o curso tem um buraco")
@@ -220,6 +223,9 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c2m222plca "title")
 % (c2m222plca "title" "Plano de curso da disciplina Cálculo 2 (RCN00020)")
 %\incl{2022-2-C2-plano-de-curso}
+
+% «writetoc»  (to ".writetoc")
+\writetoc   % Writes to: (find-LATEX "2022-2-C2-tudo.mytoc")
 
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 

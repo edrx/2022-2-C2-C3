@@ -59,10 +59,10 @@ require "Pict2e1"      -- (find-angg "LUA/Pict2e1.lua")
 
 pi, sin, cos = math.pi, math.sin, math.cos
 
-seqn = function (a, b, n)
-    local f = function (k) return a + (b-a)*(k/n) end
-    return map(f, seq(0, n))
-  end
+-- seqn = function (a, b, n)
+--     local f = function (k) return a + (b-a)*(k/n) end
+--     return map(f, seq(0, n))
+--   end
 
 
 

@@ -19,14 +19,20 @@
 %               file:///tmp/2022-2-C3-tudo.pdf
 %           file:///tmp/pen/2022-2-C3-tudo.pdf
 % http://angg.twu.net/LATEX/2022-2-C3-tudo.pdf
+% (find-Deps1-links "TocLines1")
+% (find-Deps1-cps   "TocLines1")
+% (find-Deps1-anggs "TocLines1")
 % (find-LATEX "2019.mk")
-% (find-CN-aula-links "2022-2-C3-tudo" "3" "c3m222tudo" "c3tu")
+% (find-CN-aula-links "2022-2-C3-tudo" "2" "c3m222tudo" "c3tu")
+% (find-MM-tudo-links "22" "2" "C3")
 
 % (find-angg "2022-2-C2-C3/README.org")
 
-% «.defs»	(to "defs")
-% «.title»	(to "title")
-% «.parts»	(to "parts")
+% «.defs»		(to "defs")
+% «.defs-toclines»	(to "defs-toclines")
+% «.title»		(to "title")
+% «.parts»		(to "parts")
+% «.writetoc»		(to "writetoc")
 
 
 
@@ -72,6 +78,14 @@
 \def\drafturl{http://angg.twu.net/2022.2-C3.html}
 \def\draftfooter{\tiny \href{\drafturl}{\jobname{}} \ColorBrown{\shorttoday{} \hours}}
 
+% «defs-toclines»  (to ".defs-toclines")
+\catcode`\^^J=10
+\directlua{dofile "dednat6load.lua"} % (find-LATEX "dednat6load.lua")
+%L require "TocLines1"              -- (find-angg "LUA/TocLines1.lua")
+%L output(TocLines.texdefs)         -- (find-angg "LUA/TocLines1.lua" "texdefs")
+%L toclines = TocLines.new(status.filename)
+\pu
+
 
 
 %  _____ _ _   _                               
@@ -112,7 +126,6 @@ Eduardo Ochs - RCN/PURO/UFF
 % «parts»  (to ".parts")
 % (c3m222tudop 2 "parts")
 % (c3m222tudoa   "parts")
-\def\incl#1{\includepdf[pages=1-last]{#1.pdf}}
 % (find-angg ".emacs" "c3-2022-2")
 
 % (c3m222introa "title")
@@ -200,26 +213,13 @@ Eduardo Ochs - RCN/PURO/UFF
 % (c3m222plca "title")
 %\incl{2022-2-C3-plano-de-curso}
 
+% «writetoc»  (to ".writetoc")
+\writetoc   % Writes to: (find-LATEX "2022-2-C3-tudo.mytoc")
+
 \GenericWarning{Success:}{Success!!!}  % Used by `M-x cv'
 
 \end{document}
 
-
-
-%  __  __       _        
-% |  \/  | __ _| | _____ 
-% | |\/| |/ _` | |/ / _ \
-% | |  | | (_| |   <  __/
-% |_|  |_|\__,_|_|\_\___|
-%                        
-% <make>
-
- (eepitch-shell)
- (eepitch-kill)
- (eepitch-shell)
-# (find-LATEXfile "2019planar-has-1.mk")
-make -f 2019.mk STEM=2022-2-C3-tudo veryclean
-make -f 2019.mk STEM=2022-2-C3-tudo pdf
 
 % Local Variables:
 % coding: utf-8-unix
