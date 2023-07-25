@@ -16,6 +16,7 @@
 # (defun cv () (interactive) (c) (v))
 # 
 # (find-mygitrepo-links "2022-2-C2-C3")
+# (find-MMMMgit-links   "2022-2" "C2-C3")
 # (find-C2C3git-links   "2022-2")
 # (find-orgnode "Table of Contents")
 #+OPTIONS: toc:nil num:nil
@@ -41,6 +42,8 @@ make
 #+end_src
 
 #+begin_comment
+# (find-MMMMgit-links "2022-2" "C2-C3")
+
  (eepitch-shell)
  (eepitch-kill)
  (eepitch-shell)
